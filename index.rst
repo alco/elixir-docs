@@ -32,6 +32,7 @@ API reference
 
    v0.13.3 <ref/v0.13.3>
    v0.14.0-dev (master) <ref/master>
+   ref/topical
 
 Source repo docs
 ================
