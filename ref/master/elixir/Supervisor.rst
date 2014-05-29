@@ -98,17 +98,16 @@ workers and supervisors as children, each of them with their specific
 configuration, shutdown values, and restart strategies.
 
 Continue reading this moduledoc to learn more about supervision
-strategies and then follow to the
-```Supervisor.Spec`` <Supervisor.Spec.html>`__ module documentation to
-learn about the specification for workers and supervisors.
+strategies and then follow to the :elixir:mod:`Supervisor.Spec` module
+documentation to learn about the specification for workers and
+supervisors.
 
 Module-based supervisors
 ~~~~~~~~~~~~~~~~~~~~~~~~
 
 In the example above, a supervisor was dynamically created by passing
-the supervision structure to ```start_link/2`` <#start_link/2>`__.
-However, supervisors can also be created by explicitly defining a
-supevision module:
+the supervision structure to :elixir:func:`start_link/2`. However, supervisors can
+also be created by explicitly defining a supevision module:
 
 ::
 
@@ -166,8 +165,7 @@ Name Registration
 ~~~~~~~~~~~~~~~~~
 
 A supervisor is bound to the same name registration rules as a
-```GenServer`` <GenServer.html>`__. Read more about it in the
-```GenServer`` <GenServer.html>`__ docs.
+:elixir:mod:`GenServer`. Read more about it in the :elixir:mod:`GenServer` docs.
 
 
 
@@ -295,7 +293,7 @@ Functions
    Deletes the child specification identified by ``child_id``.
    
    The corresponding child process must not be running, use
-   ```terminate_child/2`` <#terminate_child/2>`__ to terminate it.
+   :elixir:func:`terminate_child/2` to terminate it.
    
    If successful, the function returns ``:ok``. This function may error
    with an appropriate error tuple if the ``child_id`` is not found, or if
@@ -402,13 +400,11 @@ Functions
    
    A strategy is required to be given as an option. Furthermore, the
    ``:max_restarts`` and ``:max_seconds`` value can be configured as
-   described in
-   ```Supervisor.Spec.supervise/2`` <Supervisor.Spec.html#supervise/2>`__
-   docs.
+   described in :elixir:func:`Supervisor.Spec.supervise/2` docs.
    
    The options can also be used to register a supervisor name. the
    supported values are described under the ``Name Registration`` section
-   in the ```GenServer`` <GenServer.html>`__ module docs.
+   in the :elixir:mod:`GenServer` module docs.
    
    If the supervisor and its child processes are successfully created (i.e.
    if the start function of all child processes returns ``{:ok, child}``,
@@ -440,8 +436,8 @@ Functions
    
    To start the supervisor, the ``init/1`` callback will be invoked in the
    given module. The ``init/1`` callback must return a supervision
-   specification which can be created with the help of
-   ```Supervisor.Spec`` <Supervisor.Spec.html>`__ module.
+   specification which can be created with the help of :elixir:mod:`Supervisor.Spec`
+   module.
    
    If the ``init/1`` callback returns ``:ignore``, this function returns
    ``:ignore`` as well and the supervisor terminates with reason
@@ -451,10 +447,9 @@ Functions
    
    The ``:name`` option can also be given in order to register a supervisor
    name, the supported values are described under the ``Name Registration``
-   section in the ```GenServer`` <GenServer.html>`__ module docs.
+   section in the :elixir:mod:`GenServer` module docs.
    
-   Other failure conditions are specified in
-   ```start_link/2`` <#start_link/2>`__ docs.
+   Other failure conditions are specified in :elixir:func:`start_link/2` docs.
    
    
 
@@ -481,8 +476,7 @@ Functions
    
    A non-temporary child process may later be restarted by the supervisor.
    The child process can also be restarted explicitly by calling
-   ```restart_child/2`` <#restart_child/2>`__. Use
-   ```delete_child/2`` <#delete_child/2>`__ to remove the child
+   :elixir:func:`restart_child/2`. Use :elixir:func:`delete_child/2` to remove the child
    specification.
    
    If successful, the function returns ``:ok``. If there is no child

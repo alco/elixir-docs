@@ -8,10 +8,8 @@ EEx.SmartEngine
 Overview
 --------
 
-An engine meant for end-user usage that includes
-```EEx.AssignsEngine`` <EEx.AssignsEngine.html>`__ and other
-conveniences. Read ```EEx.AssignsEngine`` <EEx.AssignsEngine.html>`__
-for examples.
+An engine meant for end-user usage that includes :elixir:mod:`EEx.AssignsEngine`
+and other conveniences. Read :elixir:mod:`EEx.AssignsEngine` for examples.
 
 
 
@@ -21,11 +19,11 @@ Summary
 -------
 
 ============================ =
-:elixir:func:`handle_body/1` Callback implementation of ```EEx.Engine.handle_body/1`` <EEx.Engine.html#handle_body/1>`__ 
+:elixir:func:`handle_body/1` Callback implementation of :elixir:func:`EEx.Engine.handle_body/1` 
 
-:elixir:func:`handle_expr/3` Callback implementation of ```EEx.Engine.handle_expr/3`` <EEx.Engine.html#handle_expr/3>`__ 
+:elixir:func:`handle_expr/3` Callback implementation of :elixir:func:`EEx.Engine.handle_expr/3` 
 
-:elixir:func:`handle_text/2` Callback implementation of ```EEx.Engine.handle_text/2`` <EEx.Engine.html#handle_text/2>`__ 
+:elixir:func:`handle_text/2` Callback implementation of :elixir:func:`EEx.Engine.handle_text/2` 
 ============================ =
 
 
@@ -40,8 +38,7 @@ Functions
 
 
    
-   Callback implementation of
-   ```EEx.Engine.handle_body/1`` <EEx.Engine.html#handle_body/1>`__.
+   Callback implementation of :elixir:func:`EEx.Engine.handle_body/1`.
    
    
 
@@ -50,8 +47,7 @@ Functions
 
 
    
-   Callback implementation of
-   ```EEx.Engine.handle_expr/3`` <EEx.Engine.html#handle_expr/3>`__.
+   Callback implementation of :elixir:func:`EEx.Engine.handle_expr/3`.
    
    
 
@@ -60,8 +56,7 @@ Functions
 
 
    
-   Callback implementation of
-   ```EEx.Engine.handle_text/2`` <EEx.Engine.html#handle_text/2>`__.
+   Callback implementation of :elixir:func:`EEx.Engine.handle_text/2`.
    
    
 

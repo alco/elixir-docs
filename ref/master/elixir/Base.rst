@@ -110,9 +110,8 @@ Functions
    
    Decodes a base 16 encoded string into a binary string.
    
-   An ```ArgumentError`` <ArgumentError.html>`__ exception is raised if the
-   padding is incorrect or a non-alphabet character is present in the
-   string.
+   An :elixir:mod:`ArgumentError` exception is raised if the padding is incorrect or
+   a non-alphabet character is present in the string.
    
    **Examples**
    
@@ -184,9 +183,8 @@ Functions
    
    Decodes a base 32 encoded string into a binary string.
    
-   An ```ArgumentError`` <ArgumentError.html>`__ exception is raised if the
-   padding is incorrect or a non-alphabet character is present in the
-   string.
+   An :elixir:mod:`ArgumentError` exception is raised if the padding is incorrect or
+   a non-alphabet character is present in the string.
    
    **Examples**
    
@@ -276,9 +274,8 @@ Functions
    
    The following alphabet is used both for encoding and decoding:
    
-   An ```ArgumentError`` <ArgumentError.html>`__ exception is raised if the
-   padding is incorrect or a non-alphabet character is present in the
-   string.
+   An :elixir:mod:`ArgumentError` exception is raised if the padding is incorrect or
+   a non-alphabet character is present in the string.
    
    **Examples**
    
@@ -421,9 +418,8 @@ Functions
    Decodes a base 32 encoded string with extended hexadecimal alphabet into
    a binary string.
    
-   An ```ArgumentError`` <ArgumentError.html>`__ exception is raised if the
-   padding is incorrect or a non-alphabet character is present in the
-   string.
+   An :elixir:mod:`ArgumentError` exception is raised if the padding is incorrect or
+   a non-alphabet character is present in the string.
    
    **Examples**
    
@@ -529,9 +525,8 @@ Functions
    Decodes a base 64 encoded string with URL and filename safe alphabet
    into a binary string.
    
-   An ```ArgumentError`` <ArgumentError.html>`__ exception is raised if the
-   padding is incorrect or a non-alphabet character is present in the
-   string.
+   An :elixir:mod:`ArgumentError` exception is raised if the padding is incorrect or
+   a non-alphabet character is present in the string.
    
    **Examples**
    

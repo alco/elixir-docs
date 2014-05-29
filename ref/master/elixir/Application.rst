@@ -83,8 +83,7 @@ define the module callback in the application definition in the
 
 Our application now requires the ``MyApp`` module to provide an
 application callback. This can be done by invoking ``use Application``
-in that module and defining a ```start/2`` <#start/2>`__ callback, for
-example:
+in that module and defining a :elixir:func:`start/2` callback, for example:
 
 ::
 
@@ -96,24 +95,23 @@ example:
       end
     end
 
-```start/2`` <#start/2>`__ most commonly returns ``{:ok, pid}`` or
+:elixir:func:`start/2` most commonly returns ``{:ok, pid}`` or
 ``{:ok, pid, state}`` where ``pid`` identifies the supervision tree and
 the state is the application state. ``args`` is second element of the
 tuple given to the ``:mod`` option.
 
-The ``type`` passed into ```start/2`` <#start/2>`__ is usually
-``:normal`` unless in a distributed setup where applications takeover
-and failovers are configured. This particular aspect of applications can
-be read with more detail in the OTP documentation:
+The ``type`` passed into :elixir:func:`start/2` is usually ``:normal`` unless in a
+distributed setup where applications takeover and failovers are
+configured. This particular aspect of applications can be read with more
+detail in the OTP documentation:
 
 -  http://www.erlang.org/doc/man/application.html
 -  http://www.erlang.org/doc/design\_principles/applications.html
 
-A developer may also implement the ```stop/1`` <#stop/1>`__ callback
-(automatically defined by ``use Application``) which does any
-application cleanup. It receives the application state and can return
-any value. Notice that shutting down the supervisor is automatically
-handled by the VM;
+A developer may also implement the :elixir:func:`stop/1` callback (automatically
+defined by ``use Application``) which does any application cleanup. It
+receives the application state and can return any value. Notice that
+shutting down the supervisor is automatically handled by the VM;
 
 
 
@@ -125,7 +123,7 @@ Summary
 =================================== =
 :elixir:func:`app_dir/1`            Gets the directory for app 
 
-:elixir:func:`app_dir/2`            Returns the given path inside ```app_dir/1`` <#app_dir/1>`__ 
+:elixir:func:`app_dir/2`            Returns the given path inside :elixir:func:`app_dir/1` 
 
 :elixir:func:`delete_env/3`         Deletes the ``key`` from the given ``app`` environment 
 
@@ -135,7 +133,7 @@ Summary
 
 :elixir:func:`fetch_env/2`          Returns the value for ``key`` in ``app``'s environment in a tuple 
 
-:elixir:func:`format_error/1`       Formats the error reason returned by ```start/2`` <#start/2>`__, ``ensure_started/2, [``\ stop/1\ ``](#stop/1), [``\ load/1\ ``](#load/1) and [``\ unload/1\`](#unload/1), returns a string 
+:elixir:func:`format_error/1`       Formats the error reason returned by :elixir:func:`start/2`, ``ensure_started/2,``\ stop/1\ ``,``\ load/1\ ``and``\ unload/1\`, returns a string 
 
 :elixir:func:`get_all_env/1`        Returns all key-value pairs for ``app`` 
 
@@ -218,8 +216,8 @@ Functions
        Application.app_dir(:bar)
        #=> "bar-123"
    
-   For more information on code paths, check the ```Code`` <Code.html>`__
-   module in Elixir and also Erlang's ``:code`` module.
+   For more information on code paths, check the :elixir:mod:`Code` module in Elixir
+   and also Erlang's ``:code`` module.
    
    
 
@@ -234,7 +232,7 @@ Functions
  
 
    
-   Returns the given path inside ```app_dir/1`` <#app_dir/1>`__.
+   Returns the given path inside :elixir:func:`app_dir/1`.
    
    
 
@@ -251,7 +249,7 @@ Functions
    
    Deletes the ``key`` from the given ``app`` environment.
    
-   See ```put_env/4`` <#put_env/4>`__ for a description of the options.
+   See :elixir:func:`put_env/4` for a description of the options.
    
    
 
@@ -268,9 +266,9 @@ Functions
    
    Ensures the given ``app`` and its applications are started.
    
-   Same as ```start/2`` <#start/2>`__ but also starts the applications
-   listed under ``:applications`` in the ``.app`` file in case they were
-   not previously started.
+   Same as :elixir:func:`start/2` but also starts the applications listed under
+   ``:applications`` in the ``.app`` file in case they were not previously
+   started.
    
    
 
@@ -287,9 +285,9 @@ Functions
    
    Ensures the given ``app`` is started.
    
-   Same as ```start/2`` <#start/2>`__ but returns ``:ok`` if the
-   application was already started. This is useful in scripts and in test
-   setup, where test applications need to be explicitly started:
+   Same as :elixir:func:`start/2` but returns ``:ok`` if the application was already
+   started. This is useful in scripts and in test setup, where test
+   applications need to be explicitly started:
    
    ::
    
@@ -327,8 +325,8 @@ Functions
  
 
    
-   Formats the error reason returned by ```start/2`` <#start/2>`__,
-   ``ensure_started/2, [``\ stop/1\ ``](#stop/1), [``\ load/1\ ``](#load/1) and [``\ unload/1\`](#unload/1),
+   Formats the error reason returned by :elixir:func:`start/2`,
+   ``ensure_started/2,``\ stop/1\ ``,``\ load/1\ ``and``\ unload/1\`,
    returns a string.
    
    
@@ -407,9 +405,9 @@ Functions
    -  ``:persistent`` - persists the given value on application load and
       reloads;
    
-   If ```put_env/4`` <#put_env/4>`__ is called before the application is
-   loaded, the application environment values specified in the ``.app``
-   file will override the ones previously set.
+   If :elixir:func:`put_env/4` is called before the application is loaded, the
+   application environment values specified in the ``.app`` file will
+   override the ones previously set.
    
    The persistent option can be set to true when there is a need to
    guarantee parameters set with this function will not be overridden by
@@ -433,7 +431,7 @@ Functions
    Starts the given ``app``.
    
    If the ``app`` is not loaded, the application will first be loaded using
-   ```load/1`` <#load/1>`__. Any included application, defined in the
+   :elixir:func:`load/1`. Any included application, defined in the
    ``:included_applications`` key of the ``.app`` file will also be loaded,
    but they won't be started.
    
@@ -443,7 +441,7 @@ Functions
    of the missing application.
    
    In case you want to automatically load **and start** all of ``app``'s
-   dependencies, see ```ensure_all_started/2`` <#ensure_all_started/2>`__.
+   dependencies, see :elixir:func:`ensure_all_started/2`.
    
    The ``type`` argument specifies the type of the application:
    
@@ -457,8 +455,8 @@ Functions
       applications are terminated (the default);
    
    Note that it is always possible to stop an application explicitly by
-   calling ```stop/1`` <#stop/1>`__. Regardless of the type of the
-   application, no other applications will be affected.
+   calling :elixir:func:`stop/1`. Regardless of the type of the application, no other
+   applications will be affected.
    
    Note also that the ``:transient`` type is of little practical use, since
    when a supervision tree terminates, the reason is set to ``:shutdown``,

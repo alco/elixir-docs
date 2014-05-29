@@ -22,7 +22,7 @@ Summary
 
 :elixir:func:`parse/2`      Parses ``argv`` into a keywords list 
 
-:elixir:func:`parse_head/2` Similar to ```parse/2`` <#parse/2>`__ but only parses the head of ``argv``; as soon as it finds a non-switch, it stops parsing 
+:elixir:func:`parse_head/2` Similar to :elixir:func:`parse/2` but only parses the head of ``argv``; as soon as it finds a non-switch, it stops parsing 
 =========================== =
 
 
@@ -70,9 +70,8 @@ Functions
    
    Low-level function that parses one option.
    
-   It accepts the same options as ```parse/2`` <#parse/2>`__ and
-   ```parse_head/2`` <#parse_head/2>`__ as both functions are built on top
-   of next. This function may return:
+   It accepts the same options as :elixir:func:`parse/2` and :elixir:func:`parse_head/2` as both
+   functions are built on top of next. This function may return:
    
    -  ``{:ok, key, value, rest}`` - the option ``key`` with ``value`` was
       successfully parsed
@@ -224,10 +223,10 @@ Functions
  
 
    
-   Similar to ```parse/2`` <#parse/2>`__ but only parses the head of
-   ``argv``; as soon as it finds a non-switch, it stops parsing.
+   Similar to :elixir:func:`parse/2` but only parses the head of ``argv``; as soon as
+   it finds a non-switch, it stops parsing.
    
-   See ```parse/2`` <#parse/2>`__ for more information.
+   See :elixir:func:`parse/2` for more information.
    
    **Example**
    

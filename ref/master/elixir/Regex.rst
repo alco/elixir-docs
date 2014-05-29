@@ -14,9 +14,8 @@ As the ``re`` module, Regex is based on PCRE (Perl Compatible Regular
 Expressions). More information can be found in the ```re``
 documentation <http://www.erlang.org/doc/man/re.html>`__.
 
-Regular expressions in Elixir can be created using
-```Regex.compile!/2`` <Regex.html#compile!/2>`__ or using the special
-form with ```~r`` <Kernel.html#sigil_r/2>`__:
+Regular expressions in Elixir can be created using :elixir:func:`Regex.compile!/2`
+or using the special form with ```~r`` <Kernel.html#sigil_r/2>`__:
 
 ::
 
@@ -26,9 +25,8 @@ form with ```~r`` <Kernel.html#sigil_r/2>`__:
     # A regular expression with case insensitive and unicode options
     ~r/foo/iu
 
-A Regex is represented internally as the ```Regex`` <Regex.html>`__
-struct. Therefore, ``%Regex{}`` can be used whenever there is a need to
-match on them.
+A Regex is represented internally as the :elixir:mod:`Regex` struct. Therefore,
+``%Regex{}`` can be used whenever there is a need to match on them.
 
 Modifiers
 ~~~~~~~~~
@@ -94,7 +92,7 @@ Summary
 -------
 
 =============================== =
-:elixir:func:`compile!/2`       Compiles the regular expression according to the given options. Fails with ```Regex.CompileError`` <Regex.CompileError.html>`__ if the regex cannot be compiled 
+:elixir:func:`compile!/2`       Compiles the regular expression according to the given options. Fails with :elixir:mod:`Regex.CompileError` if the regex cannot be compiled 
 
 :elixir:func:`compile/2`        Compiles the regular expression 
 
@@ -116,7 +114,7 @@ Summary
 
 :elixir:func:`run/3`            Runs the regular expression against the given string until the first match. It returns a list with all captures or ``nil`` if no match occurred 
 
-:elixir:func:`scan/3`           Same as ```run/3`` <#run/3>`__, but scans the target several times collecting all matches of the regular expression. A list of lists is returned, where each entry in the primary list represents a match and each entry in the secondary list represents the captured contents 
+:elixir:func:`scan/3`           Same as :elixir:func:`run/3`, but scans the target several times collecting all matches of the regular expression. A list of lists is returned, where each entry in the primary list represents a match and each entry in the secondary list represents the captured contents 
 
 :elixir:func:`source/1`         Returns the regex source as a binary 
 
@@ -180,8 +178,7 @@ Functions
 
    
    Compiles the regular expression according to the given options. Fails
-   with ```Regex.CompileError`` <Regex.CompileError.html>`__ if the regex
-   cannot be compiled.
+   with :elixir:mod:`Regex.CompileError` if the regex cannot be compiled.
    
    
 
@@ -400,10 +397,10 @@ Functions
 
 
    
-   Same as ```run/3`` <#run/3>`__, but scans the target several times
-   collecting all matches of the regular expression. A list of lists is
-   returned, where each entry in the primary list represents a match and
-   each entry in the secondary list represents the captured contents.
+   Same as :elixir:func:`run/3`, but scans the target several times collecting all
+   matches of the regular expression. A list of lists is returned, where
+   each entry in the primary list represents a match and each entry in the
+   secondary list represents the captured contents.
    
    **Options**
    

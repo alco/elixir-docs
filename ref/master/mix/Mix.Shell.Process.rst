@@ -20,8 +20,8 @@ sent to the current process:
 
 This is mainly useful in tests, allowing us to assert if given messages
 were received or not. Since we need to guarantee a clean slate between
-tests, there is also a ```flush/1`` <#flush/1>`__ function responsible
-for flushing all ``:mix_shell`` related messages from the process inbox.
+tests, there is also a :elixir:func:`flush/1` function responsible for flushing all
+``:mix_shell`` related messages from the process inbox.
 
 
 

@@ -80,8 +80,7 @@ Functions
    
    Append a path to the Erlang VM code path.
    
-   The path is expanded with ```Path.expand/1`` <Path.html#expand/1>`__
-   before being appended.
+   The path is expanded with :elixir:func:`Path.expand/1` before being appended.
    
    
 
@@ -108,7 +107,7 @@ Functions
    the second one is its byte code (as a binary).
    
    For compiling many files at once, check
-   ```Kernel.ParallelCompiler.files/2`` <Kernel.ParallelCompiler.html#files/2>`__.
+   :elixir:func:`Kernel.ParallelCompiler.files/2`.
    
    
 
@@ -119,8 +118,7 @@ Functions
    
    Gets the compilation options from the code server.
    
-   Check ```compiler_options/1`` <#compiler_options/1>`__ for more
-   information.
+   Check :elixir:func:`compiler_options/1` for more information.
    
    
 
@@ -159,8 +157,7 @@ Functions
    
    Delete a path from the Erlang VM code path.
    
-   The path is expanded with ```Path.expand/1`` <Path.html#expand/1>`__
-   before being deleted.
+   The path is expanded with :elixir:func:`Path.expand/1` before being deleted.
    
    
 
@@ -178,10 +175,8 @@ Functions
    If it succeeds loading the module, it returns ``{:module, module}``. If
    not, returns ``{:error, reason}`` with the error reason.
    
-   Check ```ensure_loaded/1`` <#ensure_loaded/1>`__ for more information on
-   module loading and when to use
-   ```ensure_loaded/1`` <#ensure_loaded/1>`__ or
-   ```ensure_compiled/1`` <#ensure_compiled/1>`__.
+   Check :elixir:func:`ensure_loaded/1` for more information on module loading and
+   when to use :elixir:func:`ensure_loaded/1` or :elixir:func:`ensure_compiled/1`.
    
    
 
@@ -192,9 +187,9 @@ Functions
    
    Ensures the given module is compiled and loaded.
    
-   Similar to ```ensure_compiled/1`` <#ensure_compiled/1>`__, but returns
-   ``true`` if the module is already loaded or was successfully loaded and
-   compiled. Returns ``false`` otherwise.
+   Similar to :elixir:func:`ensure_compiled/1`, but returns ``true`` if the module is
+   already loaded or was successfully loaded and compiled. Returns
+   ``false`` otherwise.
    
    
 
@@ -220,27 +215,25 @@ Functions
    need to be loaded upfront or explicitly.
    
    Therefore, this function is used to check if a module is loaded before
-   using it and allows one to react accordingly. For example, the
-   ```URI`` <URI.html>`__ module uses this function to check if a specific
-   parser exists for a given URI scheme.
+   using it and allows one to react accordingly. For example, the :elixir:mod:`URI`
+   module uses this function to check if a specific parser exists for a
+   given URI scheme.
    
-   **```Code.ensure_compiled/1`` <Code.html#ensure_compiled/1>`__**
+   **:elixir:func:`Code.ensure_compiled/1`**
    
-   Elixir also contains an ```ensure_compiled/1`` <#ensure_compiled/1>`__
-   function that is a superset of
-   ```ensure_loaded/1`` <#ensure_loaded/1>`__.
+   Elixir also contains an :elixir:func:`ensure_compiled/1` function that is a
+   superset of :elixir:func:`ensure_loaded/1`.
    
    Since Elixir's compilation happens in parallel, in some situations you
    may need to use a module that was not yet compiled, therefore it can't
    even be loaded.
    
-   ```ensure_compiled/1`` <#ensure_compiled/1>`__ halts the current process
-   until the module we are depending on is available.
+   :elixir:func:`ensure_compiled/1` halts the current process until the module we are
+   depending on is available.
    
-   In most cases, ```ensure_loaded/1`` <#ensure_loaded/1>`__ is enough.
-   ```ensure_compiled/1`` <#ensure_compiled/1>`__ must be used in rare
-   cases, usually involving macros that need to invoke a module for
-   callback information.
+   In most cases, :elixir:func:`ensure_loaded/1` is enough. :elixir:func:`ensure_compiled/1` must
+   be used in rare cases, usually involving macros that need to invoke a
+   module for callback information.
    
    
 
@@ -251,9 +244,8 @@ Functions
    
    Ensures the given module is loaded.
    
-   Similar to ```ensure_loaded/1`` <#ensure_loaded/1>`__, but returns
-   ``true`` if the module is already loaded or was successfully loaded.
-   Returns ``false`` otherwise.
+   Similar to :elixir:func:`ensure_loaded/1`, but returns ``true`` if the module is
+   already loaded or was successfully loaded. Returns ``false`` otherwise.
    
    
 
@@ -280,8 +272,7 @@ Functions
    
    Evaluate the quoted contents.
    
-   See ```eval_string/3`` <#eval_string/3>`__ for a description of
-   arguments and return values.
+   See :elixir:func:`eval_string/3` for a description of arguments and return values.
    
    **Examples**
    
@@ -334,9 +325,9 @@ Functions
    
    Notice that setting any of the values above overrides Elixir's default
    values. For example, setting ``:requires`` to ``[]``, will no longer
-   automatically require the ```Kernel`` <Kernel.html>`__ module; in the
-   same way setting ``:macros`` will no longer auto-import
-   ```Kernel`` <Kernel.html>`__ macros like ``if``, ``case``, etc.
+   automatically require the :elixir:mod:`Kernel` module; in the same way setting
+   ``:macros`` will no longer auto-import :elixir:mod:`Kernel` macros like ``if``,
+   ``case``, etc.
    
    Returns a tuple of the form ``{value, binding}``, where ``value`` is the
    value returned from evaluating ``string``. If an error occurs while
@@ -414,8 +405,8 @@ Functions
    
    Notice that if ``load_file`` is invoked by different processes
    concurrently, the target file will be loaded concurrently many times.
-   Check ```require_file/2`` <#require_file/2>`__ if you don't want a file
-   to be loaded concurrently.
+   Check :elixir:func:`require_file/2` if you don't want a file to be loaded
+   concurrently.
    
    
 
@@ -435,8 +426,7 @@ Functions
    
    Prepend a path to the Erlang VM code path.
    
-   The path is expanded with ```Path.expand/1`` <Path.html#expand/1>`__
-   before being prepended.
+   The path is expanded with :elixir:func:`Path.expand/1` before being prepended.
    
    
 
@@ -448,9 +438,9 @@ Functions
    Requires the given ``file``.
    
    Accepts ``relative_to`` as an argument to tell where the file is
-   located. The return value is the same as that of
-   ```load_file/2`` <#load_file/2>`__. If the file was already
-   required/loaded, doesn't do anything and returns ``nil``.
+   located. The return value is the same as that of :elixir:func:`load_file/2`. If the
+   file was already required/loaded, doesn't do anything and returns
+   ``nil``.
    
    Notice that if ``require_file`` is invoked by different processes
    concurrently, the first process to invoke ``require_file`` acquires a
@@ -459,8 +449,7 @@ Functions
    loaded only once. The first process to call ``require_file`` will get
    the list of loaded modules, others will get ``nil``.
    
-   Check ```load_file/2`` <#load_file/2>`__ if you want a file to be loaded
-   multiple times.
+   Check :elixir:func:`load_file/2` if you want a file to be loaded multiple times.
    
    
 
@@ -487,8 +476,8 @@ Functions
    **Macro.to\_string/2**
    
    The opposite of converting a string to its quoted form is
-   ```Macro.to_string/2`` <Macro.html#to_string/2>`__, which converts a
-   quoted form to a string/binary representation.
+   :elixir:func:`Macro.to_string/2`, which converts a quoted form to a string/binary
+   representation.
    
    
 
@@ -500,12 +489,10 @@ Functions
    Convert the given string to its quoted form.
    
    It returns the ast if it succeeds, raises an exception otherwise. The
-   exception is a ```TokenMissingError`` <TokenMissingError.html>`__ in
-   case a token is missing (usually because the expression is incomplete),
-   ```SyntaxError`` <SyntaxError.html>`__ otherwise.
+   exception is a :elixir:mod:`TokenMissingError` in case a token is missing (usually
+   because the expression is incomplete), :elixir:mod:`SyntaxError` otherwise.
    
-   Check ```string_to_quoted/2`` <#string_to_quoted/2>`__ for options
-   information.
+   Check :elixir:func:`string_to_quoted/2` for options information.
    
    
 

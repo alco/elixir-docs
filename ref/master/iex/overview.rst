@@ -14,7 +14,7 @@ Modules
 ================================ =
 :elixir:mod:`IEx`                Elixir's interactive shell 
 
-:elixir:mod:`IEx.Helpers`        Welcome to Interactive Elixir. You are currently seeing the documentation for the module ```IEx.Helpers`` <IEx.Helpers.html>`__ which provides many helpers to make Elixir's shell more joyful to work with 
+:elixir:mod:`IEx.Helpers`        Welcome to Interactive Elixir. You are currently seeing the documentation for the module ``IEx.Helpers`` which provides many helpers to make Elixir's shell more joyful to work with 
 
 :elixir:mod:`IEx.History.Server` 
 ================================ =

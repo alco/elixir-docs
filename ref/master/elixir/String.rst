@@ -14,21 +14,17 @@ String and binary operations
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 The functions in this module act according to the Unicode Standard,
-version 6.3.0. For example, ```capitalize/1`` <#capitalize/1>`__,
-```downcase/1`` <#downcase/1>`__, ```strip/1`` <#strip/1>`__ are
-provided by this module.
+version 6.3.0. For example, :elixir:func:`capitalize/1`, :elixir:func:`downcase/1`,
+:elixir:func:`strip/1` are provided by this module.
 
 In addition to this module, Elixir provides more low-level operations
 that work directly with binaries. Some of those can be found in the
-```Kernel`` <Kernel.html>`__ module, as:
+:elixir:mod:`Kernel` module, as:
 
--  ```Kernel.binary_part/3`` <Kernel.html#binary_part/3>`__ - retrieves
-   part of the binary
--  ```Kernel.bit_size/1`` <Kernel.html#bit_size/1>`__ and
-   ```Kernel.byte_size/1`` <Kernel.html#byte_size/1>`__ - size related
+-  :elixir:func:`Kernel.binary_part/3` - retrieves part of the binary
+-  :elixir:func:`Kernel.bit_size/1` and :elixir:func:`Kernel.byte_size/1` - size related
    functions
--  ```Kernel.is_bitstring/1`` <Kernel.html#is_bitstring/1>`__ and
-   ```Kernel.is_binary/1`` <Kernel.html#is_binary/1>`__ - type checking
+-  :elixir:func:`Kernel.is_bitstring/1` and :elixir:func:`Kernel.is_binary/1` - type checking
    function
 -  Plus a number of functions for working with binaries (bytes) `in the
    ``:binary`` module <http://erlang.org/doc/man/binary.html>`__
@@ -126,8 +122,8 @@ data (i.e., data that is not possible according to the definition of the
 encoding) is encountered, only one codepoint needs to be rejected.
 
 This module relies on this behaviour to ignore such invalid characters.
-For example, ```length/1`` <#length/1>`__ is going to return a correct
-result even if an invalid codepoint is fed into it.
+For example, :elixir:func:`length/1` is going to return a correct result even if an
+invalid codepoint is fed into it.
 
 In other words, this module expects invalid data to be detected when
 retrieving data from the external source. For example, a driver that

@@ -9,7 +9,7 @@ Overview
 --------
 
 Provides a set of algorithms that enumerate over collections according
-to the ```Enumerable`` <Enumerable.html>`__ protocol:
+to the :elixir:mod:`Enumerable` protocol:
 
 ::
 
@@ -25,15 +25,14 @@ enumeration. For dicts, the argument is always a ``{key, value}`` tuple:
     iex> Enum.map(dict, fn {k, v} -> {k, v * 2} end)
     [a: 2, b: 4]
 
-Note that the functions in the ```Enum`` <Enum.html>`__ module are
-eager: they always start the enumeration of the given collection. The
-```Stream`` <Stream.html>`__ module allows lazy enumeration of
-collections and provides infinite streams.
+Note that the functions in the :elixir:mod:`Enum` module are eager: they always
+start the enumeration of the given collection. The :elixir:mod:`Stream` module
+allows lazy enumeration of collections and provides infinite streams.
 
-Since the majority of the functions in ```Enum`` <Enum.html>`__
-enumerate the whole collection and return a list as result, infinite
-streams need to be carefully used with such functions, as they can
-potentially run forever. For example:
+Since the majority of the functions in :elixir:mod:`Enum` enumerate the whole
+collection and return a list as result, infinite streams need to be
+carefully used with such functions, as they can potentially run forever.
+For example:
 
 ::
 
@@ -86,9 +85,9 @@ Summary
 
 :elixir:func:`find/3`            Returns the first item for which ``fun`` returns a truthy value. If no such item is found, returns ``ifnone`` 
 
-:elixir:func:`find_index/2`      Similar to ```find/3`` <#find/3>`__, but returns the index (zero-based) of the element instead of the element itself 
+:elixir:func:`find_index/2`      Similar to :elixir:func:`find/3`, but returns the index (zero-based) of the element instead of the element itself 
 
-:elixir:func:`find_value/3`      Similar to ```find/3`` <#find/3>`__, but returns the value of the function invocation instead of the element itself 
+:elixir:func:`find_value/3`      Similar to :elixir:func:`find/3`, but returns the value of the function invocation instead of the element itself 
 
 :elixir:func:`flat_map/2`        Returns a new collection appending the result of invoking ``fun`` on each corresponding item of ``collection`` 
 
@@ -432,8 +431,8 @@ Functions
    Concatenates the enumerable on the right with the enumerable on the
    left.
    
-   This function produces the same result as the
-   ```Kernel.++/2`` <Kernel.html#++/2>`__ operator for lists.
+   This function produces the same result as the :elixir:func:`Kernel.++/2` operator
+   for lists.
    
    **Examples**
    
@@ -760,8 +759,8 @@ Functions
  
 
    
-   Similar to ```find/3`` <#find/3>`__, but returns the index (zero-based)
-   of the element instead of the element itself.
+   Similar to :elixir:func:`find/3`, but returns the index (zero-based) of the element
+   instead of the element itself.
    
    **Examples**
    
@@ -787,8 +786,8 @@ Functions
  
 
    
-   Similar to ```find/3`` <#find/3>`__, but returns the value of the
-   function invocation instead of the element itself.
+   Similar to :elixir:func:`find/3`, but returns the value of the function invocation
+   instead of the element itself.
    
    **Examples**
    
@@ -1426,11 +1425,10 @@ Functions
    
    Returns a list of collection elements shuffled.
    
-   Notice that you need to explicitly call
-   ```:random.seed/1`` <http://www.erlang.org/doc/man/random.html#seed-1>`__
-   and set a seed value for the random algorithm. Otherwise, the default
-   seed will be set which will always return the same result. For example,
-   one could do the following to set a seed dynamically:
+   Notice that you need to explicitly call `[`:random.seed/1`](http://www.erlang.org/doc/man/random.html#seed-1)` and set a
+   seed value for the random algorithm. Otherwise, the default seed will be
+   set which will always return the same result. For example, one could do
+   the following to set a seed dynamically:
    
    ::
    
@@ -1648,8 +1646,7 @@ Functions
    
    Returns the sum of all values.
    
-   Raises ```ArithmeticError`` <ArithmeticError.html>`__ if collection
-   contains a non-numeric value.
+   Raises :elixir:mod:`ArithmeticError` if collection contains a non-numeric value.
    
    **Examples**
    
@@ -1782,8 +1779,8 @@ Functions
    
    Traverses the given enumerable keeping its shape.
    
-   It also expects the enumerable to implement the
-   ```Collectable`` <Collectable.html>`__ protocol.
+   It also expects the enumerable to implement the :elixir:mod:`Collectable`
+   protocol.
    
    **Examples**
    

@@ -20,7 +20,7 @@ Summary
 ============================== =
 :elixir:func:`files/2`         Compiles the given files 
 
-:elixir:func:`files_to_path/3` Compiles the given files to the given path. Read ```files/2`` <#files/2>`__ for more information 
+:elixir:func:`files_to_path/3` Compiles the given files to the given path. Read :elixir:func:`files/2` for more information 
 ============================== =
 
 
@@ -62,8 +62,8 @@ Functions
 
 
    
-   Compiles the given files to the given path. Read
-   ```files/2`` <#files/2>`__ for more information.
+   Compiles the given files to the given path. Read :elixir:func:`files/2` for more
+   information.
    
    
 

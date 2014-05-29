@@ -8,18 +8,17 @@ Kernel
 Overview
 --------
 
-```Kernel`` <Kernel.html>`__ provides the default macros and functions
-Elixir imports into your environment. These macros and functions can be
-skipped or cherry-picked via the ``import`` macro. For instance, if you
-want to tell Elixir not to import the ``if`` macro, you can do:
+:elixir:mod:`Kernel` provides the default macros and functions Elixir imports into
+your environment. These macros and functions can be skipped or
+cherry-picked via the ``import`` macro. For instance, if you want to
+tell Elixir not to import the ``if`` macro, you can do:
 
 ::
 
     import Kernel, except: [if: 2]
 
 Elixir also has special forms that are always imported and cannot be
-skipped. These are described in
-```Kernel.SpecialForms`` <Kernel.SpecialForms.html>`__.
+skipped. These are described in :elixir:mod:`Kernel.SpecialForms`.
 
 Some of the functions described in this module are inlined by the Elixir
 compiler into their Erlang counterparts in the ``:erlang`` module. Those
@@ -120,7 +119,7 @@ Summary
 
 :elixir:macro:`defexception/1`      Defines an exception 
 
-:elixir:macro:`defimpl/3`           Defines an implementation for the given protocol. See ```defprotocol/2`` <#defprotocol/2>`__ for examples 
+:elixir:macro:`defimpl/3`           Defines an implementation for the given protocol. See :elixir:func:`defprotocol/2` for examples 
 
 :elixir:macro:`defmacro/2`          Defines a macro with the given name and contents 
 
@@ -152,7 +151,7 @@ Summary
 
 :elixir:macro:`in/2`                Checks if the element on the left side is member of the collection on the right side 
 
-:elixir:func:`inspect/2`            Inspect the given argument according to the ```Inspect`` <Inspect.html>`__ protocol. The second argument is a keywords list with options to control inspection 
+:elixir:func:`inspect/2`            Inspect the given argument according to the :elixir:mod:`Inspect` protocol. The second argument is a keywords list with options to control inspection 
 
 :elixir:func:`is_atom/1`            Returns ``true`` if ``term`` is an atom; otherwise returns ``false`` 
 
@@ -258,9 +257,9 @@ Summary
 
 :elixir:func:`struct/2`             Creates and updates structs 
 
-:elixir:func:`throw/1`              A non-local return from a function. Check ```Kernel.SpecialForms.try/1`` <Kernel.SpecialForms.html#try/1>`__ for more information 
+:elixir:func:`throw/1`              A non-local return from a function. Check :elixir:func:`Kernel.SpecialForms.try/1` for more information 
 
-:elixir:func:`tl/1`                 Returns the tail of a list. Raises ```ArgumentError`` <ArgumentError.html>`__ if the list is empty 
+:elixir:func:`tl/1`                 Returns the tail of a list. Raises :elixir:mod:`ArgumentError` if the list is empty 
 
 :elixir:macro:`to_char_list/1`      Convert the argument to a list according to the List.Chars protocol 
 
@@ -863,7 +862,7 @@ Functions
    ``length``. Binaries are zero-indexed.
    
    If start or length references in any way outside the binary, an
-   ```ArgumentError`` <ArgumentError.html>`__ exception is raised.
+   :elixir:mod:`ArgumentError` exception is raised.
    
    Allowed in guard tests. Inlined by the compiler.
    
@@ -1040,8 +1039,7 @@ Functions
    ``function`` with the given ``arity``, otherwise false.
    
    Notice that this function does not load the module in case it is not
-   loaded. Check ```Code.ensure_loaded/1`` <Code.html#ensure_loaded/1>`__
-   for more information.
+   loaded. Check :elixir:func:`Code.ensure_loaded/1` for more information.
    
    
 
@@ -1073,15 +1071,13 @@ Functions
  
 
    
-   Inspect the given argument according to the
-   ```Inspect`` <Inspect.html>`__ protocol. The second argument is a
-   keywords list with options to control inspection.
+   Inspect the given argument according to the :elixir:mod:`Inspect` protocol. The
+   second argument is a keywords list with options to control inspection.
    
    **Options**
    
-   ```inspect/2`` <#inspect/2>`__ accepts a list of options that are
-   internally translated to an ```Inspect.Opts`` <Inspect.Opts.html>`__
-   struct. Check the docs for ```Inspect.Opts`` <Inspect.Opts.html>`__ to
+   :elixir:func:`inspect/2` accepts a list of options that are internally translated
+   to an :elixir:mod:`Inspect.Opts` struct. Check the docs for :elixir:mod:`Inspect.Opts` to
    see the supported options.
    
    **Examples**
@@ -1421,8 +1417,7 @@ Functions
    with the given ``arity``, otherwise false.
    
    Notice that this function does not load the module in case it is not
-   loaded. Check ```Code.ensure_loaded/1`` <Code.html#ensure_loaded/1>`__
-   for more information.
+   loaded. Check :elixir:func:`Code.ensure_loaded/1` for more information.
    
    
 
@@ -1725,8 +1720,7 @@ Functions
    Returns the size of the given argument, which must be a tuple or a
    binary.
    
-   Prefer using ```tuple_size/1`` <#tuple_size/1>`__ or
-   ```byte_size/1`` <#byte_size/1>`__ instead.
+   Prefer using :elixir:func:`tuple_size/1` or :elixir:func:`byte_size/1` instead.
    
    Allowed in guard tests. Inlined by the compiler.
    
@@ -1745,9 +1739,8 @@ Functions
    
    Spawns the given function and returns its pid.
    
-   Check the modules ```Process`` <Process.html>`__ and
-   ```Node`` <Node.html>`__ for other functions to handle processes,
-   including spawning functions in nodes.
+   Check the modules :elixir:mod:`Process` and :elixir:mod:`Node` for other functions to handle
+   processes, including spawning functions in nodes.
    
    Inlined by the compiler.
    
@@ -1779,9 +1772,8 @@ Functions
    Spawns the given module and function passing the given args and returns
    its pid.
    
-   Check the modules ```Process`` <Process.html>`__ and
-   ```Node`` <Node.html>`__ for other functions to handle processes,
-   including spawning functions in nodes.
+   Check the modules :elixir:mod:`Process` and :elixir:mod:`Node` for other functions to handle
+   processes, including spawning functions in nodes.
    
    Inlined by the compiler.
    
@@ -1808,9 +1800,8 @@ Functions
    Spawns the given function, links it to the current process and returns
    its pid.
    
-   Check the modules ```Process`` <Process.html>`__ and
-   ```Node`` <Node.html>`__ for other functions to handle processes,
-   including spawning functions in nodes.
+   Check the modules :elixir:mod:`Process` and :elixir:mod:`Node` for other functions to handle
+   processes, including spawning functions in nodes.
    
    Inlined by the compiler.
    
@@ -1842,9 +1833,8 @@ Functions
    Spawns the given module and function passing the given args, links it to
    the current process and returns its pid.
    
-   Check the modules ```Process`` <Process.html>`__ and
-   ```Node`` <Node.html>`__ for other functions to handle processes,
-   including spawning functions in nodes.
+   Check the modules :elixir:mod:`Process` and :elixir:mod:`Node` for other functions to handle
+   processes, including spawning functions in nodes.
    
    Inlined by the compiler.
    
@@ -1871,9 +1861,8 @@ Functions
    Spawns the given function, monitors it and returns its pid and
    monitoring reference.
    
-   Check the modules ```Process`` <Process.html>`__ and
-   ```Node`` <Node.html>`__ for other functions to handle processes,
-   including spawning functions in nodes.
+   Check the modules :elixir:mod:`Process` and :elixir:mod:`Node` for other functions to handle
+   processes, including spawning functions in nodes.
    
    Inlined by the compiler.
    
@@ -1901,9 +1890,8 @@ Functions
    Spawns the given module and function passing the given args, monitors it
    and returns its pid and monitoring reference.
    
-   Check the modules ```Process`` <Process.html>`__ and
-   ```Node`` <Node.html>`__ for other functions to handle processes,
-   including spawning functions in nodes.
+   Check the modules :elixir:mod:`Process` and :elixir:mod:`Node` for other functions to handle
+   processes, including spawning functions in nodes.
    
    Inlined by the compiler.
    
@@ -1970,9 +1958,8 @@ Functions
  
 
    
-   A non-local return from a function. Check
-   ```Kernel.SpecialForms.try/1`` <Kernel.SpecialForms.html#try/1>`__ for
-   more information.
+   A non-local return from a function. Check :elixir:func:`Kernel.SpecialForms.try/1`
+   for more information.
    
    Inlined by the compiler.
    
@@ -1989,8 +1976,8 @@ Functions
  
 
    
-   Returns the tail of a list. Raises
-   ```ArgumentError`` <ArgumentError.html>`__ if the list is empty.
+   Returns the tail of a list. Raises :elixir:mod:`ArgumentError` if the list is
+   empty.
    
    Allowed in guard tests. Inlined by the compiler.
    
@@ -2210,8 +2197,7 @@ Macros
    Unlike Erlang, such attributes are not stored in the module by default
    since it is common in Elixir to use such attributes to store temporary
    data. A developer can configure an attribute to behave closer to Erlang
-   by calling
-   ```Module.register_attribute/3`` <Module.html#register_attribute/3>`__.
+   by calling :elixir:func:`Module.register_attribute/3`.
    
    Finally, notice that attributes can also be read inside functions:
    
@@ -2229,8 +2215,8 @@ Macros
    
    It is important to note that reading an attribute takes a snapshot of
    its current value. In other words, the value is read at compilation time
-   and not at runtime. Check the module ```Module`` <Module.html>`__ for
-   other functions to manipulate module attributes.
+   and not at runtime. Check the module :elixir:mod:`Module` for other functions to
+   manipulate module attributes.
    
    
 
@@ -2242,9 +2228,7 @@ Macros
    When used inside quoting, marks that the alias should not be hygienezed.
    This means the alias will be expanded when the macro is expanded.
    
-   Check
-   ```Kernel.SpecialForms.quote/2`` <Kernel.SpecialForms.html#quote/2>`__
-   for more information.
+   Check :elixir:func:`Kernel.SpecialForms.quote/2` for more information.
    
    
 
@@ -2453,10 +2437,9 @@ Macros
    behaviour. The Exception behaviour requires two functions to be
    implemented:
    
-   -  ``exception/1`` - that receives the arguments given to
-      ```raise/2`` <#raise/2>`__ and returns the exception struct. The
-      default implementation accepts a set of keyword arguments that is
-      merged into the struct;
+   -  ``exception/1`` - that receives the arguments given to :elixir:func:`raise/2`
+      and returns the exception struct. The default implementation accepts
+      a set of keyword arguments that is merged into the struct;
    
    -  ``message/1`` - receives the exception struct and must return its
       message. Most commonly exceptions have a message field which by
@@ -2464,14 +2447,13 @@ Macros
       not have a message field, this function must be explicitly
       implemented;
    
-   Since exceptions are structs, all the API supported by
-   ```defstruct/1`` <#defstruct/1>`__ is also available in
-   ```defexception/1`` <#defexception/1>`__.
+   Since exceptions are structs, all the API supported by :elixir:func:`defstruct/1`
+   is also available in :elixir:func:`defexception/1`.
    
    **Raising exceptions**
    
-   The most common way to raise an exception is via the
-   ```raise/2`` <#raise/2>`__ function:
+   The most common way to raise an exception is via the :elixir:func:`raise/2`
+   function:
    
    ::
    
@@ -2508,8 +2490,8 @@ Macros
 
 
    
-   Defines an implementation for the given protocol. See
-   ```defprotocol/2`` <#defprotocol/2>`__ for examples.
+   Defines an implementation for the given protocol. See :elixir:func:`defprotocol/2`
+   for examples.
    
    Inside an implementation, the name of the protocol can be accessed via
    ``@protocol`` and the current target as ``@for``.
@@ -2551,7 +2533,7 @@ Macros
    Defines a macro that is private. Private macros are only accessible from
    the same module in which they are defined.
    
-   Check ```defmacro/2`` <#defmacro/2>`__ for more information
+   Check :elixir:func:`defmacro/2` for more information
    
    
 
@@ -2592,8 +2574,7 @@ Macros
    
    This means that, if the module ``Bar`` is moved to another file, the
    references to ``Bar`` needs to be updated or an alias needs to be
-   explicitly set with the help of
-   ```Kernel.SpecialForms.alias/2`` <Kernel.SpecialForms.html#alias/2>`__.
+   explicitly set with the help of :elixir:func:`Kernel.SpecialForms.alias/2`.
    
    **Dynamic names**
    
@@ -2658,7 +2639,7 @@ Macros
    Defines a function that is private. Private functions are only
    accessible from within the module in which they are defined.
    
-   Check ```def/2`` <#def/2>`__ for more information
+   Check :elixir:func:`def/2` for more information
    
    **Examples**
    
@@ -2749,8 +2730,8 @@ Macros
    
    The real benefit of protocols comes when mixed with structs. For
    instance, Elixir ships with many data types implemented as structs, like
-   ```HashDict`` <HashDict.html>`__ and ```HashSet`` <HashSet.html>`__. We
-   can implement the ``Blank`` protocol for those types as well:
+   :elixir:mod:`HashDict` and :elixir:mod:`HashSet`. We can implement the ``Blank`` protocol
+   for those types as well:
    
    ::
    
@@ -2834,9 +2815,8 @@ Macros
    compiler. The debug info though may be removed after consolidation.
    
    For more information on how to apply protocol consolidation to a given
-   project, please check the functions in the
-   ```Protocol`` <Protocol.html>`__ module or the ``mix compile.protocols``
-   task.
+   project, please check the functions in the :elixir:mod:`Protocol` module or the
+   ``mix compile.protocols`` task.
    
    
 
@@ -3016,8 +2996,8 @@ Macros
          baz
        end
    
-   If you want to compare more than two clauses, you can use the
-   ```cond/1`` <#cond/1>`__ macro.
+   If you want to compare more than two clauses, you can use the :elixir:func:`cond/1`
+   macro.
    
    
 
@@ -3170,9 +3150,8 @@ Macros
    
    Raises an exception.
    
-   If the argument is a binary, it raises
-   ```RuntimeError`` <RuntimeError.html>`__ using the given argument as
-   message.
+   If the argument is a binary, it raises :elixir:mod:`RuntimeError` using the given
+   argument as message.
    
    If an atom, it will become a call to ``raise(atom, [])``.
    
@@ -3205,9 +3184,8 @@ Macros
    Calls ``.exception`` on the given argument passing the attributes in
    order to retrieve the appropriate exception structure.
    
-   Any module defined via ```defexception/1`` <#defexception/1>`__
-   automatically implements ``exception(attrs)`` callback expected by
-   ```raise/2`` <#raise/2>`__.
+   Any module defined via :elixir:func:`defexception/1` automatically implements
+   ``exception(attrs)`` callback expected by :elixir:func:`raise/2`.
    
    **Examples**
    
@@ -3226,8 +3204,7 @@ Macros
    
    Raises an exception preserving a previous stacktrace.
    
-   Works like ```raise/1`` <#raise/1>`__ but does not generate a new
-   stacktrace.
+   Works like :elixir:func:`raise/1` but does not generate a new stacktrace.
    
    Notice that ``System.stacktrace`` returns the stacktrace of the last
    exception. That said, it is common to assign the stacktrace as the first
@@ -3259,10 +3236,9 @@ Macros
    
    Raises an exception preserving a previous stacktrace.
    
-   Works like ```raise/2`` <#raise/2>`__ but does not generate a new
-   stacktrace.
+   Works like :elixir:func:`raise/2` but does not generate a new stacktrace.
    
-   See ```reraise/2`` <#reraise/2>`__ for more details.
+   See :elixir:func:`reraise/2` for more details.
    
    **Examples**
    
@@ -3559,9 +3535,7 @@ Macros
    hygienized. The argument can be either a variable unquoted or an atom
    representing the variable name.
    
-   Check
-   ```Kernel.SpecialForms.quote/2`` <Kernel.SpecialForms.html#quote/2>`__
-   for more information.
+   Check :elixir:func:`Kernel.SpecialForms.quote/2` for more information.
    
    
 
@@ -3594,10 +3568,9 @@ Macros
        iex> [1, [2], 3] |> List.flatten |> Enum.map(fn x -> x * 2 end)
        [2, 4, 6]
    
-   The example above will pass the list to
-   ```List.flatten/1`` <List.html#flatten/1>`__, then get the flattened
-   list and pass to ```Enum.map/2`` <Enum.html#map/2>`__, which will
-   multiply each entry in the list per two.
+   The example above will pass the list to :elixir:func:`List.flatten/1`, then get the
+   flattened list and pass to :elixir:func:`Enum.map/2`, which will multiply each
+   entry in the list per two.
    
    In other words, the expression above simply translates to:
    

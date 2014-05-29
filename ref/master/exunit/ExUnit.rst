@@ -22,7 +22,7 @@ A basic setup for ExUnit is shown below:
     # 1) Start ExUnit.
     ExUnit.start
 
-    # 2) Create a new test module (test case) and use [`ExUnit.Case`](ExUnit.Case.html).
+    # 2) Create a new test module (test case) and use `ExUnit.Case`.
     defmodule AssertionTest do
       # 3) Notice we pass `async: true`, this runs the test case
       #    concurrently with other test cases
@@ -45,13 +45,11 @@ as:
 Case, Callbacks and Assertions
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-See ```ExUnit.Case`` <ExUnit.Case.html>`__ and
-```ExUnit.Callbacks`` <ExUnit.Callbacks.html>`__ for more information
-about defining test cases.
+See :elixir:mod:`ExUnit.Case` and :elixir:mod:`ExUnit.Callbacks` for more information about
+defining test cases.
 
-The ```ExUnit.Assertions`` <ExUnit.Assertions.html>`__ module contains a
-set of macros to easily generate assertions with appropriate error
-messages.
+The :elixir:mod:`ExUnit.Assertions` module contains a set of macros to easily
+generate assertions with appropriate error messages.
 
 Integration with Mix
 ~~~~~~~~~~~~~~~~~~~~
@@ -87,9 +85,9 @@ Summary
 
 :elixir:func:`configure/1`     Configures ExUnit 
 
-:elixir:func:`run/0`           API used to run the tests. It is invoked automatically if ExUnit is started via ```ExUnit.start/1`` <ExUnit.html#start/1>`__ 
+:elixir:func:`run/0`           API used to run the tests. It is invoked automatically if ExUnit is started via :elixir:func:`ExUnit.start/1` 
 
-:elixir:func:`start/1`         Starts ExUnit and automatically runs tests right before the VM terminates. It accepts a set of options to configure ```ExUnit`` <ExUnit.html>`__ (the same ones accepted by ```configure/1`` <#configure/1>`__) 
+:elixir:func:`start/1`         Starts ExUnit and automatically runs tests right before the VM terminates. It accepts a set of options to configure :elixir:mod:`ExUnit` (the same ones accepted by :elixir:func:`configure/1`) 
 ============================== =
 
 
@@ -170,7 +168,7 @@ Functions
 
    
    API used to run the tests. It is invoked automatically if ExUnit is
-   started via ```ExUnit.start/1`` <ExUnit.html#start/1>`__.
+   started via :elixir:func:`ExUnit.start/1`.
    
    Returns a map containing the number of tests and the number of failures.
    
@@ -182,9 +180,8 @@ Functions
 
    
    Starts ExUnit and automatically runs tests right before the VM
-   terminates. It accepts a set of options to configure
-   ```ExUnit`` <ExUnit.html>`__ (the same ones accepted by
-   ```configure/1`` <#configure/1>`__).
+   terminates. It accepts a set of options to configure :elixir:mod:`ExUnit` (the
+   same ones accepted by :elixir:func:`configure/1`).
    
    If you want to run tests manually, you can set ``:autorun`` to
    ``false``.

@@ -179,8 +179,7 @@ Functions
    
    Current working directory, exception on error.
    
-   Returns the current working directory or raises
-   ```RuntimeError`` <RuntimeError.html>`__.
+   Returns the current working directory or raises :elixir:mod:`RuntimeError`.
    
    
 
@@ -370,8 +369,7 @@ Functions
    the current stacktrace but rather the stacktrace of the latest
    exception.
    
-   Inlined by the compiler into
-   ```:erlang.get_stacktrace/0`` <http://www.erlang.org/doc/man/erlang.html#get_stacktrace-0>`__.
+   Inlined by the compiler into `[`:erlang.get_stacktrace/0`](http://www.erlang.org/doc/man/erlang.html#get_stacktrace-0)`.
    
    
 
@@ -402,9 +400,8 @@ Functions
    
    Writable temporary directory, exception on error.
    
-   Same as ```tmp_dir/0`` <#tmp_dir/0>`__ but raises
-   ```RuntimeError`` <RuntimeError.html>`__ instead of returning ``nil`` if
-   no temp dir is set.
+   Same as :elixir:func:`tmp_dir/0` but raises :elixir:mod:`RuntimeError` instead of returning
+   ``nil`` if no temp dir is set.
    
    
 
@@ -427,9 +424,8 @@ Functions
    
    User home directory, exception on error.
    
-   Same as ```user_home/0`` <#user_home/0>`__ but raises
-   ```RuntimeError`` <RuntimeError.html>`__ instead of returning ``nil`` if
-   no user home is set.
+   Same as :elixir:func:`user_home/0` but raises :elixir:mod:`RuntimeError` instead of returning
+   ``nil`` if no user home is set.
    
    
 

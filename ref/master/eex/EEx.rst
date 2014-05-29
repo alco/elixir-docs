@@ -52,15 +52,13 @@ Engine
 EEx has the concept of engines which allows you to modify or transform
 the code extracted from the given string or file.
 
-By default, ```EEx`` <EEx.html>`__ uses the
-```EEx.SmartEngine`` <EEx.SmartEngine.html>`__ that provides some
-conveniences on top of the simple ```EEx.Engine`` <EEx.Engine.html>`__.
+By default, :elixir:mod:`EEx` uses the :elixir:mod:`EEx.SmartEngine` that provides some
+conveniences on top of the simple :elixir:mod:`EEx.Engine`.
 
 Tags
 ^^^^
 
-```EEx.SmartEngine`` <EEx.SmartEngine.html>`__ supports the following
-tags:
+:elixir:mod:`EEx.SmartEngine` supports the following tags:
 
 ::
 
@@ -89,9 +87,8 @@ Other tags may be added in future versions.
 Macros
 ^^^^^^
 
-```EEx.SmartEngine`` <EEx.SmartEngine.html>`__ also adds some macros to
-your template. An example is the ``@`` macro which allows easy data
-access in a template:
+:elixir:mod:`EEx.SmartEngine` also adds some macros to your template. An example
+is the ``@`` macro which allows easy data access in a template:
 
 ::
 

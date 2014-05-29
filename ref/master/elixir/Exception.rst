@@ -112,9 +112,8 @@ Functions
    
    Normalizes and formats throw/errors/exits and stacktrace.
    
-   It relies on ```format_banner/3`` <#format_banner/3>`__ and
-   ```format_stacktrace/1`` <#format_stacktrace/1>`__ to generate the final
-   format.
+   It relies on :elixir:func:`format_banner/3` and :elixir:func:`format_stacktrace/1` to generate
+   the final format.
    
    Note that ``{:EXIT, pid}`` do not generate a stacktrace though (as they
    are retrieved as messages without stacktraces).
@@ -138,12 +137,11 @@ Functions
    Elixir's CLI.
    
    The third argument, a stacktrace, is optional. If it is not supplied
-   ```System.stacktrace/0`` <System.html#stacktrace/0>`__ will sometimes be
-   used to get additional information for the ``kind`` ``:error``. If the
-   stacktrace is unknown and
-   ```System.stacktrace/0`` <System.html#stacktrace/0>`__ would not return
-   the stacktrace corresponding to the exception an empty stacktrace,
-   ``[]``, must be used.
+   :elixir:func:`System.stacktrace/0` will sometimes be used to get additional
+   information for the ``kind`` ``:error``. If the stacktrace is unknown
+   and :elixir:func:`System.stacktrace/0` would not return the stacktrace
+   corresponding to the exception an empty stacktrace, ``[]``, must be
+   used.
    
    
 
@@ -243,7 +241,7 @@ Functions
    Formats the stacktrace.
    
    A stacktrace must be given as an argument. If not, the stacktrace is
-   retrieved from ```Process.info/2`` <Process.html#info/2>`__.
+   retrieved from :elixir:func:`Process.info/2`.
    
    
 
@@ -291,12 +289,11 @@ Functions
    only ``:error``, returning the untouched payload for others.
    
    The third argument, a stacktrace, is optional. If it is not supplied
-   ```System.stacktrace/0`` <System.html#stacktrace/0>`__ will sometimes be
-   used to get additional information for the ``kind`` ``:error``. If the
-   stacktrace is unknown and
-   ```System.stacktrace/0`` <System.html#stacktrace/0>`__ would not return
-   the stacktrace corresponding to the exception an empty stacktrace,
-   ``[]``, must be used.
+   :elixir:func:`System.stacktrace/0` will sometimes be used to get additional
+   information for the ``kind`` ``:error``. If the stacktrace is unknown
+   and :elixir:func:`System.stacktrace/0` would not return the stacktrace
+   corresponding to the exception an empty stacktrace, ``[]``, must be
+   used.
    
    
 

@@ -48,7 +48,7 @@ Summary
 
 :elixir:macro:`__DIR__/0`          Returns the current directory as a binary 
 
-:elixir:macro:`__ENV__/0`          Returns the current environment information as a ```Macro.Env`` <Macro.Env.html>`__ struct 
+:elixir:macro:`__ENV__/0`          Returns the current environment information as a :elixir:mod:`Macro.Env` struct 
 
 :elixir:macro:`__MODULE__/0`       Returns the current module name as an atom or ``nil`` otherwise 
 
@@ -161,14 +161,13 @@ Macros
    
    The syntax above will guarantee the given keys are valid at compilation
    time and it will guarantee at runtime the given argument is a struct,
-   failing with ```BadStructError`` <BadStructError.html>`__ otherwise.
+   failing with :elixir:mod:`BadStructError` otherwise.
    
    Alhought structs are maps, by default structs do not implement any of
-   the protocols implemented for maps. Check
-   ```Kernel.defprotocol/2`` <Kernel.html#defprotocol/2>`__ for more
-   information on how structs can be used with protocols for polymorphic
-   dispatch. Also see ```Kernel.struct/2`` <Kernel.html#struct/2>`__ for
-   examples on how to create and update structs dynamically.
+   the protocols implemented for maps. Check :elixir:func:`Kernel.defprotocol/2` for
+   more information on how structs can be used with protocols for
+   polymorphic dispatch. Also see :elixir:func:`Kernel.struct/2` for examples on how
+   to create and update structs dynamically.
    
    
 
@@ -203,15 +202,13 @@ Macros
        iex> %{a: :b, a: :c}
        %{a: :c}
    
-   Conveniences for manipulating maps can be found in the
-   ```Map`` <Map.html>`__ module.
+   Conveniences for manipulating maps can be found in the :elixir:mod:`Map` module.
    
    **Access syntax**
    
-   Besides the access functions available in the ```Map`` <Map.html>`__
-   module, like ```Map.get/3`` <Map.html#get/3>`__ and
-   ```Map.fetch/2`` <Map.html#fetch/2>`__, a map can be accessed using the
-   ``.`` operator:
+   Besides the access functions available in the :elixir:mod:`Map` module, like
+   :elixir:func:`Map.get/3` and :elixir:func:`Map.fetch/2`, a map can be accessed using the ``.``
+   operator:
    
    ::
    
@@ -220,7 +217,7 @@ Macros
        :b
    
    Note that the ``.`` operator expects the field to exist in the map. If
-   not, an ```ArgumentError`` <ArgumentError.html>`__ is raised.
+   not, an :elixir:mod:`ArgumentError` is raised.
    
    **Update syntax**
    
@@ -233,8 +230,7 @@ Macros
        %{:a => :c}
    
    Notice the update syntax requires the given keys to exist. Trying to
-   update a key that does not exist will raise an
-   ```ArgumentError`` <ArgumentError.html>`__.
+   update a key that does not exist will raise an :elixir:mod:`ArgumentError`.
    
    **AST representation**
    
@@ -269,8 +265,7 @@ Macros
        iex> fun.("string")
        false
    
-   In the example above, we captured
-   ```Kernel.is_atom/1`` <Kernel.html#is_atom/1>`__ as an anonymous
+   In the example above, we captured :elixir:func:`Kernel.is_atom/1` as an anonymous
    function and then invoked it.
    
    The capture operator can also be used to capture local functions,
@@ -351,8 +346,8 @@ Macros
        "foo"
    
    In this example above, we have used ``.`` to invoke ``downcase`` in the
-   ```String`` <String.html>`__ alias, passing "FOO" as argument. We can
-   also use the dot for creating aliases:
+   :elixir:mod:`String` alias, passing "FOO" as argument. We can also use the dot for
+   creating aliases:
    
    ::
    
@@ -404,8 +399,7 @@ Macros
        String.Sample
    
    In case the right-side is also dynamic, ``.``'s behaviour can be
-   reproduced at runtime via ``apply/3`` and
-   ```Module.concat/2`` <Module.html#concat/2>`__:
+   reproduced at runtime via ``apply/3`` and :elixir:func:`Module.concat/2`:
    
    ::
    
@@ -435,8 +429,8 @@ Macros
    This tuple follows the general quoted expression structure in Elixir,
    with the name as first argument, some keyword list as metadata as
    second, and the number of arguments as third. In this case, the
-   arguments is the alias ```String`` <String.html>`__ and the atom
-   ``:downcase``. The second argument is **always** an atom:
+   arguments is the alias :elixir:mod:`String` and the atom ``:downcase``. The second
+   argument is **always** an atom:
    
    ::
    
@@ -470,8 +464,7 @@ Macros
    
    Similar to ``Kernel."HELLO"``, ``unquote(x)`` will always generate a
    remote call, independent of the value of ``x``. To generate an alias via
-   the quoted expression, one needs to rely on
-   ```Module.concat/2`` <Module.html#concat/2>`__:
+   the quoted expression, one needs to rely on :elixir:func:`Module.concat/2`:
    
    ::
    
@@ -707,8 +700,7 @@ Macros
 
 
    
-   Returns the current environment information as a
-   ```Macro.Env`` <Macro.Env.html>`__ struct.
+   Returns the current environment information as a :elixir:mod:`Macro.Env` struct.
    
    In the environment you can access the current filename, line numbers,
    set up aliases, the current function and others.
@@ -814,12 +806,11 @@ Macros
        end
    
    In the example above, we have set up ``MyKeyword`` to be aliased as
-   ```Keyword`` <Keyword.html>`__. So now, any reference to
-   ```Keyword`` <Keyword.html>`__ will be automatically replaced by
-   ``MyKeyword``.
+   :elixir:mod:`Keyword`. So now, any reference to :elixir:mod:`Keyword` will be automatically
+   replaced by ``MyKeyword``.
    
-   In case one wants to access the original ```Keyword`` <Keyword.html>`__,
-   it can be done by accessing ``Elixir``:
+   In case one wants to access the original :elixir:mod:`Keyword`, it can be done by
+   accessing ``Elixir``:
    
    ::
    
@@ -997,7 +988,7 @@ Macros
    In the examples above, the result returned by the comprehension was
    always a list. The returned result can be configured by passing an
    ``:into`` option, that accepts any structure as long as it implements
-   the ```Collectable`` <Collectable.html>`__ protocol.
+   the :elixir:mod:`Collectable` protocol.
    
    For example, we can use bitstring generators with the ``:into`` option
    to easily remove all spaces in a string:
@@ -1007,10 +998,8 @@ Macros
        iex> for <<c <- " hello world ">>, c != ?\s, into: "", do: <<c>>
        "helloworld"
    
-   The ```IO`` <IO.html>`__ module provides streams, that are both
-   ```Enumerable`` <Enumerable.html>`__ and
-   ```Collectable`` <Collectable.html>`__, here is an upcase echo server
-   using comprehensions:
+   The :elixir:mod:`IO` module provides streams, that are both :elixir:mod:`Enumerable` and
+   :elixir:mod:`Collectable`, here is an upcase echo server using comprehensions:
    
    ::
    
@@ -1413,7 +1402,7 @@ Macros
    
    Notice that, even though the alias ``D`` is not available in the context
    the macro is expanded, the code above works because ``D`` still expands
-   to ```HashDict`` <HashDict.html>`__.
+   to :elixir:mod:`HashDict`.
    
    Similarly, even if we defined an alias with the same name before
    invoking a macro, it won't affect the macro's result:
@@ -1691,8 +1680,7 @@ Macros
    **Variables handling**
    
    The ``receive`` special form handles variables exactly as the ``case``
-   special macro. For more information, check the docs for
-   ```case/2`` <#case/2>`__.
+   special macro. For more information, check the docs for :elixir:func:`case/2`.
    
    
 
@@ -1822,7 +1810,7 @@ Macros
    
    The most common Erlang errors will be transformed into their Elixir
    counter-part. Those which are not will be transformed into
-   ```ErlangError`` <ErlangError.html>`__:
+   :elixir:mod:`ErlangError`:
    
    ::
    
@@ -2050,12 +2038,10 @@ Macros
    other tuples are represented in the AST as a call to the special form
    ``:{}``.
    
-   Conveniences for manipulating tuples can be found in the
-   ```Tuple`` <Tuple.html>`__ module. Some functions for working with
-   tuples are also available in ```Kernel`` <Kernel.html>`__, namely
-   ```Kernel.elem/2`` <Kernel.html#elem/2>`__,
-   ```Kernel.put_elem/3`` <Kernel.html#put_elem/3>`__ and
-   ```Kernel.tuple_size/1`` <Kernel.html#tuple_size/1>`__.
+   Conveniences for manipulating tuples can be found in the :elixir:mod:`Tuple`
+   module. Some functions for working with tuples are also available in
+   :elixir:mod:`Kernel`, namely :elixir:func:`Kernel.elem/2`, :elixir:func:`Kernel.put_elem/3` and
+   :elixir:func:`Kernel.tuple_size/1`.
    
    **Examples**
    

@@ -68,17 +68,16 @@ We start a new event manager by calling ``GenEvent.start_link/0``.
 Notifications can be sent to the event manager which will then invoke
 ``handle_event/0`` for each registered handler.
 
-We can add new handlers with ```add_handler/4`` <#add_handler/4>`__.
-Calls can also be made to specific handlers by using ``call/3``.
+We can add new handlers with :elixir:func:`add_handler/4`. Calls can also be made
+to specific handlers by using ``call/3``.
 
 Callbacks
 ~~~~~~~~~
 
-There are 6 callbacks required to be implemented in a
-```GenEvent`` <GenEvent.html>`__. By adding ``use GenEvent`` to your
-module, Elixir will automatically define all 6 callbacks for you,
-leaving it up to you to implement the ones you want to customize. The
-callbacks are:
+There are 6 callbacks required to be implemented in a :elixir:mod:`GenEvent`. By
+adding ``use GenEvent`` to your module, Elixir will automatically define
+all 6 callbacks for you, leaving it up to you to implement the ones you
+want to customize. The callbacks are:
 
 -  ``init(args)`` - invoked when the event handler is added
 
@@ -89,8 +88,7 @@ It must return:
 -  ``{:error, reason}``
 
 -  ``handle_event(msg, state)`` - invoked whenever an event is sent via
-   ```notify/2`` <#notify/2>`__ or
-   ```sync_notify/2`` <#sync_notify/2>`__.
+   :elixir:func:`notify/2` or :elixir:func:`sync_notify/2`.
 
 It must return:
 
@@ -133,14 +131,13 @@ Name Registration
 ~~~~~~~~~~~~~~~~~
 
 A GenEvent is bound to the same name registration rules as a
-```GenServer`` <GenServer.html>`__. Read more about it in the
-```GenServer`` <GenServer.html>`__ docs.
+:elixir:mod:`GenServer`. Read more about it in the :elixir:mod:`GenServer` docs.
 
 Streaming
 ~~~~~~~~~
 
-```GenEvent`` <GenEvent.html>`__\ s can be streamed from and streamed
-with the help of ```stream/2`` <#stream/2>`__. Here are some examples:
+:elixir:mod:`GenEvent`\ s can be streamed from and streamed with the help of
+:elixir:func:`stream/2`. Here are some examples:
 
 ::
 
@@ -155,8 +152,7 @@ with the help of ```stream/2`` <#stream/2>`__. Here are some examples:
     end
 
 A stream may also be given an id, which allows all streams with the
-given id to be cancelled at any moment via
-```cancel_streams/1`` <#cancel_streams/1>`__.
+given id to be cancelled at any moment via :elixir:func:`cancel_streams/1`.
 
 Learn more
 ~~~~~~~~~~
@@ -178,7 +174,7 @@ Summary
 -------
 
 =============================== =
-:elixir:func:`__struct__/0`     Defines a ```GenEvent`` <GenEvent.html>`__ stream 
+:elixir:func:`__struct__/0`     Defines a :elixir:mod:`GenEvent` stream 
 
 :elixir:func:`add_handler/4`    Adds a new event handler to the event ``manager`` 
 
@@ -273,13 +269,12 @@ Functions
  
 
    
-   Defines a ```GenEvent`` <GenEvent.html>`__ stream.
+   Defines a :elixir:mod:`GenEvent` stream.
    
-   This is a struct returned by ```stream/2`` <#stream/2>`__. The struct is
-   public and contains the following fields:
+   This is a struct returned by :elixir:func:`stream/2`. The struct is public and
+   contains the following fields:
    
-   -  ``:manager`` - the manager reference given to
-      ```GenEvent.stream/2`` <GenEvent.html#stream/2>`__
+   -  ``:manager`` - the manager reference given to :elixir:func:`GenEvent.stream/2`
    -  ``:id`` - the event stream id for cancellation
    -  ``:timeout`` - the timeout in between events, defaults to
       ``:infinity``
@@ -325,8 +320,8 @@ Functions
    one of the following:
    
    -  ``:normal`` - if the event handler has been removed due to a call to
-      ```remove_handler/3`` <#remove_handler/3>`__, or ``:remove_handler``
-      has been returned by a callback function;
+      :elixir:func:`remove_handler/3`, or ``:remove_handler`` has been returned by a
+      callback function;
    
    -  ``:shutdown`` - if the event handler has been removed because the
       event manager is terminating;
@@ -379,8 +374,8 @@ Functions
    Cancels all streams currently running with the given ``:id``.
    
    In order for a stream to be cancelled, an ``:id`` must be passed when
-   the stream is created via ```stream/2`` <#stream/2>`__. Passing a stream
-   without an id leads to an argument error.
+   the stream is created via :elixir:func:`stream/2`. Passing a stream without an id
+   leads to an argument error.
    
    
 
@@ -439,7 +434,7 @@ Functions
    Starts an event manager process without links (outside of a supervision
    tree).
    
-   See ```start_link/1`` <#start_link/1>`__ for more information.
+   See :elixir:func:`start_link/1` for more information.
    
    
 
@@ -456,12 +451,11 @@ Functions
    
    Starts an event manager linked to the current process.
    
-   This is often used to start the ```GenEvent`` <GenEvent.html>`__ as part
-   of a supervision tree.
+   This is often used to start the :elixir:mod:`GenEvent` as part of a supervision
+   tree.
    
    It accepts the ``:name`` option which is described under the
-   ``Name Registration`` section in the ```GenServer`` <GenServer.html>`__
-   module docs.
+   ``Name Registration`` section in the :elixir:mod:`GenServer` module docs.
    
    If the event manager is successfully created and initialized, the
    function returns ``{:ok, pid}``, where pid is the pid of the server. If
@@ -496,9 +490,8 @@ Functions
    
    Returns a stream that consumes and notifies events to the ``manager``.
    
-   The stream is a ```GenEvent`` <GenEvent.html>`__ struct that implements
-   the ```Enumerable`` <Enumerable.html>`__ protocol. The supported options
-   are:
+   The stream is a :elixir:mod:`GenEvent` struct that implements the :elixir:mod:`Enumerable`
+   protocol. The supported options are:
    
    -  ``:id`` - an id to identify all live stream instances. When an
       ``:id`` is given, existing streams can be called with via
@@ -538,8 +531,8 @@ Functions
    If there was a linked connection between handler1 and a process pid,
    there will be a link connection between handler2 and pid instead. A new
    link in between the caller process and the new handler can also be set
-   with by giving ``link: true`` as option. See
-   ```add_handler/4`` <#add_handler/4>`__ for more information.
+   with by giving ``link: true`` as option. See :elixir:func:`add_handler/4` for more
+   information.
    
    If ``init/1`` in the second handler returns a correct value, this
    function returns ``:ok``.
@@ -562,7 +555,7 @@ Functions
    In other words, this function only returns ``:ok`` after the event
    manager invokes the ``handle_event/2`` on each installed event handler.
    
-   See ```notify/2`` <#notify/2>`__ for more info.
+   See :elixir:func:`notify/2` for more info.
    
    
 

@@ -19,7 +19,7 @@ Summary
 ========================== =
 :elixir:func:`exception/1` Callback implementation of ``Exception.exception/1`` 
 
-:elixir:func:`message/1`   Callback implementation of ```Exception.message/1`` <Exception.html#message/1>`__ 
+:elixir:func:`message/1`   Callback implementation of :elixir:func:`Exception.message/1` 
 ========================== =
 
 
@@ -65,8 +65,7 @@ Functions
  
 
    
-   Callback implementation of
-   ```Exception.message/1`` <Exception.html#message/1>`__.
+   Callback implementation of :elixir:func:`Exception.message/1`.
    
    
 

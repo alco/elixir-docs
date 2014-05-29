@@ -10,9 +10,9 @@ Overview
 
 Defines and manipulate Mix projects.
 
-In order to configure Mix, a developer needs to use
-```Mix.Project`` <Mix.Project.html>`__ in a module and define a function
-named ``project`` that returns a keyword list with configuration.
+In order to configure Mix, a developer needs to use :elixir:mod:`Mix.Project` in a
+module and define a function named ``project`` that returns a keyword
+list with configuration.
 
 ::
 
@@ -26,15 +26,13 @@ named ``project`` that returns a keyword list with configuration.
     end
 
 After being defined, the configuration for this project can be read as
-```Mix.Project.config/0`` <Mix.Project.html#config/0>`__. Notice that
-```config/0`` <#config/0>`__ won't fail if a project is not defined;
-this allows many mix tasks to work even without a project.
+:elixir:func:`Mix.Project.config/0`. Notice that :elixir:func:`config/0` won't fail if a
+project is not defined; this allows many mix tasks to work even without
+a project.
 
 In case the developer needs a project or wants to access a special
-function in the project, he/she can call
-```Mix.Project.get!/0`` <Mix.Project.html#get!/0>`__ which fails with
-```Mix.NoProjectError`` <Mix.NoProjectError.html>`__ in case a project
-is not defined.
+function in the project, he/she can call :elixir:func:`Mix.Project.get!/0` which
+fails with :elixir:mod:`Mix.NoProjectError` in case a project is not defined.
 
 
 
@@ -58,7 +56,7 @@ Summary
 
 :elixir:func:`deps_path/1`       Returns the path to store dependencies for this project 
 
-:elixir:func:`get!/0`            Same as ```get/0`` <#get/0>`__, but raises an exception if there is no current project 
+:elixir:func:`get!/0`            Same as :elixir:func:`get/0`, but raises an exception if there is no current project 
 
 :elixir:func:`get/0`             Retrieves the current project if there is one 
 
@@ -224,7 +222,7 @@ Functions
    mixfile in the current directory.
    
    If you expect a project to be defined, i.e. it is a requirement of the
-   current task, you should call ```get!/0`` <#get!/0>`__ instead.
+   current task, you should call :elixir:func:`get!/0` instead.
    
    
 
@@ -233,14 +231,13 @@ Functions
 
 
    
-   Same as ```get/0`` <#get/0>`__, but raises an exception if there is no
-   current project.
+   Same as :elixir:func:`get/0`, but raises an exception if there is no current
+   project.
    
    This is usually called by tasks that need additional functions on the
    project to be defined. Since such tasks usually depend on a project
-   being defined, this function raises
-   ```Mix.NoProjectError`` <Mix.NoProjectError.html>`__ in case no project
-   is available.
+   being defined, this function raises :elixir:mod:`Mix.NoProjectError` in case no
+   project is available.
    
    
 

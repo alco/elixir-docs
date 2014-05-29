@@ -27,10 +27,9 @@ In Elixir, records are used mostly in two situations:
 1. To work with short, internal data;
 2. To interface with Erlang records;
 
-The macros ```defrecord/3`` <#defrecord/3>`__ and
-```defrecordp/3`` <#defrecordp/3>`__ can be used to create records while
-```extract/2`` <#extract/2>`__ can be used to extract records from
-Erlang files.
+The macros :elixir:func:`defrecord/3` and :elixir:func:`defrecordp/3` can be used to create
+records while :elixir:func:`extract/2` can be used to extract records from Erlang
+files.
 
 
 
@@ -42,7 +41,7 @@ Summary
 ============================ =
 :elixir:macro:`defrecord/3`  Defines a set of macros to create and access a record 
 
-:elixir:macro:`defrecordp/3` Same as ```defrecord/3`` <#defrecord/3>`__ but generates private macros 
+:elixir:macro:`defrecordp/3` Same as :elixir:func:`defrecord/3` but generates private macros 
 
 :elixir:macro:`extract/2`    Extracts record information from an Erlang file 
 
@@ -113,7 +112,7 @@ Macros
 
 
    
-   Same as ```defrecord/3`` <#defrecord/3>`__ but generates private macros.
+   Same as :elixir:func:`defrecord/3` but generates private macros.
    
    
 

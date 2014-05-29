@@ -13,8 +13,7 @@ atom and the second element can be any value.
 
 A keyword may have duplicated keys so it is not strictly a dictionary.
 However most of the functions in this module behave exactly as a
-dictionary and mimic the API defined by the ```Dict`` <Dict.html>`__
-behaviour.
+dictionary and mimic the API defined by the :elixir:mod:`Dict` behaviour.
 
 For example, ``Keyword.get`` will get the first entry matching the given
 key, regardless if duplicated entries exist. Similarly, ``Keyword.put``
@@ -27,8 +26,7 @@ keys, ``get_values`` returns all values for a given key and
 ``delete_first`` deletes just one of the existing entries.
 
 Since a keyword list is simply a list, all the operations defined in
-```Enum`` <Enum.html>`__ and ```List`` <List.html>`__ can also be
-applied.
+:elixir:mod:`Enum` and :elixir:mod:`List` can also be applied.
 
 
 
@@ -48,7 +46,7 @@ Summary
 
 :elixir:func:`equal?/2`       Checks if two keywords are equal. I.e. they contain the same keys and those keys contain the same values 
 
-:elixir:func:`fetch!/2`       Fetches the value for specific ``key``. If ``key`` does not exist, a ```KeyError`` <KeyError.html>`__ is raised 
+:elixir:func:`fetch!/2`       Fetches the value for specific ``key``. If ``key`` does not exist, a :elixir:mod:`KeyError` is raised 
 
 :elixir:func:`fetch/2`        Fetches the value for a specific ``key`` and returns it in a tuple. If the ``key`` does not exist, returns ``:error`` 
 
@@ -84,7 +82,7 @@ Summary
 
 :elixir:func:`take/2`         Takes all entries corresponding to the given keys and returns them in a new keyword list 
 
-:elixir:func:`update!/3`      Updates the ``key`` with the given function. If the ``key`` does not exist, raises ```KeyError`` <KeyError.html>`__ 
+:elixir:func:`update!/3`      Updates the ``key`` with the given function. If the ``key`` does not exist, raises :elixir:mod:`KeyError` 
 
 :elixir:func:`update/4`       Updates the ``key`` with the given function. If the ``key`` does not exist, inserts the given ``initial`` value 
 
@@ -299,7 +297,7 @@ Functions
 
    
    Fetches the value for specific ``key``. If ``key`` does not exist, a
-   ```KeyError`` <KeyError.html>`__ is raised.
+   :elixir:mod:`KeyError` is raised.
    
    **Examples**
    
@@ -331,7 +329,7 @@ Functions
    value).
    
    If duplicated entries exist, the first one is returned. Use
-   ```get_values/2`` <#get_values/2>`__ to retrieve all entries.
+   :elixir:func:`get_values/2` to retrieve all entries.
    
    **Examples**
    
@@ -567,8 +565,8 @@ Functions
    Returns the first value associated with ``key`` in the keyword list as
    well as the keyword list without ``key``.
    
-   All duplicated entries are removed. See
-   ```pop_first/3`` <#pop_first/3>`__ for removing only the first entry.
+   All duplicated entries are removed. See :elixir:func:`pop_first/3` for removing
+   only the first entry.
    
    **Examples**
    
@@ -775,7 +773,7 @@ Functions
 
    
    Updates the ``key`` with the given function. If the ``key`` does not
-   exist, raises ```KeyError`` <KeyError.html>`__.
+   exist, raises :elixir:mod:`KeyError`.
    
    If there are duplicated entries, they are all removed and only the first
    one is updated.

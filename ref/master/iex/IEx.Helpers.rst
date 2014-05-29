@@ -9,37 +9,32 @@ Overview
 --------
 
 Welcome to Interactive Elixir. You are currently seeing the
-documentation for the module ```IEx.Helpers`` <IEx.Helpers.html>`__
-which provides many helpers to make Elixir's shell more joyful to work
-with.
+documentation for the module :elixir:mod:`IEx.Helpers` which provides many helpers
+to make Elixir's shell more joyful to work with.
 
 This message was triggered by invoking the helper ``h()``, usually
-referred to as ```h/0`` <#h/0>`__ (since it expects 0 arguments).
+referred to as :elixir:func:`h/0` (since it expects 0 arguments).
 
 There are many other helpers available:
 
--  ```c/2`` <#c/2>`__ — compiles a file at the given path
--  ```cd/1`` <#cd/1>`__ — changes the current directory
--  ```clear/0`` <#clear/0>`__ — clears the screen
--  ```flush/0`` <#flush/0>`__ — flushes all messages sent to the shell
--  ```h/0`` <#h/0>`__ — prints this help message
--  ```h/1`` <#h/1>`__ — prints help for the given module, function or
-   macro
--  ```l/1`` <#l/1>`__ — loads the given module's beam code and purges
-   the current version
+-  :elixir:func:`c/2` — compiles a file at the given path
+-  :elixir:func:`cd/1` — changes the current directory
+-  :elixir:func:`clear/0` — clears the screen
+-  :elixir:func:`flush/0` — flushes all messages sent to the shell
+-  :elixir:func:`h/0` — prints this help message
+-  :elixir:func:`h/1` — prints help for the given module, function or macro
+-  :elixir:func:`l/1` — loads the given module's beam code and purges the current
+   version
 -  ``ls/0`` — lists the contents of the current directory
--  ```ls/1`` <#ls/1>`__ — lists the contents of the specified directory
--  ```pwd/0`` <#pwd/0>`__ — prints the current working directory
--  ```r/1`` <#r/1>`__ — recompiles and reloads the given module's source
-   file
--  ```respawn/0`` <#respawn/0>`__ — respawns the current shell
--  ```s/1`` <#s/1>`__ — prints spec information
--  ```t/1`` <#t/1>`__ — prints type information
--  ```v/0`` <#v/0>`__ — prints the history of commands evaluated in the
-   session
--  ```v/1`` <#v/1>`__ — retrieves the nth value from the history
--  ```import_file/1`` <#import_file/1>`__ — evaluates the given file in
-   the shell's context
+-  :elixir:func:`ls/1` — lists the contents of the specified directory
+-  :elixir:func:`pwd/0` — prints the current working directory
+-  :elixir:func:`r/1` — recompiles and reloads the given module's source file
+-  :elixir:func:`respawn/0` — respawns the current shell
+-  :elixir:func:`s/1` — prints spec information
+-  :elixir:func:`t/1` — prints type information
+-  :elixir:func:`v/0` — prints the history of commands evaluated in the session
+-  :elixir:func:`v/1` — retrieves the nth value from the history
+-  :elixir:func:`import_file/1` — evaluates the given file in the shell's context
 
 Help for functions in this module can be consulted directly from the
 command line, as an example, try:
@@ -74,7 +69,7 @@ Summary
 
 :elixir:func:`flush/0`        Flushes all messages sent to the shell and prints them out 
 
-:elixir:func:`h/0`            Prints the documentation for ```IEx.Helpers`` <IEx.Helpers.html>`__ 
+:elixir:func:`h/0`            Prints the documentation for :elixir:mod:`IEx.Helpers` 
 
 :elixir:macro:`h/1`           Prints the documentation for the given module or for the given function/arity pair 
 
@@ -90,7 +85,7 @@ Summary
 
 :elixir:func:`respawn/0`      Respawns the current shell by starting a new process and a new scope. Returns true if it worked 
 
-:elixir:macro:`s/1`           Similar to ```t/1`` <#t/1>`__, only for specs 
+:elixir:macro:`s/1`           Similar to :elixir:func:`t/1`, only for specs 
 
 :elixir:macro:`t/1`           When given a module, prints specifications (or simply specs) for all the types defined in it 
 
@@ -161,7 +156,7 @@ Functions
 
 
    
-   Prints the documentation for ```IEx.Helpers`` <IEx.Helpers.html>`__.
+   Prints the documentation for :elixir:mod:`IEx.Helpers`.
    
    
 
@@ -304,7 +299,7 @@ Macros
 
 
    
-   Similar to ```t/1`` <#t/1>`__, only for specs.
+   Similar to :elixir:func:`t/1`, only for specs.
    
    When given a module, prints the list of all specs defined in the module.
    

@@ -20,9 +20,9 @@ Modules
 
 :elixir:mod:`EEx.Engine`            This is the basic EEx engine that ships with Elixir. An engine needs to implement three functions: 
 
-:elixir:mod:`EEx.SmartEngine`       An engine meant for end-user usage that includes ```EEx.AssignsEngine`` <EEx.AssignsEngine.html>`__ and other conveniences. Read ```EEx.AssignsEngine`` <EEx.AssignsEngine.html>`__ for examples 
+:elixir:mod:`EEx.SmartEngine`       An engine meant for end-user usage that includes ``EEx.AssignsEngine`` and other conveniences. Read ``EEx.AssignsEngine`` for examples 
 
-:elixir:mod:`EEx.TransformerEngine` An abstract engine that is meant to be used and built upon in other modules. This engine implements the ```EEx.Engine`` <EEx.Engine.html>`__ behaviour and provides a ``transform`` overridable directive that allows a developer to customize the expression returned by the engine 
+:elixir:mod:`EEx.TransformerEngine` An abstract engine that is meant to be used and built upon in other modules. This engine implements the ``EEx.Engine`` behaviour and provides a ``transform`` overridable directive that allows a developer to customize the expression returned by the engine 
 =================================== =
 
 .. toctree::

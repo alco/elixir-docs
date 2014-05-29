@@ -12,8 +12,8 @@ A set of functions for creating and manipulating algebra documents, as
 described in `"Strictly Pretty" (2000) by Christian
 Lindig <http://citeseerx.ist.psu.edu/viewdoc/summary?doi=10.1.1.34.2200>`__.
 
-An algebra document is represented by an
-```Inspect.Algebra`` <Inspect.Algebra.html>`__ node or a regular string.
+An algebra document is represented by an :elixir:mod:`Inspect.Algebra` node or a
+regular string.
 
 ::
 
@@ -32,12 +32,11 @@ together and render them:
     iex> Inspect.Algebra.pretty(doc, 80)
     "foo"
 
-The functions ```nest/2`` <#nest/2>`__, ```space/2`` <#space/2>`__ and
-```line/2`` <#line/2>`__ help you put the document together into a rigid
-structure. However, the document algebra gets interesting when using
-functions like ``break/2``, which converts the given string into a line
-break depending on how much space there is to print. Let's glue two docs
-together with a break and then render it:
+The functions :elixir:func:`nest/2`, :elixir:func:`space/2` and :elixir:func:`line/2` help you put the
+document together into a rigid structure. However, the document algebra
+gets interesting when using functions like ``break/2``, which converts
+the given string into a line break depending on how much space there is
+to print. Let's glue two docs together with a break and then render it:
 
 ::
 
@@ -55,8 +54,7 @@ line limit. Once we do, it is replaced by a newline:
     "aaaaaaaaaaaaaaaaaaaa\nb"
 
 Finally, this module also contains Elixir related functions, a bit tied
-to Elixir formatting, namely ```surround/3`` <#surround/3>`__ and
-``surround_many/5``.
+to Elixir formatting, namely :elixir:func:`surround/3` and ``surround_many/5``.
 
 Implementation details
 ~~~~~~~~~~~~~~~~~~~~~~
@@ -102,7 +100,7 @@ Summary
 
 :elixir:func:`folddoc/2`       Folds a list of document entities into a document entity using a function that is passed as the first argument 
 
-:elixir:func:`glue/2`          Inserts a break between two docs. See ```break/1`` <#break/1>`__ for more info 
+:elixir:func:`glue/2`          Inserts a break between two docs. See :elixir:func:`break/1` for more info 
 
 :elixir:func:`glue/3`          Inserts a break, passed as the second argument, between two docs, the first and the third arguments 
 
@@ -294,8 +292,7 @@ Functions
  
 
    
-   Inserts a break between two docs. See ```break/1`` <#break/1>`__ for
-   more info.
+   Inserts a break between two docs. See :elixir:func:`break/1` for more info.
    
    
 

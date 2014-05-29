@@ -11,10 +11,9 @@ Overview
 Functions related to VM nodes.
 
 Some of the functions in this module are inlined by the compiler,
-similar to functions in the ```Kernel`` <Kernel.html>`__ module and they
-are explicitly marked in their docs as "inlined by the compiler". For
-more information about inlined functions, check out the
-```Kernel`` <Kernel.html>`__ module.
+similar to functions in the :elixir:mod:`Kernel` module and they are explicitly
+marked in their docs as "inlined by the compiler". For more information
+about inlined functions, check out the :elixir:mod:`Kernel` module.
 
 
 
@@ -38,7 +37,7 @@ Summary
 
 :elixir:func:`monitor/2`    Monitors the status of the node 
 
-:elixir:func:`monitor/3`    Behaves as ```monitor/2`` <#monitor/2>`__ except that it allows an extra option to be given, namely ``:allow_passive_connect`` 
+:elixir:func:`monitor/3`    Behaves as :elixir:func:`monitor/2` except that it allows an extra option to be given, namely ``:allow_passive_connect`` 
 
 :elixir:func:`ping/1`       Tries to set up a connection to node 
 
@@ -218,8 +217,8 @@ Functions
  
 
    
-   Behaves as ```monitor/2`` <#monitor/2>`__ except that it allows an extra
-   option to be given, namely ``:allow_passive_connect``.
+   Behaves as :elixir:func:`monitor/2` except that it allows an extra option to be
+   given, namely ``:allow_passive_connect``.
    
    See http://www.erlang.org/doc/man/erlang.html#monitor\_node-3 for more
    info.
@@ -279,9 +278,8 @@ Functions
    local node, the function also sets the cookie of all other unknown nodes
    to ``cookie``.
    
-   This function will raise
-   ```FunctionClauseError`` <FunctionClauseError.html>`__ if the given
-   ``node`` is not alive.
+   This function will raise :elixir:mod:`FunctionClauseError` if the given ``node``
+   is not alive.
    
    
 

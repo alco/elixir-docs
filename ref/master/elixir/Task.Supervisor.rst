@@ -16,15 +16,13 @@ supervise tasks. Behind the scenes, this module is implemented as a
 they are not restarted after they die).
 
 The functions in this module allow tasks can be spawned and awaited from
-a supervisor, similar to the functions defined in the
-```Task`` <Task.html>`__ module.
+a supervisor, similar to the functions defined in the :elixir:mod:`Task` module.
 
 Name Registration
 ~~~~~~~~~~~~~~~~~
 
-A ```Task.Supervisor`` <Task.Supervisor.html>`__ is bound to the same
-name registration rules as a ```GenServer`` <GenServer.html>`__. Read
-more about it in the ```GenServer`` <GenServer.html>`__ docs.
+A :elixir:mod:`Task.Supervisor` is bound to the same name registration rules as a
+:elixir:mod:`GenServer`. Read more about it in the :elixir:mod:`GenServer` docs.
 
 
 
@@ -70,8 +68,8 @@ Functions
    Starts a task that can be awaited on.
    
    The ``supervisor`` must be a reference as defined in
-   ```Task.Supervisor`` <Task.Supervisor.html>`__. For more information on
-   tasks, check the ```Task`` <Task.html>`__ module.
+   :elixir:mod:`Task.Supervisor`. For more information on tasks, check the :elixir:mod:`Task`
+   module.
    
    
 
@@ -89,8 +87,8 @@ Functions
    Starts a task that can be awaited on.
    
    The ``supervisor`` must be a reference as defined in
-   ```Task.Supervisor`` <Task.Supervisor.html>`__. For more information on
-   tasks, check the ```Task`` <Task.html>`__ module.
+   :elixir:mod:`Task.Supervisor`. For more information on tasks, check the :elixir:mod:`Task`
+   module.
    
    
 
@@ -141,8 +139,8 @@ Functions
    
    Starts a task as child of the given ``supervisor``.
    
-   Similar to ```start_child/2`` <#start_child/2>`__ except the task is
-   specified by the given ``module``, ``fun`` and ``args``.
+   Similar to :elixir:func:`start_child/2` except the task is specified by the given
+   ``module``, ``fun`` and ``args``.
    
    
 
@@ -163,7 +161,7 @@ Functions
    
    -  ``:name`` - used to register a supervisor name, the supported values
       are described under the ``Name Registration`` section in the
-      ```GenServer`` <GenServer.html>`__ module docs;
+      :elixir:mod:`GenServer` module docs;
    
    -  ``:shutdown`` - ``:brutal_kill`` if the tasks must be killed directly
       on shutdown or an integer indicating the timeout value, defaults to

@@ -188,8 +188,7 @@ Macros
    
        doctest MyModule, except: [trick_fun: 1]
    
-   This macro is auto-imported with every
-   ```ExUnit.Case`` <ExUnit.Case.html>`__.
+   This macro is auto-imported with every :elixir:mod:`ExUnit.Case`.
    
    
 

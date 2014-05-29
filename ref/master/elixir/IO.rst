@@ -17,8 +17,8 @@ Elixir provides ``:stdio`` and ``:stderr`` as shortcuts to Erlang's
 
 The majority of the functions expect char data, i.e. strings or lists of
 characters and strings. In case another type is given, it will do a
-conversion to string via the ```String.Chars`` <String.Chars.html>`__
-protocol (as shown in typespecs).
+conversion to string via the :elixir:mod:`String.Chars` protocol (as shown in
+typespecs).
 
 The functions starting with ``bin*`` expects iodata as argument, i.e.
 binaries or lists of bytes and binaries.
@@ -49,7 +49,7 @@ Summary
 =================================== =
 :elixir:func:`binread/2`            Reads ``count`` bytes from the IO device or until the end of the line if ``:line`` is given. It returns: 
 
-:elixir:func:`binstream/2`          Converts the IO device into a ```IO.Stream`` <IO.Stream.html>`__ 
+:elixir:func:`binstream/2`          Converts the IO device into a :elixir:mod:`IO.Stream` 
 
 :elixir:func:`binwrite/2`           Writes the given argument to the given device as a binary, no unicode conversion happens 
 
@@ -69,11 +69,11 @@ Summary
 
 :elixir:func:`iodata_to_binary/1`   Converts iodata (a list of integers representing bytes, lists and binaries) into a binary 
 
-:elixir:func:`puts/2`               Writes the argument to the device, similar to ```write/2`` <#write/2>`__, but adds a newline at the end. The argument is expected to be a chardata 
+:elixir:func:`puts/2`               Writes the argument to the device, similar to :elixir:func:`write/2`, but adds a newline at the end. The argument is expected to be a chardata 
 
 :elixir:func:`read/2`               Reads ``count`` characters from the IO device or until the end of the line if ``:line`` is given. It returns: 
 
-:elixir:func:`stream/2`             Converts the io device into a ```IO.Stream`` <IO.Stream.html>`__ 
+:elixir:func:`stream/2`             Converts the io device into a :elixir:mod:`IO.Stream` 
 
 :elixir:func:`write/2`              Writes the given argument to the given device 
 =================================== =
@@ -141,12 +141,10 @@ Functions
  
 
    
-   Converts the IO device into a ```IO.Stream`` <IO.Stream.html>`__.
+   Converts the IO device into a :elixir:mod:`IO.Stream`.
    
-   An ```IO.Stream`` <IO.Stream.html>`__ implements both
-   ```Enumerable`` <Enumerable.html>`__ and
-   ```Collectable`` <Collectable.html>`__, allowing it to be used for both
-   read and write.
+   An :elixir:mod:`IO.Stream` implements both :elixir:mod:`Enumerable` and :elixir:mod:`Collectable`,
+   allowing it to be used for both read and write.
    
    The device is iterated line by line or by a number of bytes. This reads
    the IO device as a raw binary.
@@ -170,7 +168,7 @@ Functions
    Writes the given argument to the given device as a binary, no unicode
    conversion happens.
    
-   Check ```write/2`` <#write/2>`__ for more information.
+   Check :elixir:func:`write/2` for more information.
    
    
 
@@ -188,9 +186,8 @@ Functions
    Converts chardata (a list of integers representing codepoints, lists and
    strings) into a string.
    
-   In case the conversion fails, it raises a
-   ```UnicodeConversionError`` <UnicodeConversionError.html>`__. If a
-   string is given, returns the string itself.
+   In case the conversion fails, it raises a :elixir:mod:`UnicodeConversionError`. If
+   a string is given, returns the string itself.
    
    **Examples**
    
@@ -362,7 +359,7 @@ Functions
    Notice that this function treats lists of integers as raw bytes and does
    not perform any kind of encoding conversion. If you want to convert from
    a char list to a string (UTF-8 encoded), please use
-   ```chardata_to_string/1`` <#chardata_to_string/1>`__ instead.
+   :elixir:func:`chardata_to_string/1` instead.
    
    If this function receives a binary, the same binary is returned.
    
@@ -396,9 +393,8 @@ Functions
  
 
    
-   Writes the argument to the device, similar to
-   ```write/2`` <#write/2>`__, but adds a newline at the end. The argument
-   is expected to be a chardata.
+   Writes the argument to the device, similar to :elixir:func:`write/2`, but adds a
+   newline at the end. The argument is expected to be a chardata.
    
    
 
@@ -438,19 +434,16 @@ Functions
  
 
    
-   Converts the io device into a ```IO.Stream`` <IO.Stream.html>`__.
+   Converts the io device into a :elixir:mod:`IO.Stream`.
    
-   An ```IO.Stream`` <IO.Stream.html>`__ implements both
-   ```Enumerable`` <Enumerable.html>`__ and
-   ```Collectable`` <Collectable.html>`__, allowing it to be used for both
-   read and write.
+   An :elixir:mod:`IO.Stream` implements both :elixir:mod:`Enumerable` and :elixir:mod:`Collectable`,
+   allowing it to be used for both read and write.
    
    The device is iterated line by line if ``:line`` is given or by a given
    number of codepoints.
    
-   This reads the IO as utf-8. Check out
-   ```IO.binstream/2`` <IO.html#binstream/2>`__ to handle the IO as a raw
-   binary.
+   This reads the IO as utf-8. Check out :elixir:func:`IO.binstream/2` to handle the
+   IO as a raw binary.
    
    Note that an IO stream has side effects and every time you go over the
    stream you may get different results.

@@ -32,7 +32,7 @@ Modules
 
 :elixir:mod:`Dict`                    This module specifies the Dict API expected to be implemented by different dictionaries. It also provides functions that redirect to the underlying Dict, allowing a developer to work with different Dict implementations using one API 
 
-:elixir:mod:`Enum`                    Provides a set of algorithms that enumerate over collections according to the ```Enumerable`` <Enumerable.html>`__ protocol: 
+:elixir:mod:`Enum`                    Provides a set of algorithms that enumerate over collections according to the ``Enumerable`` protocol: 
 
 :elixir:mod:`Exception`               Functions to format throw/catch/exit and exceptions 
 
@@ -40,7 +40,7 @@ Modules
 
 :elixir:mod:`File.Stat`               A struct responsible to hold file information 
 
-:elixir:mod:`File.Stream`             Defines a ```File.Stream`` <File.Stream.html>`__ struct returned by ``File.stream!/2`` 
+:elixir:mod:`File.Stream`             Defines a ``File.Stream`` struct returned by ``File.stream!/2`` 
 
 :elixir:mod:`Float`                   Functions for working with floating point numbers 
 
@@ -56,7 +56,7 @@ Modules
 
 :elixir:mod:`IO.ANSI`                 Functionality to render ANSI escape sequences (http://en.wikipedia.org/wiki/ANSI\_escape\_code) â characters embedded in text used to control formatting, color, and other output options on video text terminals 
 
-:elixir:mod:`IO.Stream`               Defines a ```IO.Stream`` <IO.Stream.html>`__ struct returned by ```IO.stream/2`` <IO.html#stream/2>`__ and ```IO.binstream/2`` <IO.html#binstream/2>`__ 
+:elixir:mod:`IO.Stream`               Defines a ``IO.Stream`` struct returned by ``IO.stream/2`` and ``IO.binstream/2`` 
 
 :elixir:mod:`Inspect.Algebra`         A set of functions for creating and manipulating algebra documents, as described in ["Strictly Pretty" (2000) by Christian Lindig][0] 
 
@@ -64,7 +64,7 @@ Modules
 
 :elixir:mod:`Integer`                 Functions for working with integers 
 
-:elixir:mod:`Kernel`                  ```Kernel`` <Kernel.html>`__ provides the default macros and functions Elixir imports into your environment. These macros and functions can be skipped or cherry-picked via the ``import`` macro. For instance, if you want to tell Elixir not to import the ``if`` macro, you can do: 
+:elixir:mod:`Kernel`                  ``Kernel`` provides the default macros and functions Elixir imports into your environment. These macros and functions can be skipped or cherry-picked via the ``import`` macro. For instance, if you want to tell Elixir not to import the ``if`` macro, you can do: 
 
 :elixir:mod:`Kernel.ParallelCompiler` A module responsible for compiling files in parallel 
 
@@ -381,9 +381,9 @@ Protocols
 
 :elixir:mod:`Collectable`    A protocol to traverse data structures 
 
-:elixir:mod:`Enumerable`     Enumerable protocol used by ```Enum`` <Enum.html>`__ and ```Stream`` <Stream.html>`__ modules 
+:elixir:mod:`Enumerable`     Enumerable protocol used by ``Enum`` and ``Stream`` modules 
 
-:elixir:mod:`Inspect`        The ```Inspect`` <Inspect.html>`__ protocol is responsible for converting any Elixir data structure into an algebra document. This document is then formatted, either in pretty printing format or a regular one 
+:elixir:mod:`Inspect`        The ``Inspect`` protocol is responsible for converting any Elixir data structure into an algebra document. This document is then formatted, either in pretty printing format or a regular one 
 
 :elixir:mod:`List.Chars`     The List.Chars protocol is responsible for converting a structure to a list (only if applicable). The only function required to be implemented is ``to_char_list`` which does the conversion 
 

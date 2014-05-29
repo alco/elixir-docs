@@ -10,18 +10,15 @@ Overview
 
 Conveniences for working with processes and the process dictionary.
 
-Besides the functions available in this module, the
-```Kernel`` <Kernel.html>`__ module exposes and auto-imports some basic
-functionality related to processes available through the functions:
+Besides the functions available in this module, the :elixir:mod:`Kernel` module
+exposes and auto-imports some basic functionality related to processes
+available through the functions:
 
--  ```Kernel.spawn/1`` <Kernel.html#spawn/1>`__ and
-   ```Kernel.spawn/3`` <Kernel.html#spawn/3>`__
--  ```Kernel.spawn_link/1`` <Kernel.html#spawn_link/1>`__ and
-   ```Kernel.spawn_link/3`` <Kernel.html#spawn_link/3>`__
--  ```Kernel.spawn_monitor/1`` <Kernel.html#spawn_monitor/1>`__ and
-   ```Kernel.spawn_monitor/3`` <Kernel.html#spawn_monitor/3>`__
--  ```Kernel.self/0`` <Kernel.html#self/0>`__
--  ```Kernel.send/2`` <Kernel.html#send/2>`__
+-  :elixir:func:`Kernel.spawn/1` and :elixir:func:`Kernel.spawn/3`
+-  :elixir:func:`Kernel.spawn_link/1` and :elixir:func:`Kernel.spawn_link/3`
+-  :elixir:func:`Kernel.spawn_monitor/1` and :elixir:func:`Kernel.spawn_monitor/3`
+-  :elixir:func:`Kernel.self/0`
+-  :elixir:func:`Kernel.send/2`
 
 
 
@@ -66,7 +63,7 @@ Summary
 
 :elixir:func:`put/2`          Stores the given key-value in the process dictionary 
 
-:elixir:func:`register/2`     Associates the name with a pid or a port identifier. name, which must be an atom, can be used instead of the pid / port identifier with the ```Kernel.send/2`` <Kernel.html#send/2>`__ function 
+:elixir:func:`register/2`     Associates the name with a pid or a port identifier. name, which must be an atom, can be used instead of the pid / port identifier with the :elixir:func:`Kernel.send/2` function 
 
 :elixir:func:`registered/0`   Returns a list of names which have been registered using register/2 
 
@@ -447,12 +444,11 @@ Functions
    
    Associates the name with a pid or a port identifier. name, which must be
    an atom, can be used instead of the pid / port identifier with the
-   ```Kernel.send/2`` <Kernel.html#send/2>`__ function.
+   :elixir:func:`Kernel.send/2` function.
    
-   ```Process.register/2`` <Process.html#register/2>`__ will fail with
-   ```ArgumentError`` <ArgumentError.html>`__ if the pid supplied is no
-   longer alive, (check with ```alive?/1`` <#alive?/1>`__) or if the name
-   is already registered (check with ``registered?/1``).
+   :elixir:func:`Process.register/2` will fail with :elixir:mod:`ArgumentError` if the pid
+   supplied is no longer alive, (check with :elixir:func:`alive?/1`) or if the name is
+   already registered (check with ``registered?/1``).
    
    
 
@@ -523,12 +519,9 @@ Functions
    is given if the name does not refer to a process.
    
    This function returns a timer reference, which can be read or canceled
-   with
-   ```:erlang.read_timer/1`` <http://www.erlang.org/doc/man/erlang.html#read_timer-1>`__,
-   ```:erlang.start_timer/3`` <http://www.erlang.org/doc/man/erlang.html#start_timer-3>`__
-   and
-   ```:erlang.cancel_timer/1`` <http://www.erlang.org/doc/man/erlang.html#cancel_timer-1>`__.
-   Note ``time`` cannot be greater than ``4294967295``.
+   with `[`:erlang.read_timer/1`](http://www.erlang.org/doc/man/erlang.html#read_timer-1)`, `[`:erlang.start_timer/3`](http://www.erlang.org/doc/man/erlang.html#start_timer-3)` and
+   `[`:erlang.cancel_timer/1`](http://www.erlang.org/doc/man/erlang.html#cancel_timer-1)`. Note ``time`` cannot be greater than
+   ``4294967295``.
    
    Finally, the timer will be automatically canceled if the given ``dest``
    is a pid which is not alive or when the given pid exits. Note that

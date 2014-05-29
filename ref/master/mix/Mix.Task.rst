@@ -11,9 +11,8 @@ Overview
 A simple module that provides conveniences for creating, loading and
 manipulating tasks.
 
-A Mix task can be defined by simply using
-```Mix.Task`` <Mix.Task.html>`__ in a module starting with
-``Mix.Tasks.`` and defining the ```run/1`` <#run/1>`__ function:
+A Mix task can be defined by simply using :elixir:mod:`Mix.Task` in a module
+starting with ``Mix.Tasks.`` and defining the :elixir:func:`run/1` function:
 
 ::
 
@@ -25,8 +24,8 @@ A Mix task can be defined by simply using
       end
     end
 
-The ```run/1`` <#run/1>`__ function will receive all arguments passed to
-the command line.
+The :elixir:func:`run/1` function will receive all arguments passed to the command
+line.
 
 Attributes
 ~~~~~~~~~~
@@ -88,8 +87,8 @@ Functions
    
    Returns all loaded tasks.
    
-   Modules that are not yet loaded won't show up. Check
-   ```load_all/0`` <#load_all/0>`__ if you want to preload all tasks.
+   Modules that are not yet loaded won't show up. Check :elixir:func:`load_all/0` if
+   you want to preload all tasks.
    
    
 
@@ -121,10 +120,9 @@ Functions
    
    **Exceptions**
    
-   -  ```Mix.NoTaskError`` <Mix.NoTaskError.html>`__ - raised if the task
-      could not be found;
-   -  ```Mix.InvalidTaskError`` <Mix.InvalidTaskError.html>`__ - raised if
-      the task is not a valid ```Mix.Task`` <Mix.Task.html>`__
+   -  :elixir:mod:`Mix.NoTaskError` - raised if the task could not be found;
+   -  :elixir:mod:`Mix.InvalidTaskError` - raised if the task is not a valid
+      :elixir:mod:`Mix.Task`
    
    
    
@@ -200,7 +198,7 @@ Functions
    simply aborts with ``:noop``.
    
    It may raise an exception if the task was not found or it is invalid.
-   Check ```get!/1`` <#get!/1>`__ for more information.
+   Check :elixir:func:`get!/1` for more information.
    
    
 

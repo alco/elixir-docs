@@ -58,26 +58,24 @@ us to push and pop items:
     GenServer.call(pid, :pop)
     #=> :world
 
-We start our ``Stack`` by calling ```start_link/3`` <#start_link/3>`__,
-passing the module with the server implementation and its initial
-argument (a list representing the stack containing the item ``:hello``).
-We can primarily interact with the server by sending two types of
-messages. **call** messages expect a reply from the server (and are
-therefore synchronous) while **cast** messages do not.
+We start our ``Stack`` by calling :elixir:func:`start_link/3`, passing the module
+with the server implementation and its initial argument (a list
+representing the stack containing the item ``:hello``). We can primarily
+interact with the server by sending two types of messages. **call**
+messages expect a reply from the server (and are therefore synchronous)
+while **cast** messages do not.
 
-Every time you do a ```GenServer.call/3`` <GenServer.html#call/3>`__,
-the client will send a message that must be handled by the
-``handle_call/3`` callback in the GenServer. A ```cast/2`` <#cast/2>`__
-message must be handled by ``handle_cast/2``.
+Every time you do a :elixir:func:`GenServer.call/3`, the client will send a message
+that must be handled by the ``handle_call/3`` callback in the GenServer.
+A :elixir:func:`cast/2` message must be handled by ``handle_cast/2``.
 
 Callbacks
 ~~~~~~~~~
 
-There are 6 callbacks required to be implemented in a
-```GenServer`` <GenServer.html>`__. By adding ``use GenServer`` to your
-module, Elixir will automatically define all 6 callbacks for you,
-leaving it up to you to implement the ones you want to customize. The
-callbacks are:
+There are 6 callbacks required to be implemented in a :elixir:mod:`GenServer`. By
+adding ``use GenServer`` to your module, Elixir will automatically
+define all 6 callbacks for you, leaving it up to you to implement the
+ones you want to customize. The callbacks are:
 
 -  ``init(args)`` - invoked when the server is started
 
@@ -126,13 +124,12 @@ It must return:
 Name Registration
 ~~~~~~~~~~~~~~~~~
 
-Both ```start_link/3`` <#start_link/3>`__ and ```start/3`` <#start/3>`__
-support the ```GenServer`` <GenServer.html>`__ to register a name on
-start via the ``:name`` option. Registered names are also automatically
-cleaned up on termination. The supported values are:
+Both :elixir:func:`start_link/3` and :elixir:func:`start/3` support the :elixir:mod:`GenServer` to
+register a name on start via the ``:name`` option. Registered names are
+also automatically cleaned up on termination. The supported values are:
 
 -  an atom - the GenServer is registered locally with the given name
-   using ```Process.register/2`` <Process.html#register/2>`__;
+   using :elixir:func:`Process.register/2`;
 
 -  ``{:global, term}``- the GenServer is registered globally with the
    given term using the functions in the ``:global`` module;
@@ -154,9 +151,9 @@ follows:
     GenServer.call(MyStack, :pop) #=> :hello
 
 Once the server is started, the remaining functions in this module
-(```call/3`` <#call/3>`__, ```cast/2`` <#cast/2>`__, and friends) will
-also accept an atom, or any ``:global`` or ``:via`` tuples. In general,
-the following formats are supported:
+(:elixir:func:`call/3`, :elixir:func:`cast/2`, and friends) will also accept an atom, or any
+``:global`` or ``:via`` tuples. In general, the following formats are
+supported:
 
 -  a ``pid``
 -  an ``atom`` if the server is locally registered
@@ -168,12 +165,11 @@ the following formats are supported:
 Client / Server APIs
 ~~~~~~~~~~~~~~~~~~~~
 
-Although in the example above we have used
-```GenServer.start_link/3`` <GenServer.html#start_link/3>`__ and friends
-to directly start and communicate with the server, most of the time we
-don't call the ```GenServer`` <GenServer.html>`__ functions directly.
-Instead, we wrap the calls in new functions representing the public API
-of the server.
+Although in the example above we have used :elixir:func:`GenServer.start_link/3`
+and friends to directly start and communicate with the server, most of
+the time we don't call the :elixir:mod:`GenServer` functions directly. Instead, we
+wrap the calls in new functions representing the public API of the
+server.
 
 Here is a better implementation of our Stack module:
 
@@ -251,9 +247,9 @@ Summary
 
 :elixir:func:`reply/2`      Replies to a client 
 
-:elixir:func:`start/3`      Starts a ```GenServer`` <GenServer.html>`__ process without links (outside of a supervision tree) 
+:elixir:func:`start/3`      Starts a :elixir:mod:`GenServer` process without links (outside of a supervision tree) 
 
-:elixir:func:`start_link/3` Starts a ```GenServer`` <GenServer.html>`__ process linked to the current process 
+:elixir:func:`start_link/3` Starts a :elixir:mod:`GenServer` process linked to the current process 
 =========================== =
 
 
@@ -324,7 +320,7 @@ Functions
    The function returns immediately and ignores nodes that do not exist, or
    where the server name does not exist.
    
-   See ```multi_call/4`` <#multi_call/4>`__ for more information.
+   See :elixir:func:`multi_call/4` for more information.
    
    
 
@@ -424,9 +420,8 @@ Functions
    Replies to a client.
    
    This function can be used by a server to explicitly send a reply to a
-   client that called ```call/3`` <#call/3>`__ or
-   ```multi_call/4`` <#multi_call/4>`__. When the reply cannot be defined
-   in the return value of ``handle_call/3``.
+   client that called :elixir:func:`call/3` or :elixir:func:`multi_call/4`. When the reply cannot
+   be defined in the return value of ``handle_call/3``.
    
    The ``client`` must be the ``from`` argument (the second argument)
    received in ``handle_call/3`` callbacks. Reply is an arbitrary term
@@ -447,10 +442,10 @@ Functions
  
 
    
-   Starts a ```GenServer`` <GenServer.html>`__ process without links
-   (outside of a supervision tree).
+   Starts a :elixir:mod:`GenServer` process without links (outside of a supervision
+   tree).
    
-   See ```start_link/3`` <#start_link/3>`__ for more information.
+   See :elixir:func:`start_link/3` for more information.
    
    
 
@@ -465,11 +460,10 @@ Functions
  
 
    
-   Starts a ```GenServer`` <GenServer.html>`__ process linked to the
-   current process.
+   Starts a :elixir:mod:`GenServer` process linked to the current process.
    
-   This is often used to start the ```GenServer`` <GenServer.html>`__ as
-   part of a supervision tree.
+   This is often used to start the :elixir:mod:`GenServer` as part of a supervision
+   tree.
    
    Once the server is started, it calls the ``init/1`` function in the
    given ``module`` passing the given ``args`` to initialize it. To ensure
@@ -489,8 +483,7 @@ Functions
    invoked.
    
    If the ``:spawn_opt`` option is present, its value will be passed as
-   options to the underlying process as in
-   ```Process.spawn/4`` <Process.html#spawn/4>`__.
+   options to the underlying process as in :elixir:func:`Process.spawn/4`.
    
    **Return values**
    

@@ -8,8 +8,7 @@ File.Stream
 Overview
 --------
 
-Defines a ```File.Stream`` <File.Stream.html>`__ struct returned by
-``File.stream!/2``.
+Defines a :elixir:mod:`File.Stream` struct returned by ``File.stream!/2``.
 
 The following fields are public:
 

@@ -299,13 +299,12 @@ Functions
    ``%{red,bright}`` (for multiple sequences).
    
    It will also append a ``%{reset}`` to the string. If you don't want this
-   behaviour, use ```escape_fragment/2`` <#escape_fragment/2>`__.
+   behaviour, use :elixir:func:`escape_fragment/2`.
    
    An optional boolean parameter can be passed to enable or disable
    emitting actual ANSI codes. When ``false``, no ANSI codes will emitted.
    By default, standard output will be checked if it is a terminal capable
-   of handling these sequences (using ```terminal?/1`` <#terminal?/1>`__
-   function)
+   of handling these sequences (using :elixir:func:`terminal?/1` function)
    
    **Examples**
    
@@ -337,8 +336,7 @@ Functions
    An optional boolean parameter can be passed to enable or disable
    emitting actual ANSI codes. When ``false``, no ANSI codes will emitted.
    By default, standard output will be checked if it is a terminal capable
-   of handling these sequences (using ```terminal?/1`` <#terminal?/1>`__
-   function)
+   of handling these sequences (using :elixir:func:`terminal?/1` function)
    
    **Examples**
    

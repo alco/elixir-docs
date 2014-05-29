@@ -195,9 +195,8 @@ ones are currently defined by Elixir:
    -  expanded function body
 
    Note the hook receives the expanded arguments and it is invoked
-   before the function is stored in the module. So
-   ```Module.defines?/2`` <Module.html#defines?/2>`__ will return false
-   for the first clause of every function.
+   before the function is stored in the module. So :elixir:func:`Module.defines?/2`
+   will return false for the first clause of every function.
 
    If the function/macro being defined has multiple clauses, the hook
    will be called for each clause.
@@ -278,8 +277,7 @@ ones are currently defined by Elixir:
          end
 
 The following attributes are part of typespecs and are also reserved by
-Elixir (see ```Kernel.Typespec`` <Kernel.Typespec.html>`__ for more
-information about typespecs):
+Elixir (see :elixir:mod:`Kernel.Typespec` for more information about typespecs):
 
 -  ``@type`` - defines a type to be used in ``@spec``
 -  ``@typep`` - defines a private type to be used in ``@spec``
@@ -298,14 +296,13 @@ with an ``@`` and followed by a valid Elixir value:
       end
 
 For more advanced options available when defining custom attributes, see
-```register_attribute/3`` <#register_attribute/3>`__.
+:elixir:func:`register_attribute/3`.
 
 Runtime information about a module
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 It is possible to query a module at runtime to find out which functions
-and macros it defines, extract its docstrings, etc. See
-```__info__/1`` <#__info__/1>`__.
+and macros it defines, extract its docstrings, etc. See :elixir:func:`__info__/1`.
 
 
 
@@ -325,7 +322,7 @@ Summary
 
 :elixir:func:`create/3`             Creates a module with the given name and defined by the given quoted expressions. The line where the module is defined and its file can be passed as options 
 
-:elixir:func:`defines?/2`           Checks if the module defines the given function or macro. Use ```defines?/3`` <#defines?/3>`__ to assert for a specific type 
+:elixir:func:`defines?/2`           Checks if the module defines the given function or macro. Use :elixir:func:`defines?/3` to assert for a specific type 
 
 :elixir:func:`defines?/3`           Checks if the module defines a function or macro of the given ``kind``. ``kind`` can be any of ``:def``, ``:defp``, ``:defmacro`` or ``:defmacrop`` 
 
@@ -339,21 +336,21 @@ Summary
 
 :elixir:func:`function/3`           Gets an anonymous function from the given module, function and arity. The module and function are not verified to exist 
 
-:elixir:func:`get_attribute/3`      Gets the given attribute from a module. If the attribute was marked with ``accumulate`` with ```Module.register_attribute/3`` <Module.html#register_attribute/3>`__, a list is always returned 
+:elixir:func:`get_attribute/3`      Gets the given attribute from a module. If the attribute was marked with ``accumulate`` with :elixir:func:`Module.register_attribute/3`, a list is always returned 
 
-:elixir:func:`make_overridable/2`   Makes the given functions in ``module`` overridable. An overridable function is lazily defined, allowing a developer to customize it. See ```Kernel.defoverridable/1`` <Kernel.html#defoverridable/1>`__ for more information and documentation 
+:elixir:func:`make_overridable/2`   Makes the given functions in ``module`` overridable. An overridable function is lazily defined, allowing a developer to customize it. See :elixir:func:`Kernel.defoverridable/1` for more information and documentation 
 
 :elixir:func:`open?/1`              Check if a module is open, i.e. it is currently being defined and its attributes and functions can be modified 
 
 :elixir:func:`overridable?/2`       Returns ``true`` if ``tuple`` in ``module`` is marked as overridable 
 
-:elixir:func:`put_attribute/3`      Puts an Erlang attribute to the given module with the given key and value. The semantics of putting the attribute depends if the attribute was registered or not via ```register_attribute/3`` <#register_attribute/3>`__ 
+:elixir:func:`put_attribute/3`      Puts an Erlang attribute to the given module with the given key and value. The semantics of putting the attribute depends if the attribute was registered or not via :elixir:func:`register_attribute/3` 
 
 :elixir:func:`register_attribute/3` Registers an attribute. By registering an attribute, a developer is able to customize how Elixir will store and accumulate the attribute values 
 
-:elixir:func:`safe_concat/1`        Concatenates a list of aliases and returns a new alias only if the alias was already referenced. If the alias was not referenced yet, fails with ```ArgumentError`` <ArgumentError.html>`__. It handles char lists, binaries and atoms 
+:elixir:func:`safe_concat/1`        Concatenates a list of aliases and returns a new alias only if the alias was already referenced. If the alias was not referenced yet, fails with :elixir:mod:`ArgumentError`. It handles char lists, binaries and atoms 
 
-:elixir:func:`safe_concat/2`        Concatenates two aliases and returns a new alias only if the alias was already referenced. If the alias was not referenced yet, fails with ```ArgumentError`` <ArgumentError.html>`__. It handles char lists, binaries and atoms 
+:elixir:func:`safe_concat/2`        Concatenates two aliases and returns a new alias only if the alias was already referenced. If the alias was not referenced yet, fails with :elixir:mod:`ArgumentError`. It handles char lists, binaries and atoms 
 
 :elixir:func:`split/1`              Split the given module name into binary parts 
 =================================== =
@@ -379,8 +376,8 @@ Functions
    Provides runtime information about functions and macros defined by the
    module, enables docstring extraction, etc.
    
-   Each module gets an ```__info__/1`` <#__info__/1>`__ function when it's
-   compiled. The function takes one of the following atoms:
+   Each module gets an :elixir:func:`__info__/1` function when it's compiled. The
+   function takes one of the following atoms:
    
    -  ``:functions`` - keyword list of public functions along with their
       arities
@@ -389,11 +386,11 @@ Functions
    
    -  ``:module`` - module name (``Module == Module.__info__(:module)``)
    
-   In addition to the above, you may also pass to
-   ```__info__/1`` <#__info__/1>`__ any atom supported by Erlang's
-   ``module_info`` function which also gets defined for each compiled
-   module. See http://erlang.org/doc/reference\_manual/modules.html#id69430
-   for more information.
+   In addition to the above, you may also pass to :elixir:func:`__info__/1` any atom
+   supported by Erlang's ``module_info`` function which also gets defined
+   for each compiled module. See
+   http://erlang.org/doc/reference\_manual/modules.html#id69430 for more
+   information.
    
    
 
@@ -514,7 +511,7 @@ Functions
 
    
    Checks if the module defines the given function or macro. Use
-   ```defines?/3`` <#defines?/3>`__ to assert for a specific type.
+   :elixir:func:`defines?/3` to assert for a specific type.
    
    **Examples**
    
@@ -617,8 +614,7 @@ Functions
    Evaluates the quoted contents in the given module's context.
    
    A list of environment options can also be given as argument. See
-   ```Code.eval_string/3`` <Code.html#eval_string/3>`__ for more
-   information.
+   :elixir:func:`Code.eval_string/3` for more information.
    
    Raises an error if the module was already compiled.
    
@@ -677,9 +673,8 @@ Functions
 
    
    Gets the given attribute from a module. If the attribute was marked with
-   ``accumulate`` with
-   ```Module.register_attribute/3`` <Module.html#register_attribute/3>`__,
-   a list is always returned.
+   ``accumulate`` with :elixir:func:`Module.register_attribute/3`, a list is always
+   returned.
    
    The ``@`` macro compiles to a call to this function. For example, the
    following code:
@@ -723,8 +718,7 @@ Functions
    
    Makes the given functions in ``module`` overridable. An overridable
    function is lazily defined, allowing a developer to customize it. See
-   ```Kernel.defoverridable/1`` <Kernel.html#defoverridable/1>`__ for more
-   information and documentation.
+   :elixir:func:`Kernel.defoverridable/1` for more information and documentation.
    
    
 
@@ -754,8 +748,7 @@ Functions
    
    Puts an Erlang attribute to the given module with the given key and
    value. The semantics of putting the attribute depends if the attribute
-   was registered or not via
-   ```register_attribute/3`` <#register_attribute/3>`__.
+   was registered or not via :elixir:func:`register_attribute/3`.
    
    **Examples**
    
@@ -819,8 +812,7 @@ Functions
    
    Concatenates a list of aliases and returns a new alias only if the alias
    was already referenced. If the alias was not referenced yet, fails with
-   ```ArgumentError`` <ArgumentError.html>`__. It handles char lists,
-   binaries and atoms.
+   :elixir:mod:`ArgumentError`. It handles char lists, binaries and atoms.
    
    **Examples**
    
@@ -848,8 +840,7 @@ Functions
    
    Concatenates two aliases and returns a new alias only if the alias was
    already referenced. If the alias was not referenced yet, fails with
-   ```ArgumentError`` <ArgumentError.html>`__. It handles char lists,
-   binaries and atoms.
+   :elixir:mod:`ArgumentError`. It handles char lists, binaries and atoms.
    
    **Examples**
    

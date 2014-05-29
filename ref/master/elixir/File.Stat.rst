@@ -52,9 +52,9 @@ Summary
 -------
 
 ============================ =
-:elixir:func:`from_record/1` Converts a ``:file_info`` record into a ```File.Stat`` <File.Stat.html>`__ 
+:elixir:func:`from_record/1` Converts a ``:file_info`` record into a :elixir:mod:`File.Stat` 
 
-:elixir:func:`to_record/1`   Converts a ```File.Stat`` <File.Stat.html>`__ struct to a ``:file_info`` record 
+:elixir:func:`to_record/1`   Converts a :elixir:mod:`File.Stat` struct to a ``:file_info`` record 
 ============================ =
 
 
@@ -79,8 +79,7 @@ Functions
 
 
    
-   Converts a ``:file_info`` record into a
-   ```File.Stat`` <File.Stat.html>`__.
+   Converts a ``:file_info`` record into a :elixir:mod:`File.Stat`.
    
    
 
@@ -89,8 +88,7 @@ Functions
 
 
    
-   Converts a ```File.Stat`` <File.Stat.html>`__ struct to a ``:file_info``
-   record.
+   Converts a :elixir:mod:`File.Stat` struct to a ``:file_info`` record.
    
    
 

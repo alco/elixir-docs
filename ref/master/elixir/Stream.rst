@@ -12,7 +12,7 @@ Module for creating and composing streams.
 
 Streams are composable, lazy enumerables. Any enumerable that generates
 items one by one during enumeration is called a stream. For example,
-Elixir's ```Range`` <Range.html>`__ is a stream:
+Elixir's :elixir:mod:`Range` is a stream:
 
 ::
 
@@ -22,9 +22,8 @@ Elixir's ```Range`` <Range.html>`__ is a stream:
     [2,4,6,8,10]
 
 In the example above, as we mapped over the range, the elements being
-enumerated were created one by one, during enumeration. The
-```Stream`` <Stream.html>`__ module allows us to map the range, without
-triggering its enumeration:
+enumerated were created one by one, during enumeration. The :elixir:mod:`Stream`
+module allows us to map the range, without triggering its enumeration:
 
 ::
 
@@ -35,16 +34,16 @@ triggering its enumeration:
 
 Notice we started with a range and then we created a stream that is
 meant to multiply each item in the range by 2. At this point, no
-computation was done yet. Just when ```Enum.map/2`` <Enum.html#map/2>`__
-is called we enumerate over each item in the range, multiplying it by 2
-and adding 1. We say the functions in ```Stream`` <Stream.html>`__ are
-*lazy* and the functions in ```Enum`` <Enum.html>`__ are *eager*.
+computation was done yet. Just when :elixir:func:`Enum.map/2` is called we
+enumerate over each item in the range, multiplying it by 2 and adding 1.
+We say the functions in :elixir:mod:`Stream` are *lazy* and the functions in
+:elixir:mod:`Enum` are *eager*.
 
 Due to their laziness, streams are useful when working with large (or
-even infinite) collections. When chaining many operations with
-```Enum`` <Enum.html>`__, intermediate lists are created, while
-```Stream`` <Stream.html>`__ creates a recipe of computations that are
-executed at a later moment. Let's see another example:
+even infinite) collections. When chaining many operations with :elixir:mod:`Enum`,
+intermediate lists are created, while :elixir:mod:`Stream` creates a recipe of
+computations that are executed at a later moment. Let's see another
+example:
 
 ::
 
@@ -84,10 +83,9 @@ printed changed! With streams, we print the first item and then print
 its double. In this example, the list was enumerated just once!
 
 That's what we meant when we first said that streams are composable,
-lazy enumerables. Notice we could call
-```Stream.map/2`` <Stream.html#map/2>`__ multiple times, effectively
-composing the streams and they are lazy. The computations are performed
-only when you call a function from the ```Enum`` <Enum.html>`__ module.
+lazy enumerables. Notice we could call :elixir:func:`Stream.map/2` multiple times,
+effectively composing the streams and they are lazy. The computations
+are performed only when you call a function from the :elixir:mod:`Enum` module.
 
 Creating Streams
 ~~~~~~~~~~~~~~~~
@@ -95,15 +93,12 @@ Creating Streams
 There are many functions in Elixir's standard library that return
 streams, some examples are:
 
--  ```IO.stream/2`` <IO.html#stream/2>`__ - Streams input lines, one by
-   one;
--  ```URI.query_decoder/1`` <URI.html#query_decoder/1>`__ - Decodes a
-   query string, pair by pair;
+-  :elixir:func:`IO.stream/2` - Streams input lines, one by one;
+-  :elixir:func:`URI.query_decoder/1` - Decodes a query string, pair by pair;
 
 This module also provides many convenience functions for creating
-streams, like ```Stream.cycle/1`` <Stream.html#cycle/1>`__,
-```Stream.unfold/2`` <Stream.html#unfold/2>`__,
-```Stream.resource/3`` <Stream.html#resource/3>`__ and more.
+streams, like :elixir:func:`Stream.cycle/1`, :elixir:func:`Stream.unfold/2`,
+:elixir:func:`Stream.resource/3` and more.
 
 Note the functions in this module are guaranteed to return enumerables.
 Since enumerables can have different shapes (structs, anonymous
@@ -505,8 +500,7 @@ Functions
    Creates a stream that filters and then maps elements according to given
    functions.
    
-   Exists for symmetry with
-   ```Enum.filter_map/3`` <Enum.html#filter_map/3>`__.
+   Exists for symmetry with :elixir:func:`Enum.filter_map/3`.
    
    **Examples**
    
@@ -551,9 +545,8 @@ Functions
    
    Injects the stream values into the given collectable as a side-effect.
    
-   This function is often used with ```run/1`` <#run/1>`__ since any
-   evaluation is delayed until the stream is executed. See
-   ```run/1`` <#run/1>`__ for an example.
+   This function is often used with :elixir:func:`run/1` since any evaluation is
+   delayed until the stream is executed. See :elixir:func:`run/1` for an example.
    
    
 
@@ -666,9 +659,9 @@ Functions
    
    Emits a sequence of values for the given resource.
    
-   Similar to ```unfold/2`` <#unfold/2>`__ but the initial value is
-   computed lazily via ``start_fun`` and executes an ``after_fun`` at the
-   end of enumeration (both in cases of success and failure).
+   Similar to :elixir:func:`unfold/2` but the initial value is computed lazily via
+   ``start_fun`` and executes an ``after_fun`` at the end of enumeration
+   (both in cases of success and failure).
    
    Successive values are generated by calling ``next_fun`` with the
    previous accumulator (the initial value being the result returned by
@@ -722,7 +715,7 @@ Functions
        |> Stream.into(File.stream!("new"))
    
    No computation will be done until we call one of the Enum functions or
-   ```Stream.run/1`` <Stream.html#run/1>`__.
+   :elixir:func:`Stream.run/1`.
    
    
 
@@ -886,17 +879,15 @@ Functions
    (often a list) with the new accumulator or a tuple with ``:halt`` as
    first element and the accumulator as second.
    
-   Note: this function is similar to
-   ```Enum.flat_map_reduce/3`` <Enum.html#flat_map_reduce/3>`__ except the
+   Note: this function is similar to :elixir:func:`Enum.flat_map_reduce/3` except the
    latter returns both the flat list and accumulator, while this one
    returns only the stream.
    
    **Examples**
    
-   ```Stream.transform/3`` <Stream.html#transform/3>`__ is a useful as it
-   can be used as basis to implement many of the functions defined in this
-   module. For example, we can implement ``Stream.take(enum, n)`` as
-   follows:
+   :elixir:func:`Stream.transform/3` is a useful as it can be used as basis to
+   implement many of the functions defined in this module. For example, we
+   can implement ``Stream.take(enum, n)`` as follows:
    
    ::
    

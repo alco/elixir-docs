@@ -14,8 +14,7 @@ Example
 ~~~~~~~
 
 By using the functions in this module one can define a supervisor and
-start it with
-```Supervisor.start_link/2`` <Supervisor.html#start_link/2>`__:
+start it with :elixir:func:`Supervisor.start_link/2`:
 
 ::
 
@@ -50,8 +49,7 @@ module:
     end
 
 Notice in this case we don't have to explicitly import
-```Supervisor.Spec`` <Supervisor.Spec.html>`__ as ``use Supervisor``
-automatically does so.
+:elixir:mod:`Supervisor.Spec` as ``use Supervisor`` automatically does so.
 
 Explicit supervisors as above are required when there is a need to:
 
@@ -82,9 +80,8 @@ accepts the following options:
 
 -  ``:modules`` - it should be a list with one element ``[module]``,
    where module is the name of the callback module only if the child
-   process is a ```Supervisor`` <Supervisor.html>`__ or
-   ```GenServer`` <GenServer.html>`__ If the child process is a
-   ```GenEvent`` <GenEvent.html>`__, modules should be ``:dynamic``;
+   process is a :elixir:mod:`Supervisor` or :elixir:mod:`GenServer` If the child process is
+   a :elixir:mod:`GenEvent`, modules should be ``:dynamic``;
 
 Restart values
 ^^^^^^^^^^^^^^
@@ -231,7 +228,7 @@ Functions
    -  ``:strategy`` - the restart strategy option. It can be either
       ``:one_for_one``, ``:rest_for_one``, ``:one_for_all``, or
       ``:simple_one_for_one``. You can learn more about strategies in the
-      ```Supervisor`` <Supervisor.html>`__ module docs;
+      :elixir:mod:`Supervisor` module docs;
    
    -  ``:max_restarts`` - the maximum amount of restarts allowed in a time
       frame. Defaults to 5;
@@ -240,9 +237,8 @@ Functions
       Defaults to 5;
    
    The ``:strategy`` option is required and by default maximum 5 restarts
-   are allowed within 5 seconds. Please check the
-   ```Supervisor`` <Supervisor.html>`__ module for a complete description
-   of the available strategies.
+   are allowed within 5 seconds. Please check the :elixir:mod:`Supervisor` module for
+   a complete description of the available strategies.
    
    
 
@@ -275,8 +271,8 @@ Functions
         shutdown: :infinity,
         modules: [module]]
    
-   Check ```Supervisor.Spec`` <Supervisor.Spec.html>`__ module docs for
-   more information on the options.
+   Check :elixir:mod:`Supervisor.Spec` module docs for more information on the
+   options.
    
    
 
@@ -309,8 +305,8 @@ Functions
         shutdown: 5000,
         modules: [module]]
    
-   Check ```Supervisor.Spec`` <Supervisor.Spec.html>`__ module docs for
-   more information on the options.
+   Check :elixir:mod:`Supervisor.Spec` module docs for more information on the
+   options.
    
    
 

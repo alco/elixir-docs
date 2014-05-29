@@ -12,11 +12,10 @@ A Dict implementation that works on maps.
 
 Maps are key-value stores where keys are compared using the match
 operator (``===``). Maps can be created with the ``%{}`` special form
-defined in the ```Kernel.SpecialForms`` <Kernel.SpecialForms.html>`__
-module.
+defined in the :elixir:mod:`Kernel.SpecialForms` module.
 
 For more information about the functions in this module and their APIs,
-please consult the ```Dict`` <Dict.html>`__ module.
+please consult the :elixir:mod:`Dict` module.
 
 
 
@@ -26,47 +25,47 @@ Summary
 -------
 
 ========================= =
-:elixir:func:`delete/2`   Callback implementation of ```Dict.delete/2`` <Dict.html#delete/2>`__ 
+:elixir:func:`delete/2`   Callback implementation of :elixir:func:`Dict.delete/2` 
 
-:elixir:func:`drop/2`     Callback implementation of ```Dict.drop/2`` <Dict.html#drop/2>`__ 
+:elixir:func:`drop/2`     Callback implementation of :elixir:func:`Dict.drop/2` 
 
-:elixir:func:`equal?/2`   Callback implementation of ```Dict.equal?/2`` <Dict.html#equal?/2>`__ 
+:elixir:func:`equal?/2`   Callback implementation of :elixir:func:`Dict.equal?/2` 
 
-:elixir:func:`fetch!/2`   Callback implementation of ```Dict.fetch!/2`` <Dict.html#fetch!/2>`__ 
+:elixir:func:`fetch!/2`   Callback implementation of :elixir:func:`Dict.fetch!/2` 
 
-:elixir:func:`fetch/2`    Callback implementation of ```Dict.fetch/2`` <Dict.html#fetch/2>`__ 
+:elixir:func:`fetch/2`    Callback implementation of :elixir:func:`Dict.fetch/2` 
 
-:elixir:func:`get/3`      Callback implementation of ```Dict.get/3`` <Dict.html#get/3>`__ 
+:elixir:func:`get/3`      Callback implementation of :elixir:func:`Dict.get/3` 
 
-:elixir:func:`has_key?/2` Callback implementation of ```Dict.has_key?/2`` <Dict.html#has_key?/2>`__ 
+:elixir:func:`has_key?/2` Callback implementation of :elixir:func:`Dict.has_key?/2` 
 
-:elixir:func:`keys/1`     Callback implementation of ```Dict.keys/1`` <Dict.html#keys/1>`__ 
+:elixir:func:`keys/1`     Callback implementation of :elixir:func:`Dict.keys/1` 
 
-:elixir:func:`merge/2`    Callback implementation of ```Dict.merge/2`` <Dict.html#merge/2>`__ 
+:elixir:func:`merge/2`    Callback implementation of :elixir:func:`Dict.merge/2` 
 
-:elixir:func:`merge/3`    Callback implementation of ```Dict.merge/3`` <Dict.html#merge/3>`__ 
+:elixir:func:`merge/3`    Callback implementation of :elixir:func:`Dict.merge/3` 
 
 :elixir:func:`new/0`      Returns a new empty map 
 
-:elixir:func:`pop/3`      Callback implementation of ```Dict.pop/3`` <Dict.html#pop/3>`__ 
+:elixir:func:`pop/3`      Callback implementation of :elixir:func:`Dict.pop/3` 
 
-:elixir:func:`put/3`      Callback implementation of ```Dict.put/3`` <Dict.html#put/3>`__ 
+:elixir:func:`put/3`      Callback implementation of :elixir:func:`Dict.put/3` 
 
-:elixir:func:`put_new/3`  Callback implementation of ```Dict.put_new/3`` <Dict.html#put_new/3>`__ 
+:elixir:func:`put_new/3`  Callback implementation of :elixir:func:`Dict.put_new/3` 
 
-:elixir:func:`size/1`     Callback implementation of ```Dict.size/1`` <Dict.html#size/1>`__ 
+:elixir:func:`size/1`     Callback implementation of :elixir:func:`Dict.size/1` 
 
-:elixir:func:`split/2`    Callback implementation of ```Dict.split/2`` <Dict.html#split/2>`__ 
+:elixir:func:`split/2`    Callback implementation of :elixir:func:`Dict.split/2` 
 
-:elixir:func:`take/2`     Callback implementation of ```Dict.take/2`` <Dict.html#take/2>`__ 
+:elixir:func:`take/2`     Callback implementation of :elixir:func:`Dict.take/2` 
 
-:elixir:func:`to_list/1`  Callback implementation of ```Dict.to_list/1`` <Dict.html#to_list/1>`__ 
+:elixir:func:`to_list/1`  Callback implementation of :elixir:func:`Dict.to_list/1` 
 
-:elixir:func:`update!/3`  Callback implementation of ```Dict.update!/3`` <Dict.html#update!/3>`__ 
+:elixir:func:`update!/3`  Callback implementation of :elixir:func:`Dict.update!/3` 
 
-:elixir:func:`update/4`   Callback implementation of ```Dict.update/4`` <Dict.html#update/4>`__ 
+:elixir:func:`update/4`   Callback implementation of :elixir:func:`Dict.update/4` 
 
-:elixir:func:`values/1`   Callback implementation of ```Dict.values/1`` <Dict.html#values/1>`__ 
+:elixir:func:`values/1`   Callback implementation of :elixir:func:`Dict.values/1` 
 ========================= =
 
 
@@ -81,7 +80,7 @@ Functions
 
 
    
-   Callback implementation of ```Dict.delete/2`` <Dict.html#delete/2>`__.
+   Callback implementation of :elixir:func:`Dict.delete/2`.
    
    
 
@@ -90,7 +89,7 @@ Functions
 
 
    
-   Callback implementation of ```Dict.drop/2`` <Dict.html#drop/2>`__.
+   Callback implementation of :elixir:func:`Dict.drop/2`.
    
    
 
@@ -99,7 +98,7 @@ Functions
 
 
    
-   Callback implementation of ```Dict.equal?/2`` <Dict.html#equal?/2>`__.
+   Callback implementation of :elixir:func:`Dict.equal?/2`.
    
    
 
@@ -108,7 +107,7 @@ Functions
 
 
    
-   Callback implementation of ```Dict.fetch/2`` <Dict.html#fetch/2>`__.
+   Callback implementation of :elixir:func:`Dict.fetch/2`.
    
    
 
@@ -117,7 +116,7 @@ Functions
 
 
    
-   Callback implementation of ```Dict.fetch!/2`` <Dict.html#fetch!/2>`__.
+   Callback implementation of :elixir:func:`Dict.fetch!/2`.
    
    
 
@@ -126,7 +125,7 @@ Functions
 
 
    
-   Callback implementation of ```Dict.get/3`` <Dict.html#get/3>`__.
+   Callback implementation of :elixir:func:`Dict.get/3`.
    
    
 
@@ -135,8 +134,7 @@ Functions
 
 
    
-   Callback implementation of
-   ```Dict.has_key?/2`` <Dict.html#has_key?/2>`__.
+   Callback implementation of :elixir:func:`Dict.has_key?/2`.
    
    
 
@@ -145,7 +143,7 @@ Functions
 
 
    
-   Callback implementation of ```Dict.keys/1`` <Dict.html#keys/1>`__.
+   Callback implementation of :elixir:func:`Dict.keys/1`.
    
    
 
@@ -154,7 +152,7 @@ Functions
 
 
    
-   Callback implementation of ```Dict.merge/2`` <Dict.html#merge/2>`__.
+   Callback implementation of :elixir:func:`Dict.merge/2`.
    
    
 
@@ -163,7 +161,7 @@ Functions
 
 
    
-   Callback implementation of ```Dict.merge/3`` <Dict.html#merge/3>`__.
+   Callback implementation of :elixir:func:`Dict.merge/3`.
    
    
 
@@ -181,7 +179,7 @@ Functions
 
 
    
-   Callback implementation of ```Dict.pop/3`` <Dict.html#pop/3>`__.
+   Callback implementation of :elixir:func:`Dict.pop/3`.
    
    
 
@@ -190,7 +188,7 @@ Functions
 
 
    
-   Callback implementation of ```Dict.put/3`` <Dict.html#put/3>`__.
+   Callback implementation of :elixir:func:`Dict.put/3`.
    
    
 
@@ -199,7 +197,7 @@ Functions
 
 
    
-   Callback implementation of ```Dict.put_new/3`` <Dict.html#put_new/3>`__.
+   Callback implementation of :elixir:func:`Dict.put_new/3`.
    
    
 
@@ -208,7 +206,7 @@ Functions
 
 
    
-   Callback implementation of ```Dict.size/1`` <Dict.html#size/1>`__.
+   Callback implementation of :elixir:func:`Dict.size/1`.
    
    
 
@@ -217,7 +215,7 @@ Functions
 
 
    
-   Callback implementation of ```Dict.split/2`` <Dict.html#split/2>`__.
+   Callback implementation of :elixir:func:`Dict.split/2`.
    
    
 
@@ -226,7 +224,7 @@ Functions
 
 
    
-   Callback implementation of ```Dict.take/2`` <Dict.html#take/2>`__.
+   Callback implementation of :elixir:func:`Dict.take/2`.
    
    
 
@@ -235,7 +233,7 @@ Functions
 
 
    
-   Callback implementation of ```Dict.to_list/1`` <Dict.html#to_list/1>`__.
+   Callback implementation of :elixir:func:`Dict.to_list/1`.
    
    
 
@@ -244,7 +242,7 @@ Functions
 
 
    
-   Callback implementation of ```Dict.update/4`` <Dict.html#update/4>`__.
+   Callback implementation of :elixir:func:`Dict.update/4`.
    
    
 
@@ -253,7 +251,7 @@ Functions
 
 
    
-   Callback implementation of ```Dict.update!/3`` <Dict.html#update!/3>`__.
+   Callback implementation of :elixir:func:`Dict.update!/3`.
    
    
 
@@ -262,7 +260,7 @@ Functions
 
 
    
-   Callback implementation of ```Dict.values/1`` <Dict.html#values/1>`__.
+   Callback implementation of :elixir:func:`Dict.values/1`.
    
    
 

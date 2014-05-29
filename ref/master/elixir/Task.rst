@@ -26,18 +26,17 @@ only its caller) as shown in the example above. They are implemented by
 spawning a process that sends a message to the caller once the given
 computation is performed.
 
-Besides ```async/1`` <#async/1>`__ and ``await/1``, tasks can also be
-used as part of supervision trees and dynamically spawned in remote
-nodes. We will explore all three scenarios next.
+Besides :elixir:func:`async/1` and ``await/1``, tasks can also be used as part of
+supervision trees and dynamically spawned in remote nodes. We will
+explore all three scenarios next.
 
 async and await
 ~~~~~~~~~~~~~~~
 
-The most common way to spawn a task is with
-```Task.async/1`` <Task.html#async/1>`__. A new process will be created
-and this process is linked and monitored by the caller. However, the
-processes are unlinked right before the task finishes, allowing the
-proper error to be triggered only on ``await/1``.
+The most common way to spawn a task is with :elixir:func:`Task.async/1`. A new
+process will be created and this process is linked and monitored by the
+caller. However, the processes are unlinked right before the task
+finishes, allowing the proper error to be triggered only on ``await/1``.
 
 This implies three things:
 
@@ -54,8 +53,7 @@ Supervised tasks
 ~~~~~~~~~~~~~~~~
 
 It is also possible to spawn a task inside a supervision tree with
-```start_link/1`` <#start_link/1>`__ and
-```start_link/3`` <#start_link/3>`__:
+:elixir:func:`start_link/1` and :elixir:func:`start_link/3`:
 
 ::
 
@@ -73,8 +71,8 @@ Such can be mounted in your supervision tree as:
 
 Since such tasks are supervised and not directly linked to the caller,
 they cannot be awaited on. For such reason, differently from
-```async/1`` <#async/1>`__, ```start_link/1`` <#start_link/1>`__ returns
-``{:ok, pid}`` (which is the result expected by supervision trees).
+:elixir:func:`async/1`, :elixir:func:`start_link/1` returns ``{:ok, pid}`` (which is the
+result expected by supervision trees).
 
 Such tasks are useful as workers that run during your application
 life-cycle and rarely communicate with other workers. For example, a
@@ -84,17 +82,16 @@ events from an event manager and writes it to a log file.
 Supervision trees
 ~~~~~~~~~~~~~~~~~
 
-The ```Task.Supervisor`` <Task.Supervisor.html>`__ module allows
-developers to start supervisors that dynamically supervise tasks:
+The :elixir:mod:`Task.Supervisor` module allows developers to start supervisors
+that dynamically supervise tasks:
 
 ::
 
     {:ok, pid} = Task.Supervisor.start_link()
     Task.Supervisor.async(pid, fn -> do_work() end)
 
-```Task.Supervisor`` <Task.Supervisor.html>`__ also makes it possible to
-spawn tasks in remote nodes as long as the supervisor is registered
-locally or globally:
+:elixir:mod:`Task.Supervisor` also makes it possible to spawn tasks in remote
+nodes as long as the supervisor is registered locally or globally:
 
 ::
 
@@ -104,8 +101,7 @@ locally or globally:
     # On the client
     Task.Supervisor.async({:tasks_sup, :remote@local}, fn -> do_work() end)
 
-```Task.Supervisor`` <Task.Supervisor.html>`__ is more often started in
-your supervision tree as:
+:elixir:mod:`Task.Supervisor` is more often started in your supervision tree as:
 
 ::
 
@@ -115,8 +111,8 @@ your supervision tree as:
       supervisor(Task.Supervisor, [[name: :tasks_sup]])
     ]
 
-Check ```Task.Supervisor`` <Task.Supervisor.html>`__ for other
-operations supported by the Task supervisor.
+Check :elixir:mod:`Task.Supervisor` for other operations supported by the Task
+supervisor.
 
 
 
@@ -196,8 +192,8 @@ Functions
    Starts a task that can be awaited on.
    
    This function spawns a process that is linked and monitored to the
-   caller process. A ```Task`` <Task.html>`__ struct is returned containing
-   the relevant information.
+   caller process. A :elixir:mod:`Task` struct is returned containing the relevant
+   information.
    
    **Task's message format**
    
@@ -219,8 +215,8 @@ Functions
    
    Starts a task that can be awaited on.
    
-   Similar to ```async/1`` <#async/1>`__, but the task is specified by the
-   given module, function and arguments.
+   Similar to :elixir:func:`async/1`, but the task is specified by the given module,
+   function and arguments.
    
    
 
@@ -263,9 +259,8 @@ Functions
    
    This function is useful in situations where multiple tasks are spawned
    and their results are collected just later on. For example, a GenServer
-   can spawn tasks, store the tasks in a list and later use
-   ```Task.find/2`` <Task.html#find/2>`__ to see if upcoming messages are
-   from any of the tasks.
+   can spawn tasks, store the tasks in a list and later use :elixir:func:`Task.find/2`
+   to see if upcoming messages are from any of the tasks.
    
    
 

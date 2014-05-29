@@ -22,13 +22,13 @@ The following events are possible:
    ``run_us`` and ``load_us`` are the run and load times in microseconds
    respectively.
 -  ``{:case_started, test_case}`` - A test case has started. See
-   ```ExUnit.TestCase`` <ExUnit.TestCase.html>`__ for details.
+   :elixir:mod:`ExUnit.TestCase` for details.
 -  ``{:case_finished, test_case}`` - A test case has finished. See
-   ```ExUnit.TestCase`` <ExUnit.TestCase.html>`__ for details.
+   :elixir:mod:`ExUnit.TestCase` for details.
 -  ``{:test_started, test_case}`` - A test case has started. See
-   ```ExUnit.Test`` <ExUnit.Test.html>`__ for details.
+   :elixir:mod:`ExUnit.Test` for details.
 -  ``{:test_finished, test_case}`` - A test case has finished. See
-   ```ExUnit.Test`` <ExUnit.Test.html>`__ for details.
+   :elixir:mod:`ExUnit.Test` for details.
 
 
 

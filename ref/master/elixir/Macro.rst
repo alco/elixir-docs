@@ -130,9 +130,8 @@ Functions
    
    Recursively escapes a value so it can be inserted into a syntax tree.
    
-   One may pass ``unquote: true`` to ```escape/2`` <#escape/2>`__ which
-   leaves ``unquote`` statements unescaped, effectively unquoting the
-   contents on escape.
+   One may pass ``unquote: true`` to :elixir:func:`escape/2` which leaves ``unquote``
+   statements unescaped, effectively unquoting the contents on escape.
    
    **Examples**
    
@@ -157,9 +156,8 @@ Functions
    
    Receives an AST node and expands it until it can no longer be expanded.
    
-   This function uses ```expand_once/2`` <#expand_once/2>`__ under the
-   hood. Check ```expand_once/2`` <#expand_once/2>`__ for more information
-   and exmaples.
+   This function uses :elixir:func:`expand_once/2` under the hood. Check
+   :elixir:func:`expand_once/2` for more information and exmaples.
    
    
 
@@ -178,10 +176,9 @@ Functions
    -  Module attributes reader (``@foo``);
    
    If the expression cannot be expanded, it returns the expression itself.
-   Notice that ```expand_once/2`` <#expand_once/2>`__ performs the
-   expansion just once and it is not recursive. Check
-   ```expand/2`` <#expand/2>`__ for expansion until the node can no longer
-   be expanded.
+   Notice that :elixir:func:`expand_once/2` performs the expansion just once and it is
+   not recursive. Check :elixir:func:`expand/2` for expansion until the node can no
+   longer be expanded.
    
    **Examples**
    
@@ -233,9 +230,9 @@ Functions
        end
    
    The final module name will be ``MyHelpers.Module`` and not
-   ``My.Module``. With ```Macro.expand/2`` <Macro.html#expand/2>`__, such
-   aliases are taken into consideration. Local and remote macros are also
-   expanded. We could rewrite our macro above to use this function as:
+   ``My.Module``. With :elixir:func:`Macro.expand/2`, such aliases are taken into
+   consideration. Local and remote macros are also expanded. We could
+   rewrite our macro above to use this function as:
    
    ::
    
@@ -368,9 +365,8 @@ Functions
    Unescape the given chars.
    
    This is the unescaping behaviour used by default in Elixir single- and
-   double-quoted strings. Check
-   ```unescape_string/2`` <#unescape_string/2>`__ for information on how to
-   customize the escaping map.
+   double-quoted strings. Check :elixir:func:`unescape_string/2` for information on
+   how to customize the escaping map.
    
    In this setup, Elixir will escape the following: ``\a``, ``\b``, ``\d``,
    ``\e``, ``\f``, ``\n``, ``\r``, ``\s``, ``\t`` and ``\v``. Octals are
@@ -404,8 +400,8 @@ Functions
    
    Unescape the given chars according to the map given.
    
-   Check ```unescape_string/1`` <#unescape_string/1>`__ if you want to use
-   the same map as Elixir single- and double-quoted strings.
+   Check :elixir:func:`unescape_string/1` if you want to use the same map as Elixir
+   single- and double-quoted strings.
    
    **Map**
    
@@ -464,14 +460,12 @@ Functions
    
    Unescape the given tokens according to the default map.
    
-   Check ```unescape_string/1`` <#unescape_string/1>`__ and
-   ```unescape_string/2`` <#unescape_string/2>`__ for more information
-   about unescaping.
+   Check :elixir:func:`unescape_string/1` and :elixir:func:`unescape_string/2` for more
+   information about unescaping.
    
    Only tokens that are binaries are unescaped, all others are ignored.
    This function is useful when implementing your own sigils. Check the
-   implementation of ```Kernel.sigil_s/2`` <Kernel.html#sigil_s/2>`__ for
-   examples.
+   implementation of :elixir:func:`Kernel.sigil_s/2` for examples.
    
    
 
@@ -488,8 +482,8 @@ Functions
    
    Unescape the given tokens according to the given map.
    
-   Check ```unescape_tokens/1`` <#unescape_tokens/1>`__ and
-   ```unescape_string/2`` <#unescape_string/2>`__ for more information.
+   Check :elixir:func:`unescape_tokens/1` and :elixir:func:`unescape_string/2` for more
+   information.
    
    
 

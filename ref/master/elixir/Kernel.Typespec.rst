@@ -220,7 +220,7 @@ Defining a specification
     @callback function_name(type1, type2) :: return_type
 
 Callbacks are used to define the callbacks functions of behaviours (see
-```Behaviour`` <Behaviour.html>`__).
+:elixir:mod:`Behaviour`).
 
 Guards can be used to restrict type variables given as arguments to the
 function.
@@ -253,8 +253,7 @@ in Erlang, one has to use the ``char_list`` type which is a synonym for
 compiler.
 
 If you want to refer to the "string" type (the one operated on by
-functions in the ```String`` <String.html>`__ module), use ``String.t``
-type instead.
+functions in the :elixir:mod:`String` module), use ``String.t`` type instead.
 
 
 

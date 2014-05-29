@@ -10,12 +10,11 @@ Overview
 
 Functions for parsing and matching versions against requirements.
 
-A version is a string in a specific format or a
-```Version`` <Version.html>`__ generated after parsing via
-```Version.parse/1`` <Version.html#parse/1>`__.
+A version is a string in a specific format or a :elixir:mod:`Version` generated
+after parsing via :elixir:func:`Version.parse/1`.
 
-```Version`` <Version.html>`__ parsing and requirements follow `SemVer
-2.0 schema <http://semver.org/>`__.
+:elixir:mod:`Version` parsing and requirements follow `SemVer 2.0
+schema <http://semver.org/>`__.
 
 Versions
 ~~~~~~~~
@@ -87,7 +86,7 @@ Summary
 
 :elixir:func:`match?/2`            Check if the given version matches the specification 
 
-:elixir:func:`parse/1`             Parse a version string into a ```Version`` <Version.html>`__ 
+:elixir:func:`parse/1`             Parse a version string into a :elixir:mod:`Version` 
 
 :elixir:func:`parse_requirement/1` Parse a version requirement string into a ``Version.Requirement`` 
 ================================== =
@@ -139,10 +138,8 @@ Functions
    the second and ``:lt`` for vice versa. If the two versions are equal
    ``:eq`` is returned
    
-   Raises a
-   ```Version.InvalidVersionError`` <Version.InvalidVersionError.html>`__
-   exception if ``version`` is not parseable. If given an already parsed
-   version this function won't raise.
+   Raises a :elixir:mod:`Version.InvalidVersionError` exception if ``version`` is not
+   parseable. If given an already parsed version this function won't raise.
    
    **Examples**
    
@@ -174,11 +171,9 @@ Functions
    Check if the given version matches the specification.
    
    Returns ``true`` if ``version`` satisfies ``requirement``, ``false``
-   otherwise. Raises a
-   ```Version.InvalidRequirementError`` <Version.InvalidRequirementError.html>`__
-   exception if ``requirement`` is not parseable, or
-   ```Version.InvalidVersionError`` <Version.InvalidVersionError.html>`__
-   if ``version`` is not parseable. If given an already parsed version and
+   otherwise. Raises a :elixir:mod:`Version.InvalidRequirementError` exception if
+   ``requirement`` is not parseable, or :elixir:mod:`Version.InvalidVersionError` if
+   ``version`` is not parseable. If given an already parsed version and
    requirement this function won't raise.
    
    **Examples**
@@ -211,7 +206,7 @@ Functions
  
 
    
-   Parse a version string into a ```Version`` <Version.html>`__.
+   Parse a version string into a :elixir:mod:`Version`.
    
    **Examples**
    

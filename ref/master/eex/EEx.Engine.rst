@@ -27,8 +27,8 @@ marker. The allowed markers so far are:
 -  ``""``
 -  ``"="``
 
-Read ```handle_expr/3`` <#handle_expr/3>`__ below for more information
-about the markers implemented by default by this engine.
+Read :elixir:func:`handle_expr/3` below for more information about the markers
+implemented by default by this engine.
 
 
 

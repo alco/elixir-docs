@@ -22,8 +22,7 @@ Helpers
 ~~~~~~~
 
 IEx provides a bunch of helpers. They can be accessed by typing ``h()``
-into the shell or as a documentation for the
-```IEx.Helpers`` <IEx.Helpers.html>`__ module.
+into the shell or as a documentation for the :elixir:mod:`IEx.Helpers` module.
 
 The Break command
 ~~~~~~~~~~~~~~~~~
@@ -201,13 +200,12 @@ Configuring the shell
 ~~~~~~~~~~~~~~~~~~~~~
 
 There are a number of customization options provided by the shell. Take
-a look at the docs for the
-```IEx.configure/1`` <IEx.html#configure/1>`__ function by typing
+a look at the docs for the :elixir:func:`IEx.configure/1` function by typing
 ``h IEx.configure/1``.
 
 Those options can be configured in your project configuration file or
-globally by calling ```IEx.configure/1`` <IEx.html#configure/1>`__ from
-your ``~/.iex.exs`` file like this:
+globally by calling :elixir:func:`IEx.configure/1` from your ``~/.iex.exs`` file
+like this:
 
 ::
 

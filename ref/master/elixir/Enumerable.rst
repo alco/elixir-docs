@@ -8,25 +8,22 @@ Enumerable
 Overview
 --------
 
-Enumerable protocol used by ```Enum`` <Enum.html>`__ and
-```Stream`` <Stream.html>`__ modules.
+Enumerable protocol used by :elixir:mod:`Enum` and :elixir:mod:`Stream` modules.
 
-When you invoke a function in the ```Enum`` <Enum.html>`__ module, the
-first argument is usually a collection that must implement this
-protocol. For example, the expression
+When you invoke a function in the :elixir:mod:`Enum` module, the first argument is
+usually a collection that must implement this protocol. For example, the
+expression
 
 ::
 
     Enum.map([1, 2, 3], &(&1 * 2))
 
-invokes underneath
-```Enumerable.reduce/3`` <Enumerable.html#reduce/3>`__ to perform the
-reducing operation that builds a mapped list by calling the mapping
-function ``&(&1 * 2)`` on every element in the collection and cons'ing
-the element with an accumulated list.
+invokes underneath :elixir:func:`Enumerable.reduce/3` to perform the reducing
+operation that builds a mapped list by calling the mapping function
+``&(&1 * 2)`` on every element in the collection and cons'ing the
+element with an accumulated list.
 
-Internally, ```Enum.map/2`` <Enum.html#map/2>`__ is implemented as
-follows:
+Internally, :elixir:func:`Enum.map/2` is implemented as follows:
 
 ::
 
@@ -45,8 +42,8 @@ enumeration, allowing any open resource to be properly closed. It also
 allows suspension of the enumeration, which is useful when interleaving
 between many enumerables is required (as in zip).
 
-Finally, ```Enumerable.reduce/3`` <Enumerable.html#reduce/3>`__ will
-return another tagged tuple, as represented by the ``result/0`` type.
+Finally, :elixir:func:`Enumerable.reduce/3` will return another tagged tuple, as
+represented by the ``result/0`` type.
 
 
 
@@ -82,8 +79,8 @@ Types
    -  ``:suspend`` - the enumeration should be suspended immediately
    
    Depending on the accumulator value, the result returned by
-   ```Enumerable.reduce/3`` <Enumerable.html#reduce/3>`__ will change.
-   Please check the ``result`` type docs for more information.
+   :elixir:func:`Enumerable.reduce/3` will change. Please check the ``result`` type
+   docs for more information.
    
    In case a reducer function returns a ``:suspend`` accumulator, it must
    be explicitly handled by the caller and never leak.
@@ -210,10 +207,9 @@ Functions
    
    Reduces the collection into a value.
    
-   Most of the operations in ```Enum`` <Enum.html>`__ are implemented in
-   terms of reduce. This function should apply the given ``reducer``
-   function to each item in the collection and proceed as expected by the
-   returned accumulator.
+   Most of the operations in :elixir:mod:`Enum` are implemented in terms of reduce.
+   This function should apply the given ``reducer`` function to each item
+   in the collection and proceed as expected by the returned accumulator.
    
    As an example, here is the implementation of ``reduce`` for lists:
    

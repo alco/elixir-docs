@@ -77,7 +77,7 @@ Name Registration
 ~~~~~~~~~~~~~~~~~
 
 An Agent is bound to the same name registration rules as GenServers.
-Read more about it in the ```GenServer`` <GenServer.html>`__ docs.
+Read more about it in the :elixir:mod:`GenServer` docs.
 
 A word on distributed agents
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -260,7 +260,7 @@ Functions
    
    Starts an agent process without links (outside of a supervision tree).
    
-   See ```start_link/2`` <#start_link/2>`__ for more information.
+   See :elixir:func:`start_link/2` for more information.
    
    
 
@@ -297,8 +297,7 @@ Functions
    invoked.
    
    If the ``:spawn_opt`` option is present, its value will be passed as
-   options to the underlying process as in
-   ```Process.spawn/4`` <Process.html#spawn/4>`__.
+   options to the underlying process as in :elixir:func:`Process.spawn/4`.
    
    **Return values**
    

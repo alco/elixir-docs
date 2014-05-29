@@ -17,7 +17,7 @@ string or a list of characters / string) and will always return a string
 
 The majority of the functions in this module do not interact with the
 file system, except for a few functions that require it (like
-```wildcard/1`` <#wildcard/1>`__ and ```expand/1`` <#expand/1>`__).
+:elixir:func:`wildcard/1` and :elixir:func:`expand/1`).
 
 
 
@@ -27,9 +27,9 @@ Summary
 -------
 
 ================================ =
-:elixir:func:`absname/1`         Converts the given path to an absolute one. Unlike ```expand/1`` <#expand/1>`__, no attempt is made to resolve ``..``, ``.`` or ``~`` 
+:elixir:func:`absname/1`         Converts the given path to an absolute one. Unlike :elixir:func:`expand/1`, no attempt is made to resolve ``..``, ``.`` or ``~`` 
 
-:elixir:func:`absname/2`         Builds a path from ``relative_to`` to ``path``. If ``path`` is already an absolute path, ``relative_to`` is ignored. See also ```relative_to/2`` <#relative_to/2>`__ 
+:elixir:func:`absname/2`         Builds a path from ``relative_to`` to ``path``. If ``path`` is already an absolute path, ``relative_to`` is ignored. See also :elixir:func:`relative_to/2` 
 
 :elixir:func:`basename/1`        Returns the last component of the path or the path itself if it does not contain any directory separators 
 
@@ -92,9 +92,8 @@ Functions
  
 
    
-   Converts the given path to an absolute one. Unlike
-   ```expand/1`` <#expand/1>`__, no attempt is made to resolve ``..``,
-   ``.`` or ``~``.
+   Converts the given path to an absolute one. Unlike :elixir:func:`expand/1`, no
+   attempt is made to resolve ``..``, ``.`` or ``~``.
    
    **Unix examples**
    
@@ -131,10 +130,10 @@ Functions
    
    Builds a path from ``relative_to`` to ``path``. If ``path`` is already
    an absolute path, ``relative_to`` is ignored. See also
-   ```relative_to/2`` <#relative_to/2>`__.
+   :elixir:func:`relative_to/2`.
    
-   Unlike ```expand/2`` <#expand/2>`__, no attempt is made to resolve
-   ``..``, ``.`` or ``~``.
+   Unlike :elixir:func:`expand/2`, no attempt is made to resolve ``..``, ``.`` or
+   ``~``.
    
    **Examples**
    

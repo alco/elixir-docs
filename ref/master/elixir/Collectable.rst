@@ -10,17 +10,16 @@ Overview
 
 A protocol to traverse data structures.
 
-The ```Enum.into/2`` <Enum.html#into/2>`__ function uses this protocol
-to insert an enumerable into a collection:
+The :elixir:func:`Enum.into/2` function uses this protocol to insert an enumerable
+into a collection:
 
 ::
 
     iex> Enum.into([a: 1, b: 2], %{})
     %{a: 1, b: 2}
 
-If a collection implements both ```Enumerable`` <Enumerable.html>`__ and
-```Collectable`` <Collectable.html>`__, both operations can be combined
-with ```Enum.traverse/2`` <Enum.html#traverse/2>`__:
+If a collection implements both :elixir:mod:`Enumerable` and :elixir:mod:`Collectable`, both
+operations can be combined with :elixir:func:`Enum.traverse/2`:
 
 ::
 
@@ -30,33 +29,27 @@ with ```Enum.traverse/2`` <Enum.html#traverse/2>`__:
 Why Collectable?
 ~~~~~~~~~~~~~~~~
 
-The ```Enumerable`` <Enumerable.html>`__ protocol is useful to take
-values out of a collection. In order to support a wide range of values,
-the functions provided by the ```Enumerable`` <Enumerable.html>`__
-protocol do not keep shape. For example, passing a dictionary to
-```Enum.map/2`` <Enum.html#map/2>`__ always returns a list.
+The :elixir:mod:`Enumerable` protocol is useful to take values out of a
+collection. In order to support a wide range of values, the functions
+provided by the :elixir:mod:`Enumerable` protocol do not keep shape. For example,
+passing a dictionary to :elixir:func:`Enum.map/2` always returns a list.
 
-This design is intentional. ```Enumerable`` <Enumerable.html>`__ was
-designed to support infinite collections, resources and other structures
-with fixed shape. For example, it doesn't make sense to insert values
-into a range, as it has a fixed shape where just the range limits are
-stored.
+This design is intentional. :elixir:mod:`Enumerable` was designed to support
+infinite collections, resources and other structures with fixed shape.
+For example, it doesn't make sense to insert values into a range, as it
+has a fixed shape where just the range limits are stored.
 
-The ```Collectable`` <Collectable.html>`__ module was designed to fill
-the gap left by the ```Enumerable`` <Enumerable.html>`__ protocol. It
-provides two functions: ```into/1`` <#into/1>`__ and
-```empty/1`` <#empty/1>`__.
+The :elixir:mod:`Collectable` module was designed to fill the gap left by the
+:elixir:mod:`Enumerable` protocol. It provides two functions: :elixir:func:`into/1` and
+:elixir:func:`empty/1`.
 
-```into/1`` <#into/1>`__ can be seen as the opposite of
-```Enumerable.reduce/3`` <Enumerable.html#reduce/3>`__. If
-```Enumerable`` <Enumerable.html>`__ is about taking values out,
-```Collectable.into/1`` <Collectable.html#into/1>`__ is about collecting
-those values into a structure.
+:elixir:func:`into/1` can be seen as the opposite of :elixir:func:`Enumerable.reduce/3`. If
+:elixir:mod:`Enumerable` is about taking values out, :elixir:func:`Collectable.into/1` is
+about collecting those values into a structure.
 
-```empty/1`` <#empty/1>`__ receives a collectable and returns an empty
-version of the same collectable. By combining the enumerable
-functionality with ```into/1`` <#into/1>`__ and
-```empty/1`` <#empty/1>`__, one can, for example, implement a traversal
+:elixir:func:`empty/1` receives a collectable and returns an empty version of the
+same collectable. By combining the enumerable functionality with
+:elixir:func:`into/1` and :elixir:func:`empty/1`, one can, for example, implement a traversal
 mechanism.
 
 

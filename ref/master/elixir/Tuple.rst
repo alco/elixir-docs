@@ -48,8 +48,8 @@ Functions
    Removes an element from a tuple.
    
    Deletes the element at the zero-based ``index`` from ``tuple``. Raises
-   an ```ArgumentError`` <ArgumentError.html>`__ if ``index`` is greater
-   than or equal to the length of ``tuple``.
+   an :elixir:mod:`ArgumentError` if ``index`` is greater than or equal to the length
+   of ``tuple``.
    
    Inlined by the compiler.
    
@@ -106,8 +106,8 @@ Functions
    Inserts an element into a tuple.
    
    Inserts ``value`` into ``tuple`` at the given zero-based ``index``.
-   Raises an ```ArgumentError`` <ArgumentError.html>`__ if ``index`` is
-   greater than the length of ``tuple``.
+   Raises an :elixir:mod:`ArgumentError` if ``index`` is greater than the length of
+   ``tuple``.
    
    Inlined by the compiler.
    

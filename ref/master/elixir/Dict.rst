@@ -20,15 +20,14 @@ type:
 
     HashDict.new  #=> creates an empty HashDict
 
-In the examples below, ``dict_impl`` means a specific
-```Dict`` <Dict.html>`__ implementation, for example
-```HashDict`` <HashDict.html>`__ or ```Map`` <Map.html>`__.
+In the examples below, ``dict_impl`` means a specific :elixir:mod:`Dict`
+implementation, for example :elixir:mod:`HashDict` or :elixir:mod:`Map`.
 
 Protocols
 ~~~~~~~~~
 
 Besides implementing the functions in this module, all dictionaries are
-required to implement the ```Access`` <Access.html>`__ protocol:
+required to implement the :elixir:mod:`Access` protocol:
 
 ::
 
@@ -37,8 +36,7 @@ required to implement the ```Access`` <Access.html>`__ protocol:
     iex> dict[:hello]
     :world
 
-As well as the ```Enumerable`` <Enumerable.html>`__ and
-```Collectable`` <Collectable.html>`__ protocols.
+As well as the :elixir:mod:`Enumerable` and :elixir:mod:`Collectable` protocols.
 
 Match
 ~~~~~
@@ -49,8 +47,8 @@ Dictionaries are required to implement all operations using the match
 Default implementation
 ~~~~~~~~~~~~~~~~~~~~~~
 
-Default implementations for some functions in the
-```Dict`` <Dict.html>`__ module are provided via ``use Dict``.
+Default implementations for some functions in the :elixir:mod:`Dict` module are
+provided via ``use Dict``.
 
 For example:
 
@@ -66,42 +64,41 @@ For example:
 
 The client module must contain the following functions:
 
--  ```delete/2`` <#delete/2>`__
--  ```fetch/2`` <#fetch/2>`__
--  ```put/3`` <#put/3>`__
+-  :elixir:func:`delete/2`
+-  :elixir:func:`fetch/2`
+-  :elixir:func:`put/3`
 -  ``reduce/3``
--  ```size/1`` <#size/1>`__
+-  :elixir:func:`size/1`
 
 All functions, except ``reduce/3``, are required by the Dict behaviour.
 ``reduce/3`` must be implemtented as per the Enumerable protocol.
 
-Based on these functions, ```Dict`` <Dict.html>`__ generates default
-implementations for the following functions:
+Based on these functions, :elixir:mod:`Dict` generates default implementations for
+the following functions:
 
--  ```drop/2`` <#drop/2>`__
--  ```equal?/2`` <#equal?/2>`__
--  ```fetch!/2`` <#fetch!/2>`__
--  ```get/2`` <#get/2>`__
--  ```get/3`` <#get/3>`__
--  ```has_key?/2`` <#has_key?/2>`__
--  ```keys/1`` <#keys/1>`__
--  ```merge/2`` <#merge/2>`__
--  ```merge/3`` <#merge/3>`__
--  ```pop/2`` <#pop/2>`__
--  ```pop/3`` <#pop/3>`__
--  ```put_new/3`` <#put_new/3>`__
--  ```split/2`` <#split/2>`__
--  ```take/2`` <#take/2>`__
--  ```to_list/1`` <#to_list/1>`__
--  ```update/4`` <#update/4>`__
--  ```update!/3`` <#update!/3>`__
--  ```values/1`` <#values/1>`__
+-  :elixir:func:`drop/2`
+-  :elixir:func:`equal?/2`
+-  :elixir:func:`fetch!/2`
+-  :elixir:func:`get/2`
+-  :elixir:func:`get/3`
+-  :elixir:func:`has_key?/2`
+-  :elixir:func:`keys/1`
+-  :elixir:func:`merge/2`
+-  :elixir:func:`merge/3`
+-  :elixir:func:`pop/2`
+-  :elixir:func:`pop/3`
+-  :elixir:func:`put_new/3`
+-  :elixir:func:`split/2`
+-  :elixir:func:`take/2`
+-  :elixir:func:`to_list/1`
+-  :elixir:func:`update/4`
+-  :elixir:func:`update!/3`
+-  :elixir:func:`values/1`
 
 All of these functions are defined as overridable, so you can provide
 your own implementation if needed.
 
-Note you can also test your custom module via ```Dict`` <Dict.html>`__'s
-doctests:
+Note you can also test your custom module via :elixir:mod:`Dict`'s doctests:
 
 ::
 
@@ -130,7 +127,7 @@ Summary
 
 :elixir:func:`equal?/2`   Check if two dicts are equal using ``===`` 
 
-:elixir:func:`fetch!/2`   Returns the value associated with ``key`` in ``dict``. If ``dict`` does not contain ``key``, it raises ```KeyError`` <KeyError.html>`__ 
+:elixir:func:`fetch!/2`   Returns the value associated with ``key`` in ``dict``. If ``dict`` does not contain ``key``, it raises :elixir:mod:`KeyError` 
 
 :elixir:func:`fetch/2`    Returns ``{:ok, value}`` associated with ``key`` in ``dict``. If ``dict`` does not contain ``key``, returns ``:error`` 
 
@@ -324,7 +321,7 @@ Functions
 
    
    Returns the value associated with ``key`` in ``dict``. If ``dict`` does
-   not contain ``key``, it raises ```KeyError`` <KeyError.html>`__.
+   not contain ``key``, it raises :elixir:mod:`KeyError`.
    
    **Examples**
    

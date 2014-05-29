@@ -20,8 +20,8 @@ When used, it accepts the following options:
    change any global state;
 
 This module automatically includes all callbacks defined in
-```ExUnit.Callbacks`` <ExUnit.Callbacks.html>`__. See that module's
-documentation for more information.
+:elixir:mod:`ExUnit.Callbacks`. See that module's documentation for more
+information.
 
 Examples
 ~~~~~~~~
@@ -117,8 +117,8 @@ working directory that is reverted to after the test in the teardown
 callback.
 
 Tags are also very effective when used with case templates
-(```ExUnit.CaseTemplate`` <ExUnit.CaseTemplate.html>`__) allowing
-callbacks in the case template to customize the test behaviour.
+(:elixir:mod:`ExUnit.CaseTemplate`) allowing callbacks in the case template to
+customize the test behaviour.
 
 Note a tag can be set in two different ways:
 
@@ -158,7 +158,7 @@ Filters
 Tags can also be used to identify specific tests, which can then be
 included or excluded using filters. The most common functionality is to
 exclude some particular tests from running, which can be done via
-```ExUnit.configure/1`` <ExUnit.html#configure/1>`__:
+:elixir:func:`ExUnit.configure/1`:
 
 ::
 

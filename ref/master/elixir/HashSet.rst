@@ -10,16 +10,16 @@ Overview
 
 A set store.
 
-The ```HashSet`` <HashSet.html>`__ is represented internally as a
-struct, therefore ``%HashSet{}`` can be used whenever there is a need to
-match on any ```HashSet`` <HashSet.html>`__. Note though the struct
-fields are private and must not be accessed directly. Instead, use the
-functions on this or in the ```Set`` <Set.html>`__ module.
+The :elixir:mod:`HashSet` is represented internally as a struct, therefore
+``%HashSet{}`` can be used whenever there is a need to match on any
+:elixir:mod:`HashSet`. Note though the struct fields are private and must not be
+accessed directly. Instead, use the functions on this or in the :elixir:mod:`Set`
+module.
 
-The ```HashSet`` <HashSet.html>`__ is implemented using tries, which
-grows in space as the number of keys grows, working well with both small
-and large set of keys. For more information about the functions and
-their APIs, please consult the ```Set`` <Set.html>`__ module.
+The :elixir:mod:`HashSet` is implemented using tries, which grows in space as the
+number of keys grows, working well with both small and large set of
+keys. For more information about the functions and their APIs, please
+consult the :elixir:mod:`Set` module.
 
 
 
@@ -29,29 +29,29 @@ Summary
 -------
 
 ============================= =
-:elixir:func:`delete/2`       Callback implementation of ```Set.delete/2`` <Set.html#delete/2>`__ 
+:elixir:func:`delete/2`       Callback implementation of :elixir:func:`Set.delete/2` 
 
-:elixir:func:`difference/2`   Callback implementation of ```Set.difference/2`` <Set.html#difference/2>`__ 
+:elixir:func:`difference/2`   Callback implementation of :elixir:func:`Set.difference/2` 
 
-:elixir:func:`disjoint?/2`    Callback implementation of ```Set.disjoint?/2`` <Set.html#disjoint?/2>`__ 
+:elixir:func:`disjoint?/2`    Callback implementation of :elixir:func:`Set.disjoint?/2` 
 
-:elixir:func:`equal?/2`       Callback implementation of ```Set.equal?/2`` <Set.html#equal?/2>`__ 
+:elixir:func:`equal?/2`       Callback implementation of :elixir:func:`Set.equal?/2` 
 
-:elixir:func:`intersection/2` Callback implementation of ```Set.intersection/2`` <Set.html#intersection/2>`__ 
+:elixir:func:`intersection/2` Callback implementation of :elixir:func:`Set.intersection/2` 
 
-:elixir:func:`member?/2`      Callback implementation of ```Set.member?/2`` <Set.html#member?/2>`__ 
+:elixir:func:`member?/2`      Callback implementation of :elixir:func:`Set.member?/2` 
 
 :elixir:func:`new/0`          Creates a new empty set 
 
-:elixir:func:`put/2`          Callback implementation of ```Set.put/2`` <Set.html#put/2>`__ 
+:elixir:func:`put/2`          Callback implementation of :elixir:func:`Set.put/2` 
 
-:elixir:func:`size/1`         Callback implementation of ```Set.size/1`` <Set.html#size/1>`__ 
+:elixir:func:`size/1`         Callback implementation of :elixir:func:`Set.size/1` 
 
-:elixir:func:`subset?/2`      Callback implementation of ```Set.subset?/2`` <Set.html#subset?/2>`__ 
+:elixir:func:`subset?/2`      Callback implementation of :elixir:func:`Set.subset?/2` 
 
-:elixir:func:`to_list/1`      Callback implementation of ```Set.to_list/1`` <Set.html#to_list/1>`__ 
+:elixir:func:`to_list/1`      Callback implementation of :elixir:func:`Set.to_list/1` 
 
-:elixir:func:`union/2`        Callback implementation of ```Set.union/2`` <Set.html#union/2>`__ 
+:elixir:func:`union/2`        Callback implementation of :elixir:func:`Set.union/2` 
 ============================= =
 
 
@@ -76,7 +76,7 @@ Functions
 
 
    
-   Callback implementation of ```Set.delete/2`` <Set.html#delete/2>`__.
+   Callback implementation of :elixir:func:`Set.delete/2`.
    
    
 
@@ -85,8 +85,7 @@ Functions
 
 
    
-   Callback implementation of
-   ```Set.difference/2`` <Set.html#difference/2>`__.
+   Callback implementation of :elixir:func:`Set.difference/2`.
    
    
 
@@ -95,8 +94,7 @@ Functions
 
 
    
-   Callback implementation of
-   ```Set.disjoint?/2`` <Set.html#disjoint?/2>`__.
+   Callback implementation of :elixir:func:`Set.disjoint?/2`.
    
    
 
@@ -105,7 +103,7 @@ Functions
 
 
    
-   Callback implementation of ```Set.equal?/2`` <Set.html#equal?/2>`__.
+   Callback implementation of :elixir:func:`Set.equal?/2`.
    
    
 
@@ -114,8 +112,7 @@ Functions
 
 
    
-   Callback implementation of
-   ```Set.intersection/2`` <Set.html#intersection/2>`__.
+   Callback implementation of :elixir:func:`Set.intersection/2`.
    
    
 
@@ -124,7 +121,7 @@ Functions
 
 
    
-   Callback implementation of ```Set.member?/2`` <Set.html#member?/2>`__.
+   Callback implementation of :elixir:func:`Set.member?/2`.
    
    
 
@@ -148,7 +145,7 @@ Functions
 
 
    
-   Callback implementation of ```Set.put/2`` <Set.html#put/2>`__.
+   Callback implementation of :elixir:func:`Set.put/2`.
    
    
 
@@ -157,7 +154,7 @@ Functions
 
 
    
-   Callback implementation of ```Set.size/1`` <Set.html#size/1>`__.
+   Callback implementation of :elixir:func:`Set.size/1`.
    
    
 
@@ -166,7 +163,7 @@ Functions
 
 
    
-   Callback implementation of ```Set.subset?/2`` <Set.html#subset?/2>`__.
+   Callback implementation of :elixir:func:`Set.subset?/2`.
    
    
 
@@ -175,7 +172,7 @@ Functions
 
 
    
-   Callback implementation of ```Set.to_list/1`` <Set.html#to_list/1>`__.
+   Callback implementation of :elixir:func:`Set.to_list/1`.
    
    
 
@@ -184,7 +181,7 @@ Functions
 
 
    
-   Callback implementation of ```Set.union/2`` <Set.html#union/2>`__.
+   Callback implementation of :elixir:func:`Set.union/2`.
    
    
 

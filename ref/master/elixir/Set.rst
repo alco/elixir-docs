@@ -20,15 +20,14 @@ To create a new set, use the ``new`` functions defined by each set type:
 
     HashSet.new  #=> creates an empty HashSet
 
-In the examples below, ``set_impl`` means a specific
-```Set`` <Set.html>`__ implementation, for example
-```HashSet`` <HashSet.html>`__.
+In the examples below, ``set_impl`` means a specific :elixir:mod:`Set`
+implementation, for example :elixir:mod:`HashSet`.
 
 Protocols
 ~~~~~~~~~
 
-Sets are required to implement both ```Enumerable`` <Enumerable.html>`__
-and ```Collectable`` <Collectable.html>`__ protocols.
+Sets are required to implement both :elixir:mod:`Enumerable` and :elixir:mod:`Collectable`
+protocols.
 
 Match
 ~~~~~

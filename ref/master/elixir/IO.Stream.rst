@@ -8,9 +8,8 @@ IO.Stream
 Overview
 --------
 
-Defines a ```IO.Stream`` <IO.Stream.html>`__ struct returned by
-```IO.stream/2`` <IO.html#stream/2>`__ and
-```IO.binstream/2`` <IO.html#binstream/2>`__.
+Defines a :elixir:mod:`IO.Stream` struct returned by :elixir:func:`IO.stream/2` and
+:elixir:func:`IO.binstream/2`.
 
 The following fields are public:
 

@@ -92,8 +92,7 @@ Functions
    a map with one entry for each key-value pair. Each key and value will be
    a binary. Keys and values will be percent-unescaped.
    
-   Use ```query_decoder/1`` <#query_decoder/1>`__ if you want to iterate
-   over each value manually.
+   Use :elixir:func:`query_decoder/1` if you want to iterate over each value manually.
    
    **Examples**
    
@@ -113,7 +112,7 @@ Functions
    Returns the default port for a given scheme.
    
    If the scheme is unknown to URI, returns ``nil``. Any scheme may be
-   registered via ```default_port/2`` <#default_port/2>`__.
+   registered via :elixir:func:`default_port/2`.
    
    **Examples**
    
@@ -166,11 +165,10 @@ Functions
    
    Takes an enumerable (containing a sequence of two-item tuples) and
    returns a string of the form "key1=value1&key2=value2..." where keys and
-   values are URL encoded as per ```encode/1`` <#encode/1>`__.
+   values are URL encoded as per :elixir:func:`encode/1`.
    
-   Keys and values can be any term that implements the
-   ```String.Chars`` <String.Chars.html>`__ protocol, except lists which
-   are explicitly forbidden.
+   Keys and values can be any term that implements the :elixir:mod:`String.Chars`
+   protocol, except lists which are explicitly forbidden.
    
    **Examples**
    
@@ -201,9 +199,8 @@ Functions
    
    URIs have portions that are handled specially for the particular scheme
    of the URI. For example, http and https have different default ports.
-   Such values can be accessed and registered via
-   ```URI.default_port/1`` <URI.html#default_port/1>`__ and
-   ```URI.default_port/2`` <URI.html#default_port/2>`__.
+   Such values can be accessed and registered via :elixir:func:`URI.default_port/1`
+   and :elixir:func:`URI.default_port/2`.
    
    **Examples**
    

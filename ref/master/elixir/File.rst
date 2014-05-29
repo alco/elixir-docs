@@ -11,24 +11,22 @@ Overview
 This module contains functions to manipulate files.
 
 Some of those functions are low-level, allowing the user to interact
-with the file or IO devices, like ```open/2`` <#open/2>`__,
-```copy/3`` <#copy/3>`__ and others. This module also provides higher
-level functions that work with filenames and have their naming based on
-UNIX variants. For example, one can copy a file via ```cp/3`` <#cp/3>`__
-and remove files and directories recursively via
-```rm_rf/1`` <#rm_rf/1>`__
+with the file or IO devices, like :elixir:func:`open/2`, :elixir:func:`copy/3` and others.
+This module also provides higher level functions that work with
+filenames and have their naming based on UNIX variants. For example, one
+can copy a file via :elixir:func:`cp/3` and remove files and directories
+recursively via :elixir:func:`rm_rf/1`
 
 Encoding
 ~~~~~~~~
 
 In order to write and read files, one must use the functions in the
-```IO`` <IO.html>`__ module. By default, a file is opened in binary mode
-which requires the functions ```IO.binread/2`` <IO.html#binread/2>`__
-and ```IO.binwrite/2`` <IO.html#binwrite/2>`__ to interact with the
-file. A developer may pass ``:utf8`` as an option when opening the file,
-then the slower ```IO.read/2`` <IO.html#read/2>`__ and
-```IO.write/2`` <IO.html#write/2>`__ functions must be used as they are
-responsible for doing the proper conversions and data guarantees.
+:elixir:mod:`IO` module. By default, a file is opened in binary mode which
+requires the functions :elixir:func:`IO.binread/2` and :elixir:func:`IO.binwrite/2` to
+interact with the file. A developer may pass ``:utf8`` as an option when
+opening the file, then the slower :elixir:func:`IO.read/2` and :elixir:func:`IO.write/2`
+functions must be used as they are responsible for doing the proper
+conversions and data guarantees.
 
 Note that filenames when given as char lists in Elixir are always
 treated as UTF-8. In particular, we expect that the shell and the
@@ -89,39 +87,39 @@ Summary
 -------
 
 ============================ =
-:elixir:func:`cd!/1`         The same as ```cd/1`` <#cd/1>`__, but raises an exception if it fails 
+:elixir:func:`cd!/1`         The same as :elixir:func:`cd/1`, but raises an exception if it fails 
 
 :elixir:func:`cd!/2`         Changes the current directory to the given ``path``, executes the given function and then revert back to the previous path regardless if there is an exception 
 
 :elixir:func:`cd/1`          Sets the current working directory 
 
-:elixir:func:`chgrp!/2`      Same as ```chgrp/2`` <#chgrp/2>`__, but raises an exception in case of failure. Otherwise ``:ok`` 
+:elixir:func:`chgrp!/2`      Same as :elixir:func:`chgrp/2`, but raises an exception in case of failure. Otherwise ``:ok`` 
 
 :elixir:func:`chgrp/2`       Changes the user group given by the group id ``gid`` for a given ``file``. Returns ``:ok`` on success, or ``{:error, reason}`` on failure 
 
-:elixir:func:`chmod!/2`      Same as ```chmod/2`` <#chmod/2>`__, but raises an exception in case of failure. Otherwise ``:ok`` 
+:elixir:func:`chmod!/2`      Same as :elixir:func:`chmod/2`, but raises an exception in case of failure. Otherwise ``:ok`` 
 
 :elixir:func:`chmod/2`       Changes the unix file ``mode`` for a given ``file``. Returns ``:ok`` on success, or ``{:error, reason}`` on failure 
 
-:elixir:func:`chown!/2`      Same as ```chown/2`` <#chown/2>`__, but raises an exception in case of failure. Otherwise ``:ok`` 
+:elixir:func:`chown!/2`      Same as :elixir:func:`chown/2`, but raises an exception in case of failure. Otherwise ``:ok`` 
 
 :elixir:func:`chown/2`       Changes the owner given by the user id ``uid`` for a given ``file``. Returns ``:ok`` on success, or ``{:error, reason}`` on failure 
 
 :elixir:func:`close/1`       Closes the file referenced by ``io_device``. It mostly returns ``:ok``, except for some severe errors such as out of memory 
 
-:elixir:func:`copy!/3`       The same as ```copy/3`` <#copy/3>`__ but raises an ```File.CopyError`` <File.CopyError.html>`__ if it fails. Returns the ``bytes_copied`` otherwise 
+:elixir:func:`copy!/3`       The same as :elixir:func:`copy/3` but raises an :elixir:mod:`File.CopyError` if it fails. Returns the ``bytes_copied`` otherwise 
 
 :elixir:func:`copy/3`        Copies the contents of ``source`` to ``destination`` 
 
-:elixir:func:`cp!/3`         The same as ```cp/3`` <#cp/3>`__, but raises ```File.CopyError`` <File.CopyError.html>`__ if it fails. Returns the list of copied files otherwise 
+:elixir:func:`cp!/3`         The same as :elixir:func:`cp/3`, but raises :elixir:mod:`File.CopyError` if it fails. Returns the list of copied files otherwise 
 
 :elixir:func:`cp/3`          Copies the contents in ``source`` to ``destination`` preserving its mode 
 
-:elixir:func:`cp_r!/3`       The same as ```cp_r/3`` <#cp_r/3>`__, but raises ```File.CopyError`` <File.CopyError.html>`__ if it fails. Returns the list of copied files otherwise 
+:elixir:func:`cp_r!/3`       The same as :elixir:func:`cp_r/3`, but raises :elixir:mod:`File.CopyError` if it fails. Returns the list of copied files otherwise 
 
 :elixir:func:`cp_r/3`        Copies the contents in source to destination 
 
-:elixir:func:`cwd!/0`        The same as ```cwd/0`` <#cwd/0>`__, but raises an exception if it fails 
+:elixir:func:`cwd!/0`        The same as :elixir:func:`cwd/0`, but raises an exception if it fails 
 
 :elixir:func:`cwd/0`         Gets the current working directory 
 
@@ -131,61 +129,61 @@ Summary
 
 :elixir:func:`ln_s/2`        Creates a symbolic link ``new`` to the file or directory ``existing`` 
 
-:elixir:func:`ls!/1`         The same as ```ls/1`` <#ls/1>`__ but raises ```File.Error`` <File.Error.html>`__ in case of an error 
+:elixir:func:`ls!/1`         The same as :elixir:func:`ls/1` but raises :elixir:mod:`File.Error` in case of an error 
 
 :elixir:func:`ls/1`          Returns list of files in the given directory 
 
-:elixir:func:`mkdir!/1`      Same as ```mkdir/1`` <#mkdir/1>`__, but raises an exception in case of failure. Otherwise ``:ok`` 
+:elixir:func:`mkdir!/1`      Same as :elixir:func:`mkdir/1`, but raises an exception in case of failure. Otherwise ``:ok`` 
 
 :elixir:func:`mkdir/1`       Tries to create the directory ``path``. Missing parent directories are not created. Returns ``:ok`` if successful, or ``{:error, reason}`` if an error occurs 
 
-:elixir:func:`mkdir_p!/1`    Same as ```mkdir_p/1`` <#mkdir_p/1>`__, but raises an exception in case of failure. Otherwise ``:ok`` 
+:elixir:func:`mkdir_p!/1`    Same as :elixir:func:`mkdir_p/1`, but raises an exception in case of failure. Otherwise ``:ok`` 
 
 :elixir:func:`mkdir_p/1`     Tries to create the directory ``path``. Missing parent directories are created. Returns ``:ok`` if successful, or ``{:error, reason}`` if an error occurs 
 
-:elixir:func:`open!/2`       Same as ```open/2`` <#open/2>`__ but raises an error if file could not be opened. Returns the ``io_device`` otherwise 
+:elixir:func:`open!/2`       Same as :elixir:func:`open/2` but raises an error if file could not be opened. Returns the ``io_device`` otherwise 
 
-:elixir:func:`open!/3`       Same as ```open/3`` <#open/3>`__ but raises an error if file could not be opened. Returns the function result otherwise 
+:elixir:func:`open!/3`       Same as :elixir:func:`open/3` but raises an error if file could not be opened. Returns the function result otherwise 
 
 :elixir:func:`open/2`        Opens the given ``path`` according to the given list of modes 
 
-:elixir:func:`open/3`        Similar to ```open/2`` <#open/2>`__ but expects a function as last argument 
+:elixir:func:`open/3`        Similar to :elixir:func:`open/2` but expects a function as last argument 
 
-:elixir:func:`read!/1`       Returns binary with the contents of the given filename or raises ```File.Error`` <File.Error.html>`__ if an error occurs 
+:elixir:func:`read!/1`       Returns binary with the contents of the given filename or raises :elixir:mod:`File.Error` if an error occurs 
 
 :elixir:func:`read/1`        Returns ``{:ok, binary}``, where ``binary`` is a binary data object that contains the contents of ``path``, or ``{:error, reason}`` if an error occurs 
 
 :elixir:func:`regular?/1`    Returns ``true`` if the path is a regular file 
 
-:elixir:func:`rm!/1`         Same as ```rm/1`` <#rm/1>`__, but raises an exception in case of failure. Otherwise ``:ok`` 
+:elixir:func:`rm!/1`         Same as :elixir:func:`rm/1`, but raises an exception in case of failure. Otherwise ``:ok`` 
 
 :elixir:func:`rm/1`          Tries to delete the file ``path``. Returns ``:ok`` if successful, or ``{:error, reason}`` if an error occurs 
 
-:elixir:func:`rm_rf!/1`      Same as ```rm_rf/1`` <#rm_rf/1>`__ but raises ```File.Error`` <File.Error.html>`__ in case of failures, otherwise the list of files or directories removed 
+:elixir:func:`rm_rf!/1`      Same as :elixir:func:`rm_rf/1` but raises :elixir:mod:`File.Error` in case of failures, otherwise the list of files or directories removed 
 
 :elixir:func:`rm_rf/1`       Remove files and directories recursively at the given ``path``. Symlinks are not followed but simply removed, non-existing files are simply ignored (i.e. doesn't make this function fail) 
 
-:elixir:func:`rmdir!/1`      Same as ```rmdir/1`` <#rmdir/1>`__, but raises an exception in case of failure. Otherwise ``:ok`` 
+:elixir:func:`rmdir!/1`      Same as :elixir:func:`rmdir/1`, but raises an exception in case of failure. Otherwise ``:ok`` 
 
 :elixir:func:`rmdir/1`       Tries to delete the dir at ``path``. Returns ``:ok`` if successful, or ``{:error, reason}`` if an error occurs 
 
-:elixir:func:`stat!/2`       Same as ```stat/2`` <#stat/2>`__ but returns the ```File.Stat`` <File.Stat.html>`__ directly and throws ```File.Error`` <File.Error.html>`__ if an error is returned 
+:elixir:func:`stat!/2`       Same as :elixir:func:`stat/2` but returns the :elixir:mod:`File.Stat` directly and throws :elixir:mod:`File.Error` if an error is returned 
 
-:elixir:func:`stat/2`        Returns information about the ``path``. If it exists, it returns a ``{:ok, info}`` tuple, where info is a ```File.Stat`` <File.Stat.html>`__ struct. Returns ``{:error, reason}`` with the same reasons as ```read/1`` <#read/1>`__ if a failure occurs 
+:elixir:func:`stat/2`        Returns information about the ``path``. If it exists, it returns a ``{:ok, info}`` tuple, where info is a :elixir:mod:`File.Stat` struct. Returns ``{:error, reason}`` with the same reasons as :elixir:func:`read/1` if a failure occurs 
 
-:elixir:func:`stream!/3`     Returns a ```File.Stream`` <File.Stream.html>`__ for the given ``path`` with the given ``modes`` 
+:elixir:func:`stream!/3`     Returns a :elixir:mod:`File.Stream` for the given ``path`` with the given ``modes`` 
 
-:elixir:func:`touch!/2`      Same as ```touch/2`` <#touch/2>`__ but raises an exception if it fails. Returns ``:ok`` otherwise 
+:elixir:func:`touch!/2`      Same as :elixir:func:`touch/2` but raises an exception if it fails. Returns ``:ok`` otherwise 
 
 :elixir:func:`touch/2`       Updates modification time (mtime) and access time (atime) of the given file. File is created if it doesnât exist 
 
-:elixir:func:`write!/3`      Same as ```write/3`` <#write/3>`__ but raises an exception if it fails, returns ``:ok`` otherwise 
+:elixir:func:`write!/3`      Same as :elixir:func:`write/3` but raises an exception if it fails, returns ``:ok`` otherwise 
 
 :elixir:func:`write/3`       Writes ``content`` to the file ``path`` 
 
-:elixir:func:`write_stat!/3` Same as ```write_stat/3`` <#write_stat/3>`__ but raises an exception if it fails. Returns ``:ok`` otherwise 
+:elixir:func:`write_stat!/3` Same as :elixir:func:`write_stat/3` but raises an exception if it fails. Returns ``:ok`` otherwise 
 
-:elixir:func:`write_stat/3`  Writes the given ```File.Stat`` <File.Stat.html>`__ back to the filesystem at the given path. Returns ``:ok`` or ``{:error, reason}`` 
+:elixir:func:`write_stat/3`  Writes the given :elixir:mod:`File.Stat` back to the filesystem at the given path. Returns ``:ok`` or ``{:error, reason}`` 
 ============================ =
 
 
@@ -243,7 +241,7 @@ Functions
  
 
    
-   The same as ```cd/1`` <#cd/1>`__, but raises an exception if it fails.
+   The same as :elixir:func:`cd/1`, but raises an exception if it fails.
    
    
 
@@ -294,8 +292,8 @@ Functions
  
 
    
-   Same as ```chgrp/2`` <#chgrp/2>`__, but raises an exception in case of
-   failure. Otherwise ``:ok``.
+   Same as :elixir:func:`chgrp/2`, but raises an exception in case of failure.
+   Otherwise ``:ok``.
    
    
 
@@ -326,8 +324,8 @@ Functions
  
 
    
-   Same as ```chmod/2`` <#chmod/2>`__, but raises an exception in case of
-   failure. Otherwise ``:ok``.
+   Same as :elixir:func:`chmod/2`, but raises an exception in case of failure.
+   Otherwise ``:ok``.
    
    
 
@@ -358,8 +356,8 @@ Functions
  
 
    
-   Same as ```chown/2`` <#chown/2>`__, but raises an exception in case of
-   failure. Otherwise ``:ok``.
+   Same as :elixir:func:`chown/2`, but raises an exception in case of failure.
+   Otherwise ``:ok``.
    
    
 
@@ -378,8 +376,8 @@ Functions
    except for some severe errors such as out of memory.
    
    Note that if the option ``:delayed_write`` was used when opening the
-   file, ```close/1`` <#close/1>`__ might return an old write error and not
-   even try to close the file. See ```open/2`` <#open/2>`__.
+   file, :elixir:func:`close/1` might return an old write error and not even try to
+   close the file. See :elixir:func:`open/2`.
    
    
 
@@ -397,8 +395,8 @@ Functions
    Copies the contents of ``source`` to ``destination``.
    
    Both parameters can be a filename or an io device opened with
-   ```open/2`` <#open/2>`__. ``bytes_count`` specifies the number of bytes
-   to copy, the default being ``:infinity``.
+   :elixir:func:`open/2`. ``bytes_count`` specifies the number of bytes to copy, the
+   default being ``:infinity``.
    
    If file ``destination`` already exists, it is overwritten by the
    contents in ``source``.
@@ -406,14 +404,13 @@ Functions
    Returns ``{:ok, bytes_copied}`` if successful, ``{:error, reason}``
    otherwise.
    
-   Compared to the ```cp/3`` <#cp/3>`__, this function is more low-level,
-   allowing a copy from device to device limited by a number of bytes. On
-   the other hand, ```cp/3`` <#cp/3>`__ performs more extensive checks on
-   both source and destination and it also preserves the file mode after
-   copy.
+   Compared to the :elixir:func:`cp/3`, this function is more low-level, allowing a
+   copy from device to device limited by a number of bytes. On the other
+   hand, :elixir:func:`cp/3` performs more extensive checks on both source and
+   destination and it also preserves the file mode after copy.
    
-   Typical error reasons are the same as in ```open/2`` <#open/2>`__,
-   ```read/1`` <#read/1>`__ and ```write/3`` <#write/3>`__.
+   Typical error reasons are the same as in :elixir:func:`open/2`, :elixir:func:`read/1` and
+   :elixir:func:`write/3`.
    
    
 
@@ -428,9 +425,8 @@ Functions
  
 
    
-   The same as ```copy/3`` <#copy/3>`__ but raises an
-   ```File.CopyError`` <File.CopyError.html>`__ if it fails. Returns the
-   ``bytes_copied`` otherwise.
+   The same as :elixir:func:`copy/3` but raises an :elixir:mod:`File.CopyError` if it fails.
+   Returns the ``bytes_copied`` otherwise.
    
    
 
@@ -457,7 +453,7 @@ Functions
    
    If you want to copy contents from an io device to another device or do a
    straight copy from a source to a destination without preserving modes,
-   check ```copy/3`` <#copy/3>`__ instead.
+   check :elixir:func:`copy/3` instead.
    
    Note: The command ``cp`` in Unix systems behaves differently depending
    if ``destination`` is an existing directory or not. We have chosen to
@@ -477,9 +473,8 @@ Functions
  
 
    
-   The same as ```cp/3`` <#cp/3>`__, but raises
-   ```File.CopyError`` <File.CopyError.html>`__ if it fails. Returns the
-   list of copied files otherwise.
+   The same as :elixir:func:`cp/3`, but raises :elixir:mod:`File.CopyError` if it fails. Returns
+   the list of copied files otherwise.
    
    
 
@@ -548,9 +543,8 @@ Functions
  
 
    
-   The same as ```cp_r/3`` <#cp_r/3>`__, but raises
-   ```File.CopyError`` <File.CopyError.html>`__ if it fails. Returns the
-   list of copied files otherwise.
+   The same as :elixir:func:`cp_r/3`, but raises :elixir:mod:`File.CopyError` if it fails.
+   Returns the list of copied files otherwise.
    
    
 
@@ -585,7 +579,7 @@ Functions
  
 
    
-   The same as ```cwd/0`` <#cwd/0>`__, but raises an exception if it fails.
+   The same as :elixir:func:`cwd/0`, but raises an exception if it fails.
    
    
 
@@ -676,8 +670,7 @@ Functions
  
 
    
-   The same as ```ls/1`` <#ls/1>`__ but raises
-   ```File.Error`` <File.Error.html>`__ in case of an error.
+   The same as :elixir:func:`ls/1` but raises :elixir:mod:`File.Error` in case of an error.
    
    
 
@@ -720,8 +713,8 @@ Functions
  
 
    
-   Same as ```mkdir/1`` <#mkdir/1>`__, but raises an exception in case of
-   failure. Otherwise ``:ok``.
+   Same as :elixir:func:`mkdir/1`, but raises an exception in case of failure.
+   Otherwise ``:ok``.
    
    
 
@@ -761,8 +754,8 @@ Functions
  
 
    
-   Same as ```mkdir_p/1`` <#mkdir_p/1>`__, but raises an exception in case
-   of failure. Otherwise ``:ok``.
+   Same as :elixir:func:`mkdir_p/1`, but raises an exception in case of failure.
+   Otherwise ``:ok``.
    
    
 
@@ -780,11 +773,10 @@ Functions
    Opens the given ``path`` according to the given list of modes.
    
    In order to write and read files, one must use the functions in the
-   ```IO`` <IO.html>`__ module. By default, a file is opened in binary mode
-   which requires the functions ```IO.binread/2`` <IO.html#binread/2>`__
-   and ```IO.binwrite/2`` <IO.html#binwrite/2>`__ to interact with the
-   file. A developer may pass ``:utf8`` as an option when opening the file
-   and then all other functions from ```IO`` <IO.html>`__ are available,
+   :elixir:mod:`IO` module. By default, a file is opened in binary mode which
+   requires the functions :elixir:func:`IO.binread/2` and :elixir:func:`IO.binwrite/2` to
+   interact with the file. A developer may pass ``:utf8`` as an option when
+   opening the file and then all other functions from :elixir:mod:`IO` are available,
    since they work directly with Unicode data.
    
    The allowed modes:
@@ -832,7 +824,7 @@ Functions
       opened the file. If any process to which the ``io_device`` is linked
       terminates, the file will be closed and the process itself will be
       terminated. An ``io_device`` returned from this call can be used as
-      an argument to the ```IO`` <IO.html>`__ module functions.
+      an argument to the :elixir:mod:`IO` module functions.
    
    -  ``{:error, reason}`` - The file could not be opened.
    
@@ -858,8 +850,7 @@ Functions
  
 
    
-   Similar to ```open/2`` <#open/2>`__ but expects a function as last
-   argument.
+   Similar to :elixir:func:`open/2` but expects a function as last argument.
    
    The file is opened, given to the function as argument and automatically
    closed after the function returns, regardless if there was an error or
@@ -893,8 +884,8 @@ Functions
  
 
    
-   Same as ```open/2`` <#open/2>`__ but raises an error if file could not
-   be opened. Returns the ``io_device`` otherwise.
+   Same as :elixir:func:`open/2` but raises an error if file could not be opened.
+   Returns the ``io_device`` otherwise.
    
    
 
@@ -909,8 +900,8 @@ Functions
  
 
    
-   Same as ```open/3`` <#open/3>`__ but raises an error if file could not
-   be opened. Returns the function result otherwise.
+   Same as :elixir:func:`open/3` but raises an error if file could not be opened.
+   Returns the function result otherwise.
    
    
 
@@ -939,9 +930,8 @@ Functions
       platforms, ``:enoent`` is returned instead.
    -  :enomem - There is not enough memory for the contents of the file.
    
-   You can use
-   ```:file.format_error/1`` <http://www.erlang.org/doc/man/file.html#format_error-1>`__
-   to get a descriptive string of the error.
+   You can use `[`:file.format_error/1`](http://www.erlang.org/doc/man/file.html#format_error-1)` to get a descriptive string of the
+   error.
    
    
 
@@ -957,7 +947,7 @@ Functions
 
    
    Returns binary with the contents of the given filename or raises
-   ```File.Error`` <File.Error.html>`__ if an error occurs.
+   :elixir:mod:`File.Error` if an error occurs.
    
    
 
@@ -1030,8 +1020,8 @@ Functions
  
 
    
-   Same as ```rm/1`` <#rm/1>`__, but raises an exception in case of
-   failure. Otherwise ``:ok``.
+   Same as :elixir:func:`rm/1`, but raises an exception in case of failure. Otherwise
+   ``:ok``.
    
    
 
@@ -1077,9 +1067,8 @@ Functions
  
 
    
-   Same as ```rm_rf/1`` <#rm_rf/1>`__ but raises
-   ```File.Error`` <File.Error.html>`__ in case of failures, otherwise the
-   list of files or directories removed.
+   Same as :elixir:func:`rm_rf/1` but raises :elixir:mod:`File.Error` in case of failures,
+   otherwise the list of files or directories removed.
    
    
 
@@ -1121,8 +1110,8 @@ Functions
  
 
    
-   Same as ```rmdir/1`` <#rmdir/1>`__, but raises an exception in case of
-   failure. Otherwise ``:ok``.
+   Same as :elixir:func:`rmdir/1`, but raises an exception in case of failure.
+   Otherwise ``:ok``.
    
    
 
@@ -1138,9 +1127,9 @@ Functions
 
    
    Returns information about the ``path``. If it exists, it returns a
-   ``{:ok, info}`` tuple, where info is a
-   ```File.Stat`` <File.Stat.html>`__ struct. Returns ``{:error, reason}``
-   with the same reasons as ```read/1`` <#read/1>`__ if a failure occurs.
+   ``{:ok, info}`` tuple, where info is a :elixir:mod:`File.Stat` struct. Returns
+   ``{:error, reason}`` with the same reasons as :elixir:func:`read/1` if a failure
+   occurs.
    
    **Options**
    
@@ -1163,9 +1152,8 @@ Functions
  
 
    
-   Same as ```stat/2`` <#stat/2>`__ but returns the
-   ```File.Stat`` <File.Stat.html>`__ directly and throws
-   ```File.Error`` <File.Error.html>`__ if an error is returned.
+   Same as :elixir:func:`stat/2` but returns the :elixir:mod:`File.Stat` directly and throws
+   :elixir:mod:`File.Error` if an error is returned.
    
    
 
@@ -1174,21 +1162,19 @@ Functions
 
 
    
-   Returns a ```File.Stream`` <File.Stream.html>`__ for the given ``path``
-   with the given ``modes``.
+   Returns a :elixir:mod:`File.Stream` for the given ``path`` with the given
+   ``modes``.
    
-   The stream implements both ```Enumerable`` <Enumerable.html>`__ and
-   ```Collectable`` <Collectable.html>`__ protocols, which means it can be
-   used both for read and write.
+   The stream implements both :elixir:mod:`Enumerable` and :elixir:mod:`Collectable` protocols,
+   which means it can be used both for read and write.
    
    The ``line_or_byte`` argument configures how the file is read when
    streaming, by ``:line`` (default) or by a given number of bytes.
    
    Operating the stream can fail on open for the same reasons as
-   ```File.open!/2`` <File.html#open!/2>`__. Note that the file is
-   automatically opened only and every time streaming begins. There is no
-   need to pass ``:read`` and ``:write`` modes, as those are automatically
-   set by Elixir.
+   :elixir:func:`File.open!/2`. Note that the file is automatically opened only and
+   every time streaming begins. There is no need to pass ``:read`` and
+   ``:write`` modes, as those are automatically set by Elixir.
    
    **Raw files**
    
@@ -1230,8 +1216,8 @@ Functions
  
 
    
-   Same as ```touch/2`` <#touch/2>`__ but raises an exception if it fails.
-   Returns ``:ok`` otherwise.
+   Same as :elixir:func:`touch/2` but raises an exception if it fails. Returns ``:ok``
+   otherwise.
    
    
 
@@ -1255,9 +1241,9 @@ Functions
    **Warning:** Every time this function is invoked, a file descriptor is
    opened and a new process is spawned to write to the file. For this
    reason, if you are doing multiple writes in a loop, opening the file via
-   ```File.open/2`` <File.html#open/2>`__ and using the functions in
-   ```IO`` <IO.html>`__ to write to the file will yield much better
-   performance then calling this function multiple times.
+   :elixir:func:`File.open/2` and using the functions in :elixir:mod:`IO` to write to the file
+   will yield much better performance then calling this function multiple
+   times.
    
    Typical error reasons are:
    
@@ -1270,7 +1256,7 @@ Functions
    -  :eisdir - The named file is a directory.
    
    The writing is automatically done in ``:raw`` mode. Check
-   ```File.open/2`` <File.html#open/2>`__ for other available options.
+   :elixir:func:`File.open/2` for other available options.
    
    
 
@@ -1285,8 +1271,8 @@ Functions
  
 
    
-   Same as ```write/3`` <#write/3>`__ but raises an exception if it fails,
-   returns ``:ok`` otherwise.
+   Same as :elixir:func:`write/3` but raises an exception if it fails, returns ``:ok``
+   otherwise.
    
    
 
@@ -1301,8 +1287,8 @@ Functions
  
 
    
-   Writes the given ```File.Stat`` <File.Stat.html>`__ back to the
-   filesystem at the given path. Returns ``:ok`` or ``{:error, reason}``.
+   Writes the given :elixir:mod:`File.Stat` back to the filesystem at the given path.
+   Returns ``:ok`` or ``{:error, reason}``.
    
    
 
@@ -1317,8 +1303,8 @@ Functions
  
 
    
-   Same as ```write_stat/3`` <#write_stat/3>`__ but raises an exception if
-   it fails. Returns ``:ok`` otherwise.
+   Same as :elixir:func:`write_stat/3` but raises an exception if it fails. Returns
+   ``:ok`` otherwise.
    
    
 
