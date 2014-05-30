@@ -59,11 +59,11 @@ The callbacks and their documentation can be retrieved via the
 Summary
 -------
 
-================================== =
-:elixir:macro:`defcallback/1`      Define a function callback according to the given type specification 
+================================= =
+:elixir:func:`defcallback/1`      Define a function callback according to the given type specification 
 
-:elixir:macro:`defmacrocallback/1` Define a macro callback according to the given type specification 
-================================== =
+:elixir:func:`defmacrocallback/1` Define a macro callback according to the given type specification 
+================================= =
 
 
 

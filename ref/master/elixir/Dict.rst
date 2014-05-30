@@ -127,7 +127,7 @@ Summary
 
 :elixir:func:`equal?/2`   Check if two dicts are equal using ``===`` 
 
-:elixir:func:`fetch!/2`   Returns the value associated with ``key`` in ``dict``. If ``dict`` does not contain ``key``, it raises :elixir:mod:`KeyError` 
+:elixir:func:`fetch\!/2`  Returns the value associated with ``key`` in ``dict``. If ``dict`` does not contain ``key``, it raises :elixir:mod:`KeyError` 
 
 :elixir:func:`fetch/2`    Returns ``{:ok, value}`` associated with ``key`` in ``dict``. If ``dict`` does not contain ``key``, returns ``:error`` 
 
@@ -153,7 +153,7 @@ Summary
 
 :elixir:func:`to_list/1`  Returns a list of key-value pairs stored in ``dict``. No particular order is enforced 
 
-:elixir:func:`update!/3`  Update a value in ``dict`` by calling ``fun`` on the value to get a new value. An exception is generated if ``key`` is not present in the dict 
+:elixir:func:`update\!/3` Update a value in ``dict`` by calling ``fun`` on the value to get a new value. An exception is generated if ``key`` is not present in the dict 
 
 :elixir:func:`update/4`   Update a value in ``dict`` by calling ``fun`` on the value to get a new value. If ``key`` is not present in ``dict`` then ``initial`` will be stored as the first value 
 

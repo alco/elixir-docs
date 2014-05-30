@@ -33,55 +33,55 @@ Elixir's constructs.
 Summary
 -------
 
-================================== =
-:elixir:macro:`%/2`                Creates a struct 
+================================= =
+:elixir:func:`%/2`                Creates a struct 
 
-:elixir:macro:`%{}/1`              Creates a map 
+:elixir:func:`%{}/1`              Creates a map 
 
-:elixir:macro:`&/1`                Captures or creates an anonymous function 
+:elixir:func:`&/1`                Captures or creates an anonymous function 
 
-:elixir:macro:`./2`                Defines a remote call or an alias 
+:elixir:func:`./2`                Defines a remote call or an alias 
 
-:elixir:macro:`<<>>/1`             Defines a new bitstring 
+:elixir:func:`<<>>/1`             Defines a new bitstring 
 
-:elixir:macro:`^/1`                Accesses an already bound variable in match clauses 
+:elixir:func:`^/1`                Accesses an already bound variable in match clauses 
 
-:elixir:macro:`__DIR__/0`          Returns the current directory as a binary 
+:elixir:func:`__DIR__/0`          Returns the current directory as a binary 
 
-:elixir:macro:`__ENV__/0`          Returns the current environment information as a :elixir:mod:`Macro.Env` struct 
+:elixir:func:`__ENV__/0`          Returns the current environment information as a :elixir:mod:`Macro.Env` struct 
 
-:elixir:macro:`__MODULE__/0`       Returns the current module name as an atom or ``nil`` otherwise 
+:elixir:func:`__MODULE__/0`       Returns the current module name as an atom or ``nil`` otherwise 
 
-:elixir:macro:`__aliases__/1`      Internal special form to hold aliases information 
+:elixir:func:`__aliases__/1`      Internal special form to hold aliases information 
 
-:elixir:macro:`__block__/1`        Internal special form for block expressions 
+:elixir:func:`__block__/1`        Internal special form for block expressions 
 
-:elixir:macro:`alias/2`            ``alias`` is used to setup aliases, often useful with modules names 
+:elixir:func:`alias/2`            ``alias`` is used to setup aliases, often useful with modules names 
 
-:elixir:macro:`case/2`             Matches the given expression against the given clauses 
+:elixir:func:`case/2`             Matches the given expression against the given clauses 
 
-:elixir:macro:`fn/1`               Defines an anonymous function 
+:elixir:func:`fn/1`               Defines an anonymous function 
 
-:elixir:macro:`for/1`              Comprehensions allow you to quickly build a data structure from an enumerable or a bitstring 
+:elixir:func:`for/1`              Comprehensions allow you to quickly build a data structure from an enumerable or a bitstring 
 
-:elixir:macro:`import/2`           Imports function and macros from other modules 
+:elixir:func:`import/2`           Imports function and macros from other modules 
 
-:elixir:macro:`quote/2`            Gets the representation of any expression 
+:elixir:func:`quote/2`            Gets the representation of any expression 
 
-:elixir:macro:`receive/1`          Checks if there is a message matching the given clauses in the current process mailbox 
+:elixir:func:`receive/1`          Checks if there is a message matching the given clauses in the current process mailbox 
 
-:elixir:macro:`require/2`          Requires a given module to be compiled and loaded 
+:elixir:func:`require/2`          Requires a given module to be compiled and loaded 
 
-:elixir:macro:`super/1`            Calls the overriden function when overriding it with ``defoverridable``. See ``Kernel.defoverridable`` for more information and documentation 
+:elixir:func:`super/1`            Calls the overriden function when overriding it with ``defoverridable``. See ``Kernel.defoverridable`` for more information and documentation 
 
-:elixir:macro:`try/1`              Evaluate the given expressions and handle any error, exit or throw that may have happened 
+:elixir:func:`try/1`              Evaluate the given expressions and handle any error, exit or throw that may have happened 
 
-:elixir:macro:`unquote/1`          Unquotes the given expression from inside a macro 
+:elixir:func:`unquote/1`          Unquotes the given expression from inside a macro 
 
-:elixir:macro:`unquote_splicing/1` Unquotes the given list expanding its arguments. Similar to unquote 
+:elixir:func:`unquote_splicing/1` Unquotes the given list expanding its arguments. Similar to unquote 
 
-:elixir:macro:`{}/1`               Creates a tuple 
-================================== =
+:elixir:func:`{}/1`               Creates a tuple 
+================================= =
 
 
 

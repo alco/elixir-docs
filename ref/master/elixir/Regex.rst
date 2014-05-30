@@ -92,7 +92,7 @@ Summary
 -------
 
 =============================== =
-:elixir:func:`compile!/2`       Compiles the regular expression according to the given options. Fails with :elixir:mod:`Regex.CompileError` if the regex cannot be compiled 
+:elixir:func:`compile\!/2`      Compiles the regular expression according to the given options. Fails with :elixir:mod:`Regex.CompileError` if the regex cannot be compiled 
 
 :elixir:func:`compile/2`        Compiles the regular expression 
 

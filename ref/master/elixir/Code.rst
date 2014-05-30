@@ -22,49 +22,49 @@ which is specific to Elixir.
 Summary
 -------
 
-================================== =
-:elixir:func:`append_path/1`       Append a path to the Erlang VM code path 
+=================================== =
+:elixir:func:`append_path/1`        Append a path to the Erlang VM code path 
 
-:elixir:func:`compile_quoted/2`    Compiles the quoted expression 
+:elixir:func:`compile_quoted/2`     Compiles the quoted expression 
 
-:elixir:func:`compile_string/2`    Compiles the given string 
+:elixir:func:`compile_string/2`     Compiles the given string 
 
-:elixir:func:`compiler_options/0`  Gets the compilation options from the code server 
+:elixir:func:`compiler_options/0`   Gets the compilation options from the code server 
 
-:elixir:func:`compiler_options/1`  Sets compilation options 
+:elixir:func:`compiler_options/1`   Sets compilation options 
 
-:elixir:func:`delete_path/1`       Delete a path from the Erlang VM code path 
+:elixir:func:`delete_path/1`        Delete a path from the Erlang VM code path 
 
-:elixir:func:`ensure_compiled/1`   Ensures the given module is compiled and loaded 
+:elixir:func:`ensure_compiled/1`    Ensures the given module is compiled and loaded 
 
-:elixir:func:`ensure_compiled?/1`  Ensures the given module is compiled and loaded 
+:elixir:func:`ensure_compiled?/1`   Ensures the given module is compiled and loaded 
 
-:elixir:func:`ensure_loaded/1`     Ensures the given module is loaded 
+:elixir:func:`ensure_loaded/1`      Ensures the given module is loaded 
 
-:elixir:func:`ensure_loaded?/1`    Ensures the given module is loaded 
+:elixir:func:`ensure_loaded?/1`     Ensures the given module is loaded 
 
-:elixir:func:`eval_file/2`         Evals the given file 
+:elixir:func:`eval_file/2`          Evals the given file 
 
-:elixir:func:`eval_quoted/3`       Evaluate the quoted contents 
+:elixir:func:`eval_quoted/3`        Evaluate the quoted contents 
 
-:elixir:func:`eval_string/3`       Evaluate the contents given by ``string`` 
+:elixir:func:`eval_string/3`        Evaluate the contents given by ``string`` 
 
-:elixir:func:`get_docs/2`          Returns the docs for the given module 
+:elixir:func:`get_docs/2`           Returns the docs for the given module 
 
-:elixir:func:`load_file/2`         Load the given file 
+:elixir:func:`load_file/2`          Load the given file 
 
-:elixir:func:`loaded_files/0`      List all loaded files 
+:elixir:func:`loaded_files/0`       List all loaded files 
 
-:elixir:func:`prepend_path/1`      Prepend a path to the Erlang VM code path 
+:elixir:func:`prepend_path/1`       Prepend a path to the Erlang VM code path 
 
-:elixir:func:`require_file/2`      Requires the given ``file`` 
+:elixir:func:`require_file/2`       Requires the given ``file`` 
 
-:elixir:func:`string_to_quoted!/2` Convert the given string to its quoted form 
+:elixir:func:`string_to_quoted\!/2` Convert the given string to its quoted form 
 
-:elixir:func:`string_to_quoted/2`  Convert the given string to its quoted form 
+:elixir:func:`string_to_quoted/2`   Convert the given string to its quoted form 
 
-:elixir:func:`unload_files/1`      Remove files from the loaded files list 
-================================== =
+:elixir:func:`unload_files/1`       Remove files from the loaded files list 
+=================================== =
 
 
 

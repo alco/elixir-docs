@@ -86,105 +86,105 @@ information about such options and other performance considerations.
 Summary
 -------
 
-============================ =
-:elixir:func:`cd!/1`         The same as :elixir:func:`cd/1`, but raises an exception if it fails 
+============================= =
+:elixir:func:`cd\!/1`         The same as :elixir:func:`cd/1`, but raises an exception if it fails 
 
-:elixir:func:`cd!/2`         Changes the current directory to the given ``path``, executes the given function and then revert back to the previous path regardless if there is an exception 
+:elixir:func:`cd\!/2`         Changes the current directory to the given ``path``, executes the given function and then revert back to the previous path regardless if there is an exception 
 
-:elixir:func:`cd/1`          Sets the current working directory 
+:elixir:func:`cd/1`           Sets the current working directory 
 
-:elixir:func:`chgrp!/2`      Same as :elixir:func:`chgrp/2`, but raises an exception in case of failure. Otherwise ``:ok`` 
+:elixir:func:`chgrp\!/2`      Same as :elixir:func:`chgrp/2`, but raises an exception in case of failure. Otherwise ``:ok`` 
 
-:elixir:func:`chgrp/2`       Changes the user group given by the group id ``gid`` for a given ``file``. Returns ``:ok`` on success, or ``{:error, reason}`` on failure 
+:elixir:func:`chgrp/2`        Changes the user group given by the group id ``gid`` for a given ``file``. Returns ``:ok`` on success, or ``{:error, reason}`` on failure 
 
-:elixir:func:`chmod!/2`      Same as :elixir:func:`chmod/2`, but raises an exception in case of failure. Otherwise ``:ok`` 
+:elixir:func:`chmod\!/2`      Same as :elixir:func:`chmod/2`, but raises an exception in case of failure. Otherwise ``:ok`` 
 
-:elixir:func:`chmod/2`       Changes the unix file ``mode`` for a given ``file``. Returns ``:ok`` on success, or ``{:error, reason}`` on failure 
+:elixir:func:`chmod/2`        Changes the unix file ``mode`` for a given ``file``. Returns ``:ok`` on success, or ``{:error, reason}`` on failure 
 
-:elixir:func:`chown!/2`      Same as :elixir:func:`chown/2`, but raises an exception in case of failure. Otherwise ``:ok`` 
+:elixir:func:`chown\!/2`      Same as :elixir:func:`chown/2`, but raises an exception in case of failure. Otherwise ``:ok`` 
 
-:elixir:func:`chown/2`       Changes the owner given by the user id ``uid`` for a given ``file``. Returns ``:ok`` on success, or ``{:error, reason}`` on failure 
+:elixir:func:`chown/2`        Changes the owner given by the user id ``uid`` for a given ``file``. Returns ``:ok`` on success, or ``{:error, reason}`` on failure 
 
-:elixir:func:`close/1`       Closes the file referenced by ``io_device``. It mostly returns ``:ok``, except for some severe errors such as out of memory 
+:elixir:func:`close/1`        Closes the file referenced by ``io_device``. It mostly returns ``:ok``, except for some severe errors such as out of memory 
 
-:elixir:func:`copy!/3`       The same as :elixir:func:`copy/3` but raises an :elixir:mod:`File.CopyError` if it fails. Returns the ``bytes_copied`` otherwise 
+:elixir:func:`copy\!/3`       The same as :elixir:func:`copy/3` but raises an :elixir:mod:`File.CopyError` if it fails. Returns the ``bytes_copied`` otherwise 
 
-:elixir:func:`copy/3`        Copies the contents of ``source`` to ``destination`` 
+:elixir:func:`copy/3`         Copies the contents of ``source`` to ``destination`` 
 
-:elixir:func:`cp!/3`         The same as :elixir:func:`cp/3`, but raises :elixir:mod:`File.CopyError` if it fails. Returns the list of copied files otherwise 
+:elixir:func:`cp\!/3`         The same as :elixir:func:`cp/3`, but raises :elixir:mod:`File.CopyError` if it fails. Returns the list of copied files otherwise 
 
-:elixir:func:`cp/3`          Copies the contents in ``source`` to ``destination`` preserving its mode 
+:elixir:func:`cp/3`           Copies the contents in ``source`` to ``destination`` preserving its mode 
 
-:elixir:func:`cp_r!/3`       The same as :elixir:func:`cp_r/3`, but raises :elixir:mod:`File.CopyError` if it fails. Returns the list of copied files otherwise 
+:elixir:func:`cp_r\!/3`       The same as :elixir:func:`cp_r/3`, but raises :elixir:mod:`File.CopyError` if it fails. Returns the list of copied files otherwise 
 
-:elixir:func:`cp_r/3`        Copies the contents in source to destination 
+:elixir:func:`cp_r/3`         Copies the contents in source to destination 
 
-:elixir:func:`cwd!/0`        The same as :elixir:func:`cwd/0`, but raises an exception if it fails 
+:elixir:func:`cwd\!/0`        The same as :elixir:func:`cwd/0`, but raises an exception if it fails 
 
-:elixir:func:`cwd/0`         Gets the current working directory 
+:elixir:func:`cwd/0`          Gets the current working directory 
 
-:elixir:func:`dir?/1`        Returns ``true`` if the path is a directory 
+:elixir:func:`dir?/1`         Returns ``true`` if the path is a directory 
 
-:elixir:func:`exists?/1`     Returns ``true`` if the given path exists. It can be regular file, directory, socket, symbolic link, named pipe or device file 
+:elixir:func:`exists?/1`      Returns ``true`` if the given path exists. It can be regular file, directory, socket, symbolic link, named pipe or device file 
 
-:elixir:func:`ln_s/2`        Creates a symbolic link ``new`` to the file or directory ``existing`` 
+:elixir:func:`ln_s/2`         Creates a symbolic link ``new`` to the file or directory ``existing`` 
 
-:elixir:func:`ls!/1`         The same as :elixir:func:`ls/1` but raises :elixir:mod:`File.Error` in case of an error 
+:elixir:func:`ls\!/1`         The same as :elixir:func:`ls/1` but raises :elixir:mod:`File.Error` in case of an error 
 
-:elixir:func:`ls/1`          Returns list of files in the given directory 
+:elixir:func:`ls/1`           Returns list of files in the given directory 
 
-:elixir:func:`mkdir!/1`      Same as :elixir:func:`mkdir/1`, but raises an exception in case of failure. Otherwise ``:ok`` 
+:elixir:func:`mkdir\!/1`      Same as :elixir:func:`mkdir/1`, but raises an exception in case of failure. Otherwise ``:ok`` 
 
-:elixir:func:`mkdir/1`       Tries to create the directory ``path``. Missing parent directories are not created. Returns ``:ok`` if successful, or ``{:error, reason}`` if an error occurs 
+:elixir:func:`mkdir/1`        Tries to create the directory ``path``. Missing parent directories are not created. Returns ``:ok`` if successful, or ``{:error, reason}`` if an error occurs 
 
-:elixir:func:`mkdir_p!/1`    Same as :elixir:func:`mkdir_p/1`, but raises an exception in case of failure. Otherwise ``:ok`` 
+:elixir:func:`mkdir_p\!/1`    Same as :elixir:func:`mkdir_p/1`, but raises an exception in case of failure. Otherwise ``:ok`` 
 
-:elixir:func:`mkdir_p/1`     Tries to create the directory ``path``. Missing parent directories are created. Returns ``:ok`` if successful, or ``{:error, reason}`` if an error occurs 
+:elixir:func:`mkdir_p/1`      Tries to create the directory ``path``. Missing parent directories are created. Returns ``:ok`` if successful, or ``{:error, reason}`` if an error occurs 
 
-:elixir:func:`open!/2`       Same as :elixir:func:`open/2` but raises an error if file could not be opened. Returns the ``io_device`` otherwise 
+:elixir:func:`open\!/2`       Same as :elixir:func:`open/2` but raises an error if file could not be opened. Returns the ``io_device`` otherwise 
 
-:elixir:func:`open!/3`       Same as :elixir:func:`open/3` but raises an error if file could not be opened. Returns the function result otherwise 
+:elixir:func:`open\!/3`       Same as :elixir:func:`open/3` but raises an error if file could not be opened. Returns the function result otherwise 
 
-:elixir:func:`open/2`        Opens the given ``path`` according to the given list of modes 
+:elixir:func:`open/2`         Opens the given ``path`` according to the given list of modes 
 
-:elixir:func:`open/3`        Similar to :elixir:func:`open/2` but expects a function as last argument 
+:elixir:func:`open/3`         Similar to :elixir:func:`open/2` but expects a function as last argument 
 
-:elixir:func:`read!/1`       Returns binary with the contents of the given filename or raises :elixir:mod:`File.Error` if an error occurs 
+:elixir:func:`read\!/1`       Returns binary with the contents of the given filename or raises :elixir:mod:`File.Error` if an error occurs 
 
-:elixir:func:`read/1`        Returns ``{:ok, binary}``, where ``binary`` is a binary data object that contains the contents of ``path``, or ``{:error, reason}`` if an error occurs 
+:elixir:func:`read/1`         Returns ``{:ok, binary}``, where ``binary`` is a binary data object that contains the contents of ``path``, or ``{:error, reason}`` if an error occurs 
 
-:elixir:func:`regular?/1`    Returns ``true`` if the path is a regular file 
+:elixir:func:`regular?/1`     Returns ``true`` if the path is a regular file 
 
-:elixir:func:`rm!/1`         Same as :elixir:func:`rm/1`, but raises an exception in case of failure. Otherwise ``:ok`` 
+:elixir:func:`rm\!/1`         Same as :elixir:func:`rm/1`, but raises an exception in case of failure. Otherwise ``:ok`` 
 
-:elixir:func:`rm/1`          Tries to delete the file ``path``. Returns ``:ok`` if successful, or ``{:error, reason}`` if an error occurs 
+:elixir:func:`rm/1`           Tries to delete the file ``path``. Returns ``:ok`` if successful, or ``{:error, reason}`` if an error occurs 
 
-:elixir:func:`rm_rf!/1`      Same as :elixir:func:`rm_rf/1` but raises :elixir:mod:`File.Error` in case of failures, otherwise the list of files or directories removed 
+:elixir:func:`rm_rf\!/1`      Same as :elixir:func:`rm_rf/1` but raises :elixir:mod:`File.Error` in case of failures, otherwise the list of files or directories removed 
 
-:elixir:func:`rm_rf/1`       Remove files and directories recursively at the given ``path``. Symlinks are not followed but simply removed, non-existing files are simply ignored (i.e. doesn't make this function fail) 
+:elixir:func:`rm_rf/1`        Remove files and directories recursively at the given ``path``. Symlinks are not followed but simply removed, non-existing files are simply ignored (i.e. doesn't make this function fail) 
 
-:elixir:func:`rmdir!/1`      Same as :elixir:func:`rmdir/1`, but raises an exception in case of failure. Otherwise ``:ok`` 
+:elixir:func:`rmdir\!/1`      Same as :elixir:func:`rmdir/1`, but raises an exception in case of failure. Otherwise ``:ok`` 
 
-:elixir:func:`rmdir/1`       Tries to delete the dir at ``path``. Returns ``:ok`` if successful, or ``{:error, reason}`` if an error occurs 
+:elixir:func:`rmdir/1`        Tries to delete the dir at ``path``. Returns ``:ok`` if successful, or ``{:error, reason}`` if an error occurs 
 
-:elixir:func:`stat!/2`       Same as :elixir:func:`stat/2` but returns the :elixir:mod:`File.Stat` directly and throws :elixir:mod:`File.Error` if an error is returned 
+:elixir:func:`stat\!/2`       Same as :elixir:func:`stat/2` but returns the :elixir:mod:`File.Stat` directly and throws :elixir:mod:`File.Error` if an error is returned 
 
-:elixir:func:`stat/2`        Returns information about the ``path``. If it exists, it returns a ``{:ok, info}`` tuple, where info is a :elixir:mod:`File.Stat` struct. Returns ``{:error, reason}`` with the same reasons as :elixir:func:`read/1` if a failure occurs 
+:elixir:func:`stat/2`         Returns information about the ``path``. If it exists, it returns a ``{:ok, info}`` tuple, where info is a :elixir:mod:`File.Stat` struct. Returns ``{:error, reason}`` with the same reasons as :elixir:func:`read/1` if a failure occurs 
 
-:elixir:func:`stream!/3`     Returns a :elixir:mod:`File.Stream` for the given ``path`` with the given ``modes`` 
+:elixir:func:`stream\!/3`     Returns a :elixir:mod:`File.Stream` for the given ``path`` with the given ``modes`` 
 
-:elixir:func:`touch!/2`      Same as :elixir:func:`touch/2` but raises an exception if it fails. Returns ``:ok`` otherwise 
+:elixir:func:`touch\!/2`      Same as :elixir:func:`touch/2` but raises an exception if it fails. Returns ``:ok`` otherwise 
 
-:elixir:func:`touch/2`       Updates modification time (mtime) and access time (atime) of the given file. File is created if it doesnât exist 
+:elixir:func:`touch/2`        Updates modification time (mtime) and access time (atime) of the given file. File is created if it doesnât exist 
 
-:elixir:func:`write!/3`      Same as :elixir:func:`write/3` but raises an exception if it fails, returns ``:ok`` otherwise 
+:elixir:func:`write\!/3`      Same as :elixir:func:`write/3` but raises an exception if it fails, returns ``:ok`` otherwise 
 
-:elixir:func:`write/3`       Writes ``content`` to the file ``path`` 
+:elixir:func:`write/3`        Writes ``content`` to the file ``path`` 
 
-:elixir:func:`write_stat!/3` Same as :elixir:func:`write_stat/3` but raises an exception if it fails. Returns ``:ok`` otherwise 
+:elixir:func:`write_stat\!/3` Same as :elixir:func:`write_stat/3` but raises an exception if it fails. Returns ``:ok`` otherwise 
 
-:elixir:func:`write_stat/3`  Writes the given :elixir:mod:`File.Stat` back to the filesystem at the given path. Returns ``:ok`` or ``{:error, reason}`` 
-============================ =
+:elixir:func:`write_stat/3`   Writes the given :elixir:mod:`File.Stat` back to the filesystem at the given path. Returns ``:ok`` or ``{:error, reason}`` 
+============================= =
 
 
 

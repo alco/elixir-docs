@@ -37,33 +37,33 @@ You can select to include only or skip operators by passing options:
 Summary
 -------
 
-=========================== =
-:elixir:macro:`&&&/2`       Bitwise and as operator 
+========================== =
+:elixir:func:`&&&/2`       Bitwise and as operator 
 
-:elixir:macro:`<<</2`       Arithmetic bitshift left as operator 
+:elixir:func:`<<</2`       Arithmetic bitshift left as operator 
 
-:elixir:macro:`>>>/2`       Arithmetic bitshift right as operator 
+:elixir:func:`>>>/2`       Arithmetic bitshift right as operator 
 
-:elixir:macro:`^^^/2`       Bitwise xor as operator 
+:elixir:func:`^^^/2`       Bitwise xor as operator 
 
-:elixir:macro:`__using__/1` Allow a developer to use this module in their programs with the following options: 
+:elixir:func:`__using__/1` Allow a developer to use this module in their programs with the following options: 
 
-:elixir:macro:`band/2`      Bitwise and 
+:elixir:func:`band/2`      Bitwise and 
 
-:elixir:macro:`bnot/1`      Bitwise not 
+:elixir:func:`bnot/1`      Bitwise not 
 
-:elixir:macro:`bor/2`       Bitwise or 
+:elixir:func:`bor/2`       Bitwise or 
 
-:elixir:macro:`bsl/2`       Arithmetic bitshift left 
+:elixir:func:`bsl/2`       Arithmetic bitshift left 
 
-:elixir:macro:`bsr/2`       Arithmetic bitshift right 
+:elixir:func:`bsr/2`       Arithmetic bitshift right 
 
-:elixir:macro:`bxor/2`      Bitwise xor 
+:elixir:func:`bxor/2`      Bitwise xor 
 
-:elixir:macro:`|||/2`       Bitwise or as operator 
+:elixir:func:`|||/2`       Bitwise or as operator 
 
-:elixir:macro:`~~~/1`       Bitwise not as operator 
-=========================== =
+:elixir:func:`~~~/1`       Bitwise not as operator 
+========================== =
 
 
 
@@ -179,7 +179,7 @@ Macros
    
 
 .. elixir:macro:: Bitwise.|||/2
-   :sig: left \|\|\| right
+   :sig: left ||| right
 
 
    

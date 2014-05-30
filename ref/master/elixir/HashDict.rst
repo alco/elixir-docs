@@ -35,7 +35,7 @@ Summary
 
 :elixir:func:`equal?/2`   Callback implementation of :elixir:func:`Dict.equal?/2` 
 
-:elixir:func:`fetch!/2`   Callback implementation of :elixir:func:`Dict.fetch!/2` 
+:elixir:func:`fetch\!/2`  Callback implementation of :elixir:func:`Dict.fetch!/2` 
 
 :elixir:func:`fetch/2`    Callback implementation of :elixir:func:`Dict.fetch/2` 
 
@@ -63,7 +63,7 @@ Summary
 
 :elixir:func:`to_list/1`  Callback implementation of :elixir:func:`Dict.to_list/1` 
 
-:elixir:func:`update!/3`  Callback implementation of :elixir:func:`Dict.update!/3` 
+:elixir:func:`update\!/3` Callback implementation of :elixir:func:`Dict.update!/3` 
 
 :elixir:func:`update/4`   Callback implementation of :elixir:func:`Dict.update/4` 
 

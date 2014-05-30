@@ -46,7 +46,7 @@ Summary
 
 :elixir:func:`equal?/2`       Checks if two keywords are equal. I.e. they contain the same keys and those keys contain the same values 
 
-:elixir:func:`fetch!/2`       Fetches the value for specific ``key``. If ``key`` does not exist, a :elixir:mod:`KeyError` is raised 
+:elixir:func:`fetch\!/2`      Fetches the value for specific ``key``. If ``key`` does not exist, a :elixir:mod:`KeyError` is raised 
 
 :elixir:func:`fetch/2`        Fetches the value for a specific ``key`` and returns it in a tuple. If the ``key`` does not exist, returns ``:error`` 
 
@@ -82,7 +82,7 @@ Summary
 
 :elixir:func:`take/2`         Takes all entries corresponding to the given keys and returns them in a new keyword list 
 
-:elixir:func:`update!/3`      Updates the ``key`` with the given function. If the ``key`` does not exist, raises :elixir:mod:`KeyError` 
+:elixir:func:`update\!/3`     Updates the ``key`` with the given function. If the ``key`` does not exist, raises :elixir:mod:`KeyError` 
 
 :elixir:func:`update/4`       Updates the ``key`` with the given function. If the ``key`` does not exist, inserts the given ``initial`` value 
 

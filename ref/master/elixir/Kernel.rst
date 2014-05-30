@@ -45,13 +45,13 @@ Summary
 -------
 
 =================================== =
-:elixir:macro:`!/1`                 Receives any argument and returns ``true`` if it is ``false`` or ``nil``. Returns ``false`` otherwise. Not allowed in guard clauses 
+:elixir:func:`\!/1`                 Receives any argument and returns ``true`` if it is ``false`` or ``nil``. Returns ``false`` otherwise. Not allowed in guard clauses 
 
-:elixir:func:`!=/2`                 Returns ``true`` if the two items are not equal 
+:elixir:func:`\!=/2`                Returns ``true`` if the two items are not equal 
 
-:elixir:func:`!==/2`                Returns ``true`` if the two items do not match 
+:elixir:func:`\!==/2`               Returns ``true`` if the two items do not match 
 
-:elixir:macro:`&&/2`                Provides a short-circuit operator that evaluates and returns the second expression only if the first one evaluates to true (i.e. it is not nil nor false). Returns the first expression otherwise 
+:elixir:func:`&&/2`                 Provides a short-circuit operator that evaluates and returns the second expression only if the first one evaluates to true (i.e. it is not nil nor false). Returns the first expression otherwise 
 
 :elixir:func:`*/2`                  Arithmetic multiplication 
 
@@ -67,7 +67,7 @@ Summary
 
 :elixir:func:`-/2`                  Arithmetic minus 
 
-:elixir:macro:`../2`                Returns a range with the specified start and end. Includes both ends 
+:elixir:func:`../2`                 Returns a range with the specified start and end. Includes both ends 
 
 :elixir:func:`//2`                  Arithmetic division 
 
@@ -75,7 +75,7 @@ Summary
 
 :elixir:func:`<=/2`                 Returns ``true`` if left is less than or equal to right 
 
-:elixir:macro:`<>/2`                Concatenates two binaries 
+:elixir:func:`<>/2`                 Concatenates two binaries 
 
 :elixir:func:`==/2`                 Returns ``true`` if the two items are equal 
 
@@ -87,13 +87,13 @@ Summary
 
 :elixir:func:`>=/2`                 Returns ``true`` if left is more than or equal to right 
 
-:elixir:macro:`@/1`                 Read and write attributes of th current module 
+:elixir:func:`@/1`                  Read and write attributes of th current module 
 
 :elixir:func:`abs/1`                Returns an integer or float which is the arithmetical absolute value of ``number`` 
 
-:elixir:macro:`alias!/1`            When used inside quoting, marks that the alias should not be hygienezed. This means the alias will be expanded when the macro is expanded 
+:elixir:func:`alias\!/1`            When used inside quoting, marks that the alias should not be hygienezed. This means the alias will be expanded when the macro is expanded 
 
-:elixir:macro:`and/2`               Boolean and. Requires only the first argument to be a boolean since it short-circuits 
+:elixir:func:`and/2`                Boolean and. Requires only the first argument to be a boolean since it short-circuits 
 
 :elixir:func:`apply/2`              Invokes the given ``fun`` with the array of arguments ``args`` 
 
@@ -101,41 +101,41 @@ Summary
 
 :elixir:func:`binary_part/3`        Extracts the part of the binary starting at ``start`` with length ``length``. Binaries are zero-indexed 
 
-:elixir:macro:`binding/0`           Returns the binding as a keyword list where the variable name is the key and the variable value is the value 
+:elixir:func:`binding/0`            Returns the binding as a keyword list where the variable name is the key and the variable value is the value 
 
-:elixir:macro:`binding/1`           Receives a list of atoms at compilation time and returns the binding of the given variables as a keyword list where the variable name is the key and the variable value is the value 
+:elixir:func:`binding/1`            Receives a list of atoms at compilation time and returns the binding of the given variables as a keyword list where the variable name is the key and the variable value is the value 
 
-:elixir:macro:`binding/2`           Receives a list of atoms at compilation time and returns the binding of the given variables in the given context as a keyword list where the variable name is the key and the variable value is the value 
+:elixir:func:`binding/2`            Receives a list of atoms at compilation time and returns the binding of the given variables in the given context as a keyword list where the variable name is the key and the variable value is the value 
 
 :elixir:func:`bit_size/1`           Returns an integer which is the size in bits of ``bitstring`` 
 
 :elixir:func:`byte_size/1`          Returns the number of bytes needed to contain ``bitstring`` 
 
-:elixir:macro:`cond/1`              Evaluates the expression corresponding to the first clause that evaluates to true. Raises an error if all conditions evaluate to to nil or false 
+:elixir:func:`cond/1`               Evaluates the expression corresponding to the first clause that evaluates to true. Raises an error if all conditions evaluate to to nil or false 
 
-:elixir:macro:`def/2`               Defines a function with the given name and contents 
+:elixir:func:`def/2`                Defines a function with the given name and contents 
 
-:elixir:macro:`defdelegate/2`       Defines the given functions in the current module that will delegate to the given ``target``. Functions defined with ``defdelegate`` are public and are allowed to be invoked from external. If you find yourself wishing to define a delegation as private, you should likely use import instead 
+:elixir:func:`defdelegate/2`        Defines the given functions in the current module that will delegate to the given ``target``. Functions defined with ``defdelegate`` are public and are allowed to be invoked from external. If you find yourself wishing to define a delegation as private, you should likely use import instead 
 
-:elixir:macro:`defexception/1`      Defines an exception 
+:elixir:func:`defexception/1`       Defines an exception 
 
-:elixir:macro:`defimpl/3`           Defines an implementation for the given protocol. See :elixir:func:`defprotocol/2` for examples 
+:elixir:func:`defimpl/3`            Defines an implementation for the given protocol. See :elixir:func:`defprotocol/2` for examples 
 
-:elixir:macro:`defmacro/2`          Defines a macro with the given name and contents 
+:elixir:func:`defmacro/2`           Defines a macro with the given name and contents 
 
-:elixir:macro:`defmacrop/2`         Defines a macro that is private. Private macros are only accessible from the same module in which they are defined 
+:elixir:func:`defmacrop/2`          Defines a macro that is private. Private macros are only accessible from the same module in which they are defined 
 
-:elixir:macro:`defmodule/2`         Defines a module given by name with the given contents 
+:elixir:func:`defmodule/2`          Defines a module given by name with the given contents 
 
-:elixir:macro:`defoverridable/1`    Makes the given functions in the current module overridable. An overridable function is lazily defined, allowing a developer to customize it 
+:elixir:func:`defoverridable/1`     Makes the given functions in the current module overridable. An overridable function is lazily defined, allowing a developer to customize it 
 
-:elixir:macro:`defp/2`              Defines a function that is private. Private functions are only accessible from within the module in which they are defined 
+:elixir:func:`defp/2`               Defines a function that is private. Private functions are only accessible from within the module in which they are defined 
 
-:elixir:macro:`defprotocol/2`       Defines a protocol 
+:elixir:func:`defprotocol/2`        Defines a protocol 
 
-:elixir:macro:`defstruct/1`         Defines a struct for the current module 
+:elixir:func:`defstruct/1`          Defines a struct for the current module 
 
-:elixir:macro:`destructure/2`       Allows you to destructure two lists, assigning each term in the right to the matching term in the left. Unlike pattern matching via ``=``, if the sizes of the left and right lists don't match, destructuring simply stops instead of raising an error 
+:elixir:func:`destructure/2`        Allows you to destructure two lists, assigning each term in the right to the matching term in the left. Unlike pattern matching via ``=``, if the sizes of the left and right lists don't match, destructuring simply stops instead of raising an error 
 
 :elixir:func:`div/2`                Performs an integer division 
 
@@ -147,9 +147,9 @@ Summary
 
 :elixir:func:`hd/1`                 Returns the head of a list, raises ``badarg`` if the list is empty 
 
-:elixir:macro:`if/2`                Provides an ``if`` macro. This macro expects the first argument to be a condition and the rest are keyword arguments 
+:elixir:func:`if/2`                 Provides an ``if`` macro. This macro expects the first argument to be a condition and the rest are keyword arguments 
 
-:elixir:macro:`in/2`                Checks if the element on the left side is member of the collection on the right side 
+:elixir:func:`in/2`                 Checks if the element on the left side is member of the collection on the right side 
 
 :elixir:func:`inspect/2`            Inspect the given argument according to the :elixir:mod:`Inspect` protocol. The second argument is a keywords list with options to control inspection 
 
@@ -191,13 +191,13 @@ Summary
 
 :elixir:func:`map_size/1`           Returns the size of a map 
 
-:elixir:macro:`match?/2`            A convenient macro that checks if the right side matches the left side. The left side is allowed to be a match pattern 
+:elixir:func:`match?/2`             A convenient macro that checks if the right side matches the left side. The left side is allowed to be a match pattern 
 
 :elixir:func:`max/2`                Return the biggest of the two given terms according to Erlang's term ordering. If the terms compare equal, the first one is returned 
 
 :elixir:func:`min/2`                Return the smallest of the two given terms according to Erlang's term ordering. If the terms compare equal, the first one is returned 
 
-:elixir:macro:`nil?/1`              Checks if the given argument is nil or not. Allowed in guard clauses 
+:elixir:func:`nil?/1`               Checks if the given argument is nil or not. Allowed in guard clauses 
 
 :elixir:func:`node/0`               Returns an atom representing the name of the local node. If the node is not alive, ``:nonode@nohost`` is returned instead 
 
@@ -205,19 +205,19 @@ Summary
 
 :elixir:func:`not/1`                Boolean not. Argument must be a boolean 
 
-:elixir:macro:`or/2`                Boolean or. Requires only the first argument to be a boolean since it short-circuits 
+:elixir:func:`or/2`                 Boolean or. Requires only the first argument to be a boolean since it short-circuits 
 
 :elixir:func:`put_elem/3`           Sets the element in ``tuple`` at the zero-based ``index`` to the given ``value`` 
 
-:elixir:macro:`raise/1`             Raises an exception 
+:elixir:func:`raise/1`              Raises an exception 
 
-:elixir:macro:`raise/2`             Raises an exception 
+:elixir:func:`raise/2`              Raises an exception 
 
 :elixir:func:`rem/2`                Calculates the remainder of an integer division 
 
-:elixir:macro:`reraise/2`           Raises an exception preserving a previous stacktrace 
+:elixir:func:`reraise/2`            Raises an exception preserving a previous stacktrace 
 
-:elixir:macro:`reraise/3`           Raises an exception preserving a previous stacktrace 
+:elixir:func:`reraise/3`            Raises an exception preserving a previous stacktrace 
 
 :elixir:func:`round/1`              Returns an integer by rounding the given number 
 
@@ -225,21 +225,21 @@ Summary
 
 :elixir:func:`send/2`               Sends a message to the given ``dest`` and returns the message 
 
-:elixir:macro:`sigil_C/2`           Handles the sigil ~C. It simply returns a char list without escaping characters and without interpolations 
+:elixir:func:`sigil_C/2`            Handles the sigil ~C. It simply returns a char list without escaping characters and without interpolations 
 
-:elixir:macro:`sigil_R/2`           Handles the sigil ~R. It returns a Regex pattern without escaping nor interpreting interpolations 
+:elixir:func:`sigil_R/2`            Handles the sigil ~R. It returns a Regex pattern without escaping nor interpreting interpolations 
 
-:elixir:macro:`sigil_S/2`           Handles the sigil ~S. It simply returns a string without escaping characters and without interpolations 
+:elixir:func:`sigil_S/2`            Handles the sigil ~S. It simply returns a string without escaping characters and without interpolations 
 
-:elixir:macro:`sigil_W/2`           Handles the sigil ~W. It returns a list of "words" split by whitespace without escaping nor interpreting interpolations 
+:elixir:func:`sigil_W/2`            Handles the sigil ~W. It returns a list of "words" split by whitespace without escaping nor interpreting interpolations 
 
-:elixir:macro:`sigil_c/2`           Handles the sigil ~c. It returns a char list as if it were a single quoted string, unescaping characters and replacing interpolations 
+:elixir:func:`sigil_c/2`            Handles the sigil ~c. It returns a char list as if it were a single quoted string, unescaping characters and replacing interpolations 
 
-:elixir:macro:`sigil_r/2`           Handles the sigil ~r. It returns a Regex pattern 
+:elixir:func:`sigil_r/2`            Handles the sigil ~r. It returns a Regex pattern 
 
-:elixir:macro:`sigil_s/2`           Handles the sigil ~s. It returns a string as if it was double quoted string, unescaping characters and replacing interpolations 
+:elixir:func:`sigil_s/2`            Handles the sigil ~s. It returns a string as if it was double quoted string, unescaping characters and replacing interpolations 
 
-:elixir:macro:`sigil_w/2`           Handles the sigil ~w. It returns a list of "words" split by whitespace 
+:elixir:func:`sigil_w/2`            Handles the sigil ~w. It returns a list of "words" split by whitespace 
 
 :elixir:func:`size/1`               Returns the size of the given argument, which must be a tuple or a binary 
 
@@ -261,25 +261,25 @@ Summary
 
 :elixir:func:`tl/1`                 Returns the tail of a list. Raises :elixir:mod:`ArgumentError` if the list is empty 
 
-:elixir:macro:`to_char_list/1`      Convert the argument to a list according to the List.Chars protocol 
+:elixir:func:`to_char_list/1`       Convert the argument to a list according to the List.Chars protocol 
 
-:elixir:macro:`to_string/1`         Converts the argument to a string according to the String.Chars protocol. This is the function invoked when there is string interpolation 
+:elixir:func:`to_string/1`          Converts the argument to a string according to the String.Chars protocol. This is the function invoked when there is string interpolation 
 
 :elixir:func:`trunc/1`              Returns an integer by truncating the given number 
 
 :elixir:func:`tuple_size/1`         Returns the size of a tuple 
 
-:elixir:macro:`unless/2`            Evaluates and returns the do-block passed in as a second argument unless clause evaluates to true. Returns nil otherwise. See also ``if`` 
+:elixir:func:`unless/2`             Evaluates and returns the do-block passed in as a second argument unless clause evaluates to true. Returns nil otherwise. See also ``if`` 
 
-:elixir:macro:`use/2`               ``use`` is a simple mechanism for using a given module into the current context 
+:elixir:func:`use/2`                ``use`` is a simple mechanism for using a given module into the current context 
 
-:elixir:macro:`var!/2`              When used inside quoting, marks that the variable should not be hygienized. The argument can be either a variable unquoted or an atom representing the variable name 
+:elixir:func:`var\!/2`              When used inside quoting, marks that the variable should not be hygienized. The argument can be either a variable unquoted or an atom representing the variable name 
 
 :elixir:func:`xor/2`                Boolean exclusive-or. Arguments must be booleans. Returns ``true`` if and only if both arguments are different 
 
-:elixir:macro:`|>/2`                ``|>`` is the pipe operator 
+:elixir:func:`|>/2`                 ``|>`` is the pipe operator 
 
-:elixir:macro:`||/2`                Provides a short-circuit operator that evaluates and returns the second expression only if the first one does not evaluate to true (i.e. it is either nil or false). Returns the first expression otherwise 
+:elixir:func:`||/2`                 Provides a short-circuit operator that evaluates and returns the second expression only if the first one does not evaluate to true (i.e. it is either nil or false). Returns the first expression otherwise 
 =================================== =
 
 
@@ -3540,7 +3540,7 @@ Macros
    
 
 .. elixir:macro:: Kernel.|>/2
-   :sig: left \|> right
+   :sig: left |> right
 
 
    
@@ -3608,7 +3608,7 @@ Macros
    
 
 .. elixir:macro:: Kernel.||/2
-   :sig: left \|\| right
+   :sig: left || right
 
 
    

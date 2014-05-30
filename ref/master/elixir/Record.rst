@@ -38,17 +38,17 @@ files.
 Summary
 -------
 
-============================ =
-:elixir:macro:`defrecord/3`  Defines a set of macros to create and access a record 
+=========================== =
+:elixir:func:`defrecord/3`  Defines a set of macros to create and access a record 
 
-:elixir:macro:`defrecordp/3` Same as :elixir:func:`defrecord/3` but generates private macros 
+:elixir:func:`defrecordp/3` Same as :elixir:func:`defrecord/3` but generates private macros 
 
-:elixir:macro:`extract/2`    Extracts record information from an Erlang file 
+:elixir:func:`extract/2`    Extracts record information from an Erlang file 
 
-:elixir:macro:`record?/1`    Checks if the given ``data`` is a record 
+:elixir:func:`record?/1`    Checks if the given ``data`` is a record 
 
-:elixir:macro:`record?/2`    Checks if the given ``data`` is a record of ``kind`` 
-============================ =
+:elixir:func:`record?/2`    Checks if the given ``data`` is a record of ``kind`` 
+=========================== =
 
 
 

@@ -30,7 +30,7 @@ Summary
 
 :elixir:func:`cmd/1`             Execute a system command 
 
-:elixir:func:`cwd!/0`            Current working directory, exception on error 
+:elixir:func:`cwd\!/0`           Current working directory, exception on error 
 
 :elixir:func:`cwd/0`             Current working directory 
 
@@ -52,11 +52,11 @@ Summary
 
 :elixir:func:`stacktrace/0`      Last exception stacktrace 
 
-:elixir:func:`tmp_dir!/0`        Writable temporary directory, exception on error 
+:elixir:func:`tmp_dir\!/0`       Writable temporary directory, exception on error 
 
 :elixir:func:`tmp_dir/0`         Writable temporary directory 
 
-:elixir:func:`user_home!/0`      User home directory, exception on error 
+:elixir:func:`user_home\!/0`     User home directory, exception on error 
 
 :elixir:func:`user_home/0`       User home directory 
 

@@ -75,7 +75,7 @@ Summary
 
 :elixir:func:`empty?/1`          Returns ``true`` if the collection is empty, otherwise ``false`` 
 
-:elixir:func:`fetch!/2`          Finds the element at the given index (zero-based). Raises ``OutOfBoundsError`` if the given position is outside the range of the collection 
+:elixir:func:`fetch\!/2`         Finds the element at the given index (zero-based). Raises ``OutOfBoundsError`` if the given position is outside the range of the collection 
 
 :elixir:func:`fetch/2`           Finds the element at the given index (zero-based). Returns ``{:ok, element}`` if found, otherwise ``:error`` 
 

@@ -368,10 +368,22 @@ class ElixirDomain(Domain):
             contnode.children[0] = nodes.Text(title)
             return make_refnode(builder, fromdocname, docname, target, contnode, title)
 
-        if typ == "func" or typ == "macro":
+        if typ == "func":
             # target will be either "typename/0" or "Module.Name.typename/0"
+            text_node = contnode.children[0]
+            # title becomes tooltip text in HTML output
+            title = text_node.astext()
+
+            # Special case for the ~~~/1 operator
+            if "~~" in title:
+                target = "~~~/1"
+                title = "~~~/1"
+
             comps = target.rsplit(".", 1)
-            if len(comps) == 2:
+            # special cases for ../2 and ./2
+            if len(comps) == 2 and \
+                    not ".." in target and \
+                    not target.startswith("."):
                 docname = self.find_module_docname(comps[0])
                 if not docname:
                     return
@@ -379,9 +391,6 @@ class ElixirDomain(Domain):
                 docname = fromdocname
                 modname = node.get('elixir:module')
                 target = modname + "." + target
-            text_node = contnode.children[0]
-            # title becomes tooltip text in HTML output
-            title = text_node.astext()
             contnode.children[0] = nodes.Text(title)
             return make_refnode(builder, fromdocname, docname, target, contnode, title)
 

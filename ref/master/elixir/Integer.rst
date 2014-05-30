@@ -18,9 +18,9 @@ Summary
 -------
 
 ============================= =
-:elixir:macro:`even?/1`       Determines if an integer is even 
+:elixir:func:`even?/1`        Determines if an integer is even 
 
-:elixir:macro:`odd?/1`        Determines if an integer is odd 
+:elixir:func:`odd?/1`         Determines if an integer is odd 
 
 :elixir:func:`parse/1`        Converts a binary to an integer 
 

@@ -271,7 +271,7 @@ Summary
 
 :elixir:func:`beam_types/1`        Returns all types available from the module's beam code 
 
-:elixir:macro:`defcallback/1`      Defines a callback. This macro is responsible for handling the attribute ``@callback`` 
+:elixir:func:`defcallback/1`       Defines a callback. This macro is responsible for handling the attribute ``@callback`` 
 
 :elixir:func:`define_callback/3`   Defines a ``callback`` by receiving Erlang's typespec 
 
@@ -285,13 +285,13 @@ Summary
 
 :elixir:func:`defines_type?/3`     Returns ``true`` if the current module defines a given type (private, opaque or not). This function is only available for modules being compiled 
 
-:elixir:macro:`defopaque/1`        Defines an opaque type. This macro is responsible for handling the attribute ``@opaque`` 
+:elixir:func:`defopaque/1`         Defines an opaque type. This macro is responsible for handling the attribute ``@opaque`` 
 
-:elixir:macro:`defspec/1`          Defines a spec. This macro is responsible for handling the attribute ``@spec`` 
+:elixir:func:`defspec/1`           Defines a spec. This macro is responsible for handling the attribute ``@spec`` 
 
-:elixir:macro:`deftype/1`          Defines a type. This macro is responsible for handling the attribute ``@type`` 
+:elixir:func:`deftype/1`           Defines a type. This macro is responsible for handling the attribute ``@type`` 
 
-:elixir:macro:`deftypep/1`         Defines a private type. This macro is responsible for handling the attribute ``@typep`` 
+:elixir:func:`deftypep/1`          Defines a private type. This macro is responsible for handling the attribute ``@typep`` 
 
 :elixir:func:`spec_to_ast/2`       Converts a spec clause back to Elixir AST 
 

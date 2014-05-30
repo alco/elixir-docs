@@ -18,15 +18,15 @@ Summary
 -------
 
 ================================== =
-:elixir:func:`assert_impl!/2`      Checks if the given module is loaded and is an implementation of the given protocol 
+:elixir:func:`assert_impl\!/2`     Checks if the given module is loaded and is an implementation of the given protocol 
 
-:elixir:func:`assert_protocol!/1`  Checks if the given module is loaded and is protocol 
+:elixir:func:`assert_protocol\!/1` Checks if the given module is loaded and is protocol 
 
 :elixir:func:`consolidate/2`       Receives a protocol and a list of implementations and consolidates the given protocol 
 
 :elixir:func:`consolidated?/1`     Returns true if the protocol was consolidated 
 
-:elixir:macro:`def/1`              Defines a new protocol function 
+:elixir:func:`def/1`               Defines a new protocol function 
 
 :elixir:func:`extract_impls/2`     Extract all types implemented for the given protocol from the given paths 
 

@@ -21,37 +21,37 @@ encoding schemes.
 Summary
 -------
 
-============================== =
-:elixir:func:`decode16!/1`     Decodes a base 16 encoded string into a binary string 
+=============================== =
+:elixir:func:`decode16\!/1`     Decodes a base 16 encoded string into a binary string 
 
-:elixir:func:`decode16/1`      Decodes a base 16 encoded string into a binary string 
+:elixir:func:`decode16/1`       Decodes a base 16 encoded string into a binary string 
 
-:elixir:func:`decode32!/1`     Decodes a base 32 encoded string into a binary string 
+:elixir:func:`decode32\!/1`     Decodes a base 32 encoded string into a binary string 
 
-:elixir:func:`decode32/1`      Decodes a base 32 encoded string into a binary string 
+:elixir:func:`decode32/1`       Decodes a base 32 encoded string into a binary string 
 
-:elixir:func:`decode64!/1`     Decodes a base 64 encoded string into a binary string 
+:elixir:func:`decode64\!/1`     Decodes a base 64 encoded string into a binary string 
 
-:elixir:func:`decode64/1`      Decodes a base 64 encoded string into a binary string 
+:elixir:func:`decode64/1`       Decodes a base 64 encoded string into a binary string 
 
-:elixir:func:`encode16/1`      Encodes a binary string into a base 16 encoded string 
+:elixir:func:`encode16/1`       Encodes a binary string into a base 16 encoded string 
 
-:elixir:func:`encode32/1`      Encodes a binary string into a base 32 encoded string 
+:elixir:func:`encode32/1`       Encodes a binary string into a base 32 encoded string 
 
-:elixir:func:`encode64/1`      Encodes a binary string into a base 64 encoded string 
+:elixir:func:`encode64/1`       Encodes a binary string into a base 64 encoded string 
 
-:elixir:func:`hex_decode32!/1` Decodes a base 32 encoded string with extended hexadecimal alphabet into a binary string 
+:elixir:func:`hex_decode32\!/1` Decodes a base 32 encoded string with extended hexadecimal alphabet into a binary string 
 
-:elixir:func:`hex_decode32/1`  Decodes a base 32 encoded string with extended hexadecimal alphabet into a binary string 
+:elixir:func:`hex_decode32/1`   Decodes a base 32 encoded string with extended hexadecimal alphabet into a binary string 
 
-:elixir:func:`hex_encode32/1`  Encodes a binary string into a base 32 encoded string with an extended hexadecimal alphabet 
+:elixir:func:`hex_encode32/1`   Encodes a binary string into a base 32 encoded string with an extended hexadecimal alphabet 
 
-:elixir:func:`url_decode64!/1` Decodes a base 64 encoded string with URL and filename safe alphabet into a binary string 
+:elixir:func:`url_decode64\!/1` Decodes a base 64 encoded string with URL and filename safe alphabet into a binary string 
 
-:elixir:func:`url_decode64/1`  Decodes a base 64 encoded string with URL and filename safe alphabet into a binary string 
+:elixir:func:`url_decode64/1`   Decodes a base 64 encoded string with URL and filename safe alphabet into a binary string 
 
-:elixir:func:`url_encode64/1`  Encodes a binary string into a base 64 encoded string with URL and filename safe alphabet 
-============================== =
+:elixir:func:`url_encode64/1`   Encodes a binary string into a base 64 encoded string with URL and filename safe alphabet 
+=============================== =
 
 
 
