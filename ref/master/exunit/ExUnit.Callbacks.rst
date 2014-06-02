@@ -93,15 +93,15 @@ Examples
 Summary
 -------
 
-============================== =
-:elixir:macro:`setup/2`        Called before the start of each test 
+============================= =
+:elixir:func:`setup/2`        Called before the start of each test 
 
-:elixir:macro:`setup_all/2`    Called before the start of a case, i.e. called once before the first test in the current module and before any ``setup`` callbacks 
+:elixir:func:`setup_all/2`    Called before the start of a case, i.e. called once before the first test in the current module and before any ``setup`` callbacks 
 
-:elixir:macro:`teardown/2`     Called after the completion of each test 
+:elixir:func:`teardown/2`     Called after the completion of each test 
 
-:elixir:macro:`teardown_all/2` Called once after the last test finishes without emitting an ``:exit`` message 
-============================== =
+:elixir:func:`teardown_all/2` Called once after the last test finishes without emitting an ``:exit`` message 
+============================= =
 
 
 

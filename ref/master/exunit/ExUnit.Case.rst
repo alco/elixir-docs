@@ -194,9 +194,9 @@ excluded first, the ``include`` option has no effect.
 Summary
 -------
 
-====================== =
-:elixir:macro:`test/3` Define a test with a string 
-====================== =
+===================== =
+:elixir:func:`test/3` Define a test with a string 
+===================== =
 
 
 

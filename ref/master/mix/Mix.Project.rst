@@ -56,7 +56,7 @@ Summary
 
 :elixir:func:`deps_path/1`       Returns the path to store dependencies for this project 
 
-:elixir:func:`get!/0`            Same as :elixir:func:`get/0`, but raises an exception if there is no current project 
+:elixir:func:`get\!/0`           Same as :elixir:func:`get/0`, but raises an exception if there is no current project 
 
 :elixir:func:`get/0`             Retrieves the current project if there is one 
 

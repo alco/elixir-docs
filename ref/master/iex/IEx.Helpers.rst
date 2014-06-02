@@ -60,39 +60,39 @@ To learn more about IEx as a whole, just type ``h(IEx)``.
 Summary
 -------
 
-============================= =
-:elixir:func:`c/2`            Expects a list of files to compile and a path to write their object code to. It returns the name of the compiled modules 
+============================ =
+:elixir:func:`c/2`           Expects a list of files to compile and a path to write their object code to. It returns the name of the compiled modules 
 
-:elixir:func:`cd/1`           Changes the current working directory to the given path 
+:elixir:func:`cd/1`          Changes the current working directory to the given path 
 
-:elixir:func:`clear/0`        Clear the console screen 
+:elixir:func:`clear/0`       Clear the console screen 
 
-:elixir:func:`flush/0`        Flushes all messages sent to the shell and prints them out 
+:elixir:func:`flush/0`       Flushes all messages sent to the shell and prints them out 
 
-:elixir:func:`h/0`            Prints the documentation for :elixir:mod:`IEx.Helpers` 
+:elixir:func:`h/0`           Prints the documentation for :elixir:mod:`IEx.Helpers` 
 
-:elixir:macro:`h/1`           Prints the documentation for the given module or for the given function/arity pair 
+:elixir:func:`h/1`           Prints the documentation for the given module or for the given function/arity pair 
 
-:elixir:macro:`import_file/1` Evaluates the contents of the file at ``path`` as if it were directly typed into the shell. ``path`` has to be a literal binary 
+:elixir:func:`import_file/1` Evaluates the contents of the file at ``path`` as if it were directly typed into the shell. ``path`` has to be a literal binary 
 
-:elixir:func:`l/1`            Load the given module's beam code (and ensures any previous old version was properly purged before) 
+:elixir:func:`l/1`           Load the given module's beam code (and ensures any previous old version was properly purged before) 
 
-:elixir:func:`ls/1`           Produces a simple list of a directory's contents. If ``path`` points to a file, prints its full path 
+:elixir:func:`ls/1`          Produces a simple list of a directory's contents. If ``path`` points to a file, prints its full path 
 
-:elixir:func:`pwd/0`          Prints the current working directory 
+:elixir:func:`pwd/0`         Prints the current working directory 
 
-:elixir:func:`r/1`            Recompiles and reloads the specified module's source file 
+:elixir:func:`r/1`           Recompiles and reloads the specified module's source file 
 
-:elixir:func:`respawn/0`      Respawns the current shell by starting a new process and a new scope. Returns true if it worked 
+:elixir:func:`respawn/0`     Respawns the current shell by starting a new process and a new scope. Returns true if it worked 
 
-:elixir:macro:`s/1`           Similar to :elixir:func:`t/1`, only for specs 
+:elixir:func:`s/1`           Similar to :elixir:func:`t/1`, only for specs 
 
-:elixir:macro:`t/1`           When given a module, prints specifications (or simply specs) for all the types defined in it 
+:elixir:func:`t/1`           When given a module, prints specifications (or simply specs) for all the types defined in it 
 
-:elixir:func:`v/0`            Prints the history of expressions evaluated during the session along with their results 
+:elixir:func:`v/0`           Prints the history of expressions evaluated during the session along with their results 
 
-:elixir:func:`v/1`            Retrieves the nth expression's value from the history 
-============================= =
+:elixir:func:`v/1`           Retrieves the nth expression's value from the history 
+============================ =
 
 
 

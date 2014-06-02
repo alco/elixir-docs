@@ -38,7 +38,7 @@ Summary
 
 :elixir:func:`read_manifest/1`          Reads the given file as a manifest and returns each entry as a list 
 
-:elixir:func:`read_path!/1`             Opens and reads content from either a URL or a local filesystem path 
+:elixir:func:`read_path\!/1`            Opens and reads content from either a URL or a local filesystem path 
 
 :elixir:func:`stale?/2`                 Returns ``true`` if any of the ``sources`` are stale compared to the given ``targets`` 
 

@@ -50,7 +50,7 @@ Summary
 
 :elixir:func:`clear/0`       Clears all invoked tasks, allowing them to be reinvoked 
 
-:elixir:func:`get!/1`        Receives a task name and retrieves the task module 
+:elixir:func:`get\!/1`       Receives a task name and retrieves the task module 
 
 :elixir:func:`get/1`         Receives a task name and retrieves the task module. Returns nil if the task cannot be found 
 

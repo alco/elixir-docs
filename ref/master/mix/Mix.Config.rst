@@ -17,17 +17,17 @@ Module for reading and merging app configurations.
 Summary
 -------
 
-========================== =
-:elixir:func:`merge/2`     Merges two configurations 
+=========================== =
+:elixir:func:`merge/2`      Merges two configurations 
 
-:elixir:func:`merge/3`     Merges two configurations 
+:elixir:func:`merge/3`      Merges two configurations 
 
-:elixir:func:`persist/1`   Persists the given configuration by modifying the configured applications environment 
+:elixir:func:`persist/1`    Persists the given configuration by modifying the configured applications environment 
 
-:elixir:func:`read/1`      Reads a configuration file 
+:elixir:func:`read/1`       Reads a configuration file 
 
-:elixir:func:`validate!/1` Validates a configuration 
-========================== =
+:elixir:func:`validate\!/1` Validates a configuration 
+=========================== =
 
 
 

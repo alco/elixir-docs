@@ -278,7 +278,7 @@ Summary
 
 :elixir:func:`configure/1`     Configures IEx 
 
-:elixir:macro:`pry/1`          Pries into the process environment 
+:elixir:func:`pry/1`           Pries into the process environment 
 
 :elixir:func:`started?/0`      Returns ``true`` if IEx was properly started 
 

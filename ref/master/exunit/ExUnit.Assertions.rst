@@ -29,41 +29,41 @@ cases such as checking a floating point number or handling exceptions.
 Summary
 -------
 
-================================= =
-:elixir:macro:`assert/1`          Asserts its argument is true 
+================================ =
+:elixir:func:`assert/1`          Asserts its argument is true 
 
-:elixir:func:`assert/2`           Asserts ``value`` is true, displaying the given ``message`` otherwise 
+:elixir:func:`assert/2`          Asserts ``value`` is true, displaying the given ``message`` otherwise 
 
-:elixir:func:`assert/4`           Asserts ``value`` is true. If it fails, it raises an expectation error using the given ``left`` and ``right`` values 
+:elixir:func:`assert/4`          Asserts ``value`` is true. If it fails, it raises an expectation error using the given ``left`` and ``right`` values 
 
-:elixir:func:`assert_in_delta/4`  Asserts that ``val1`` and ``val2`` differ by no more than ``delta`` 
+:elixir:func:`assert_in_delta/4` Asserts that ``val1`` and ``val2`` differ by no more than ``delta`` 
 
-:elixir:func:`assert_raise/2`     Asserts the ``exception`` is raised during ``function`` execution. Returns the rescued exception, fails otherwise 
+:elixir:func:`assert_raise/2`    Asserts the ``exception`` is raised during ``function`` execution. Returns the rescued exception, fails otherwise 
 
-:elixir:func:`assert_raise/3`     Asserts the ``exception`` is raised during ``function`` execution with the ``expected_message``. Returns the rescued exception, fails otherwise 
+:elixir:func:`assert_raise/3`    Asserts the ``exception`` is raised during ``function`` execution with the ``expected_message``. Returns the rescued exception, fails otherwise 
 
-:elixir:macro:`assert_receive/3`  Asserts a message was or is going to be received. Unlike ``assert_received``, it has a default timeout of 100 milliseconds 
+:elixir:func:`assert_receive/3`  Asserts a message was or is going to be received. Unlike ``assert_received``, it has a default timeout of 100 milliseconds 
 
-:elixir:macro:`assert_received/2` Asserts a message was received and is in the current process' mailbox. Timeout is set to 0, so there is no waiting time 
+:elixir:func:`assert_received/2` Asserts a message was received and is in the current process' mailbox. Timeout is set to 0, so there is no waiting time 
 
-:elixir:macro:`catch_error/1`     Asserts ``expression`` will cause an error. Returns the error or fails otherwise 
+:elixir:func:`catch_error/1`     Asserts ``expression`` will cause an error. Returns the error or fails otherwise 
 
-:elixir:macro:`catch_exit/1`      Asserts ``expression`` will exit. Returns the exit status/message or fails otherwise 
+:elixir:func:`catch_exit/1`      Asserts ``expression`` will exit. Returns the exit status/message or fails otherwise 
 
-:elixir:macro:`catch_throw/1`     Asserts ``expression`` will throw a value. Returns the thrown value or fails otherwise 
+:elixir:func:`catch_throw/1`     Asserts ``expression`` will throw a value. Returns the thrown value or fails otherwise 
 
-:elixir:func:`flunk/1`            Fails with a message 
+:elixir:func:`flunk/1`           Fails with a message 
 
-:elixir:macro:`refute/1`          This is a negative assertion, failing if its parameter is truthy 
+:elixir:func:`refute/1`          This is a negative assertion, failing if its parameter is truthy 
 
-:elixir:func:`refute/2`           Asserts ``value`` is ``nil`` or ``false`` (that is, ``value`` is not truthy) 
+:elixir:func:`refute/2`          Asserts ``value`` is ``nil`` or ``false`` (that is, ``value`` is not truthy) 
 
-:elixir:func:`refute_in_delta/4`  Asserts ``val1`` and ``val2`` are not within ``delta`` 
+:elixir:func:`refute_in_delta/4` Asserts ``val1`` and ``val2`` are not within ``delta`` 
 
-:elixir:macro:`refute_receive/3`  refute\_receive message, timeout Â 100, message Â nil 
+:elixir:func:`refute_receive/3`  refute\_receive message, timeout Â 100, message Â nil 
 
-:elixir:macro:`refute_received/2` Asserts a message was not received (i.e. it is not in the current process mailbox). The ``not_expected`` argument must be a match pattern 
-================================= =
+:elixir:func:`refute_received/2` Asserts a message was not received (i.e. it is not in the current process mailbox). The ``not_expected`` argument must be a match pattern 
+================================ =
 
 
 

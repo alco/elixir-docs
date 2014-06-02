@@ -111,19 +111,19 @@ the template is not specified at compilation time.
 Summary
 -------
 
-====================================== =
-:elixir:func:`compile_file/2`          Get a ``filename`` and generate a quoted expression that can be evaluated by Elixir or compiled to a function 
+===================================== =
+:elixir:func:`compile_file/2`         Get a ``filename`` and generate a quoted expression that can be evaluated by Elixir or compiled to a function 
 
-:elixir:func:`compile_string/2`        Get a string ``source`` and generate a quoted expression that can be evaluated by Elixir or compiled to a function 
+:elixir:func:`compile_string/2`       Get a string ``source`` and generate a quoted expression that can be evaluated by Elixir or compiled to a function 
 
-:elixir:func:`eval_file/3`             Get a ``filename`` and evaluate the values using the ``bindings`` 
+:elixir:func:`eval_file/3`            Get a ``filename`` and evaluate the values using the ``bindings`` 
 
-:elixir:func:`eval_string/3`           Get a string ``source`` and evaluate the values using the ``bindings`` 
+:elixir:func:`eval_string/3`          Get a string ``source`` and evaluate the values using the ``bindings`` 
 
-:elixir:macro:`function_from_file/5`   Generates a function definition from the file contents. The kind (``:def`` or ``:defp``) must be given, the function name, its arguments and the compilation options 
+:elixir:func:`function_from_file/5`   Generates a function definition from the file contents. The kind (``:def`` or ``:defp``) must be given, the function name, its arguments and the compilation options 
 
-:elixir:macro:`function_from_string/5` Generates a function definition from the string. The kind (``:def`` or ``:defp``) must be given, the function name, its arguments and the compilation options 
-====================================== =
+:elixir:func:`function_from_string/5` Generates a function definition from the string. The kind (``:def`` or ``:defp``) must be given, the function name, its arguments and the compilation options 
+===================================== =
 
 
 

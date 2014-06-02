@@ -25,11 +25,11 @@ Summary
 
 :elixir:func:`create_file/2`      Creates a file with the given contents. If the file already exists, asks for user confirmation 
 
-:elixir:macro:`embed_template/2`  Embed a template given by ``contents`` into the current module 
+:elixir:func:`embed_template/2`   Embed a template given by ``contents`` into the current module 
 
-:elixir:macro:`embed_text/2`      Embeds a text given by ``contents`` into the current module 
+:elixir:func:`embed_text/2`       Embeds a text given by ``contents`` into the current module 
 
-:elixir:macro:`from_file/1`       Reads the content from a file relative to the current file and not relative to the cwd. Useful when used with embed macros: 
+:elixir:func:`from_file/1`        Reads the content from a file relative to the current file and not relative to the cwd. Useful when used with embed macros: 
 ================================= =
 
 

@@ -45,9 +45,9 @@ Example
 Summary
 -------
 
-======================= =
-:elixir:macro:`using/2` Allows a developer to customize the using block when the case template is used 
-======================= =
+====================== =
+:elixir:func:`using/2` Allows a developer to customize the using block when the case template is used 
+====================== =
 
 
 

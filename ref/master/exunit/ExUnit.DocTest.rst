@@ -145,9 +145,9 @@ suite run.
 Summary
 -------
 
-========================= =
-:elixir:macro:`doctest/2` This macro is used to generate ExUnit test cases for doctests 
-========================= =
+======================== =
+:elixir:func:`doctest/2` This macro is used to generate ExUnit test cases for doctests 
+======================== =
 
 
 
