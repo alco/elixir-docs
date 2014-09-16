@@ -189,7 +189,7 @@ file and guarantee it is closed with ``try/after`` block:
 
     iex> {:ok, file} = File.open "sample", [:utf8, :write]
     iex> try do
-    ...>   IO.write file, "josé"
+    ...>   IO.write file, "olá"
     ...>   raise "oops, something went wrong"
     ...> after
     ...>   File.close(file)

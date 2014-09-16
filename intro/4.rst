@@ -12,7 +12,7 @@ access previously bound values.
 ----------------------
 
 We have used the ``=`` operator a couple times to assign variables in
-Elixir.
+Elixir:
 
 .. code:: iex
 
@@ -44,7 +44,7 @@ A variable can only be assigned on the left side of ``=``:
 
 Since there is no variable ``unknown`` previously defined, Elixir
 imagined you were trying to call a function named ``unknown/0``, but
-there isn't such function.
+such a function does not exist.
 
 4.2 Pattern matching
 --------------------
@@ -62,8 +62,8 @@ example, we can pattern match on tuples:
     iex> b
     "world"
 
-A pattern match will error in case the sides can't match. This is, for
-example, the case when the tuples have different sizes:
+A pattern match will error in the case that the sides can't match. This
+is, for example, the case when the tuples have different sizes:
 
 .. code:: iex
 
@@ -198,7 +198,7 @@ left side of a match. The following example is invalid:
 .. code:: iex
 
     iex> length([1,[2],3]) = 3
-    ** (ErlangError) erlang error :illegal_pattern
+    ** (CompileError) iex:1: illegal pattern
 
 This finishes our introduction to pattern matching. As we will see in
 the next chapter, pattern matching is very common in many language

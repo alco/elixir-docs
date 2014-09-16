@@ -65,7 +65,7 @@ passed as the second argument it either triggers our first definition
 ensure that we get exactly 1 step closer to our base case.
 
 Let's now see how we can use the power of recursion to sum a list of
-numbers.
+numbers:
 
 .. code:: elixir
 

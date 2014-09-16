@@ -12,8 +12,8 @@ Use the issues tracker for:
 -  `bug reports <#bugs-reports>`__
 -  `submitting pull requests <#pull-requests>`__
 
-Please **do not** use the issues tracker for personal support requests
-nor feature requests. Support requests should be send to:
+Please **do not** use the issue tracker for personal support requests
+nor feature requests. Support requests should be sent to:
 
 -  `the elixir-talk mailing
    list <http://groups.google.com/group/elixir-lang-talk>`__
@@ -24,7 +24,7 @@ nor feature requests. Support requests should be send to:
 Feature requests can be discussed on `the elixir-core mailing
 list <http://groups.google.com/group/elixir-lang-core>`__.
 
-We do our best to keep the issues tracker tidy and organized, making it
+We do our best to keep the issue tracker tidy and organized, making it
 useful for everyone. For example, we classify open issues per
 application and perceived difficulty of the issue, making it easier for
 developers to `contribute to Elixir <#contributing>`__.
@@ -122,30 +122,6 @@ Travis-CI <https://travis-ci.org/elixir-lang/elixir>`__.
 
 With tests running and passing, you are ready to contribute to Elixir
 and send your pull requests.
-
-Building on Windows
-~~~~~~~~~~~~~~~~~~~
-
-There are a few extra steps you'll need to take for contributing from
-Windows. Basically, once you have Erlang 17, Git, and MSYS from MinGW on
-your system, you're all set. Specifically, here's what you need to do to
-get up and running:
-
-1. Install `Git <http://www.git-scm.com/download/win>`__,
-   `Erlang <http://www.erlang.org/download.html>`__, and the `MinGW
-   Installation
-   Manager <http://sourceforge.net/projects/mingw/files/latest/download?source=files>`__.
-2. Use the MinGW Installation Manager to install the msys-bash,
-   msys-make, and msys-grep packages.
-3. Add
-   ``;C:\Program Files (x86)\Git\bin;C:\Program Files\erl6.0\bin;C:\MinGW\msys\1.0\bin``
-   to your "Path" environment variable . (This is under Control Panel >
-   System and Security > System > Advanced system settings > Environment
-   Variables > System variables)
-
-You can now work in the Command Prompt similar to how you would on other
-OS'es, except for some things (like creating symlinks) you'll need to
-run the Command Prompt as an Administrator.
 
 Contributing Documentation
 --------------------------
@@ -283,7 +259,6 @@ We have saved some excellent pull requests we have received in the past
 in case you are looking for some examples:
 
 -  https://github.com/elixir-lang/elixir/pull/992
--  https://github.com/elixir-lang/elixir/pull/1041
 -  https://github.com/elixir-lang/elixir/pull/1058
 -  https://github.com/elixir-lang/elixir/pull/1059
 
