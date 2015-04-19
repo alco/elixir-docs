@@ -1,7 +1,7 @@
 14 Module attributes
 ==========================================================
 
-.. contents:: :local:
+{% include toc.html %}
 
 Module attributes in Elixir serve three purposes:
 
@@ -44,47 +44,43 @@ them, the most commonly used ones:
 
 ``@moduledoc`` and ``@doc`` are by far the most used attributes, and we
 expect you to use them a lot. Elixir treats documentation as first-class
-and provides many functions to access documentation:
+and provides many functions to access documentation.
 
-.. code:: iex
-
-    iex> defmodule MyModule do
-    ...>  @moduledoc "It does **x**"
-    ...>
-    ...>  @doc """
-    ...>  Returns the version
-    ...>  """
-    ...>  def version, do: 1
-    ...> end
-    {:module, MyModule, <<70, 79, 82, ...>>, {:version, 0}}
-    iex> h MyModule
-    * MyModule
-
-    It does **x**
-
-    iex> h MyModule.version
-    * def version()
-
-    Returns the version
-
-Elixir promotes the use of markdown with heredocs to write readable
-documentation. Heredocs are multiline strings, they start and end with
-triple quotes, keeping the formatting of the inner text:
+Let's go back to the ``Math`` module defined in the previous chapters,
+add some documentation and save it to the ``math.ex`` file:
 
 .. code:: elixir
 
     defmodule Math do
       @moduledoc """
-      This module provides mathematical functions
-      as sin, cos and constants like pi.
+      Provides math-related functions.
 
       ## Examples
 
-          Math.pi
-          #=> 3.1415...
+          iex> Math.sum(1, 2)
+          3
 
       """
+
+      @doc """
+      Calculates the sum of two numbers.
+      """
+      def sum(a, b), do: a + b
     end
+
+Elixir promotes the use of markdown with heredocs to write readable
+documentation. Heredocs are multiline strings, they start and end with
+triple quotes, keeping the formatting of the inner text. We can access
+the documentation of any compiled module directly from IEx:
+
+::
+
+    $ elixirc math.ex
+    $ iex
+    iex> h Math # Access the docs for the module Math
+    ...
+    iex> h Math.sum # Access the docs for the sum function
+    ...
 
 We also provide a tool called
 `ExDoc <https://github.com/elixir-lang/ex_doc>`__ which is used to
@@ -96,7 +92,7 @@ supported attributes. Elixir also uses attributes to define
 `typespecs </docs/stable/elixir/Kernel.Typespec.html>`__, via:
 
 -  ``@spec`` - provides a specification for a function.
--  ``@callback`` - provides a specification for the behavior callback.
+-  ``@callback`` - provides a specification for the behaviour callback.
 -  ``@type`` - defines a type to be used in ``@spec``.
 -  ``@typep`` - defines a private type to be used in ``@spec``.
 -  ``@opaque`` - defines an opaque type to be used in ``@spec``.

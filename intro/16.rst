@@ -1,7 +1,7 @@
 16 Protocols
 ==========================================================
 
-.. contents:: :local:
+{% include toc.html %}
 
 Protocols are a mechanism to achieve polymorphism in Elixir. Dispatching
 on a protocol is available to any data type as long as it implements the
@@ -101,7 +101,7 @@ they do not share protocol implementations with maps. Let's define a
 .. code:: iex
 
     iex> defmodule User do
-    ...>   defstruct name: "jose", age: 27
+    ...>   defstruct name: "john", age: 27
     ...> end
     {:module, User,
      <<70, 79, 82, ...>>, {:__struct__, 0}}
@@ -113,7 +113,7 @@ And then check:
     iex> Blank.blank?(%{})
     true
     iex> Blank.blank?(%User{})
-    ** (Protocol.UndefinedError) protocol Blank not implemented for %User{age: 27, name: "jose"}
+    ** (Protocol.UndefinedError) protocol Blank not implemented for %User{age: 27, name: "john"}
 
 Instead of sharing protocol implementation with maps, structs require
 their own protocol implementation:
@@ -124,10 +124,10 @@ their own protocol implementation:
       def blank?(_), do: false
     end
 
-If desired you could come up with your own semantics for a user being
+If desired, you could come up with your own semantics for a user being
 blank. Not only that, you could use structs to build more robust data
-types, like queues, and implemented all relevant protocols, like
-``Enumerable`` and possibly ``Blank`` for such data type.
+types, like queues, and implement all relevant protocols, such as
+``Enumerable`` and possibly ``Blank``, for this data type.
 
 In many cases though, developers may want to provide a default
 implementation for structs, as explicitly implementing the protocol for
@@ -218,7 +218,7 @@ like IEx use to print results:
     iex> {1, 2, 3}
     {1,2,3}
     iex> %User{}
-    %User{name: "jose", age: 27}
+    %User{name: "john", age: 27}
 
 Keep in mind that, by convention, whenever the inspected value starts
 with ``#``, it is representing a data structure in non-valid Elixir

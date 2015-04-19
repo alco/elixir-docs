@@ -1,9 +1,9 @@
 15 Structs
 ==========================================================
 
-.. contents:: :local:
+{% include toc.html %}
 
-In early chapters, we have learned about maps:
+In earlier chapters, we learned about maps:
 
 .. code:: iex
 
@@ -23,7 +23,7 @@ module:
 .. code:: iex
 
     iex> defmodule User do
-    ...>   defstruct name: "jose", age: 27
+    ...>   defstruct name: "john", age: 27
     ...> end
     {:module, User,
      <<70, 79, 82, ...>>, {:__struct__, 0}}
@@ -34,9 +34,9 @@ syntax:
 .. code:: iex
 
     iex> %User{}
-    %User{name: "jose", age: 27}
-    iex> %User{name: "eric"}
-    %User{name: "eric", age: 27}
+    %User{age: 27, name: "john"}
+    iex> %User{name: "meg"}
+    %User{age: 27, name: "meg"}
     iex> is_map(%User{})
     true
 
@@ -53,18 +53,18 @@ existing fields of a map. The same applies to structs:
 
 .. code:: iex
 
-    iex> jose = %User{}
-    %User{name: "jose", age: 27}
-    iex> jose.name
-    "jose"
-    iex> eric = %{jose | name: "eric"}
-    %User{name: "eric", age: 27}
-    iex> %{eric | oops: :field}
+    iex> john = %User{}
+    %User{age: 27, name: "john"}
+    iex> john.name
+    "john"
+    iex> meg = %{john | name: "meg"}
+    %User{age: 27, name: "meg"}
+    iex> %{meg | oops: :field}
     ** (ArgumentError) argument error
 
 By using the update syntax, the VM is aware no new keys will be added to
 the map/struct, allowing the maps to share their structure in memory. In
-the example above, both ``jose`` and ``eric`` share the same key
+the example above, both ``john`` and ``meg`` share the same key
 structure in memory.
 
 Structs can also be used in pattern matching and they guarantee the
@@ -72,10 +72,10 @@ structs are of the same type:
 
 .. code:: iex
 
-    iex> %User{name: name} = jose
-    %User{name: "jose", age: 27}
+    iex> %User{name: name} = john
+    %User{age: 27, name: "john"}
     iex> name
-    "jose"
+    "john"
     iex> %User{} = %{}
     ** (MatchError) no match of right hand side value: %{}
 
@@ -84,7 +84,7 @@ the map:
 
 .. code:: iex
 
-    iex> jose.__struct__
+    iex> john.__struct__
     User
 
 Overall, a struct is just a bare map with default fields. Notice we say
@@ -95,9 +95,9 @@ struct:
 .. code:: iex
 
     iex> user = %User{}
-    %User{name: "jose", age: 27}
+    %User{age: 27, name: "john"}
     iex> user[:name]
-    ** (Protocol.UndefinedError) protocol Access not implemented for %User{age: 27, name: "jose"}
+    ** (Protocol.UndefinedError) protocol Access not implemented for %User{age: 27, name: "john"}
 
 A struct also is not a dictionary and therefore can't be used with the
 ``Dict`` module:
@@ -105,6 +105,15 @@ A struct also is not a dictionary and therefore can't be used with the
 .. code:: iex
 
     iex> Dict.get(%User{}, :name)
-    ** (ArgumentError) unsupported dict: %User{name: "jose", age: 27}
+    ** (ArgumentError) unsupported dict: %User{name: "john", age: 27}
+
+Since structs are just maps, they will work with the ``Map`` module:
+
+.. code:: iex
+
+    iex> Map.put(%User{}, :name, "kurt")
+    %User{age: 27, name: "kurt"}
+    iex> Map.merge(%User{age: 27}, %User{name: "takashi"})
+    %User{age: 27, name: "takashi"}
 
 We will cover how structs interacts with protocols in the next chapter.

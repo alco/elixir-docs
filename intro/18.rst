@@ -1,7 +1,7 @@
 18 Comprehensions
 ==========================================================
 
-.. contents:: :local:
+{% include toc.html %}
 
 In Elixir, it is common to loop over Enumerables, often filtering some
 results, and mapping to another list of values. Comprehensions are
@@ -49,7 +49,7 @@ out. For example, we can get the square of only odd numbers:
 .. code:: iex
 
     iex> require Integer
-    iex> for n <- 1..4, Integer.odd?(n), do: n * n
+    iex> for n <- 1..4, Integer.is_odd(n), do: n * n
     [1, 9]
 
 A filter will keep all values except ``nil`` or ``false``.

@@ -1,7 +1,7 @@
 12 IO
 ==========================================================
 
-.. contents:: :local:
+{% include toc.html %}
 
 This chapter is a quick introduction to input/output mechanisms in
 Elixir and related modules, like
@@ -25,7 +25,7 @@ straight-forward:
 .. code:: iex
 
     iex> IO.puts "hello world"
-    "hello world"
+    hello world
     :ok
     iex> IO.gets "yes or no? "
     yes or no? yes
@@ -38,7 +38,7 @@ error device:
 .. code:: iex
 
     iex> IO.puts :stderr, "hello world"
-    "hello world"
+    hello world
     :ok
 
 12.2 The File module
@@ -166,7 +166,7 @@ own process:
 
 After ``IO.write/2``, we can see the request sent by the IO module
 printed, which then fails since the IO module expected some kind of
-result, which we did not supply.
+result that we did not supply.
 
 The ```StringIO`` </docs/stable/elixir/StringIO.html>`__ module provides
 an implementation of the IO device messages on top of a string:
@@ -179,12 +179,12 @@ an implementation of the IO device messages on top of a string:
     "he"
 
 By modelling IO devices with processes, the Erlang VM allows different
-nodes in the same network to exchange file processes and read/write
-files in between nodes. Of all IO devices, there is one that is special
-to each process, called group leader.
+nodes in the same network to exchange file processes to read/write files
+in between nodes. Of all IO devices, there is one that is special to
+each process, called group leader.
 
 When you write to ``:stdio``, you are actually sending a message to the
-group leader, which writes to ``:stdio``:
+group leader, which writes to STDIO file descriptor:
 
 .. code:: iex
 
@@ -196,9 +196,9 @@ group leader, which writes to ``:stdio``:
     :ok
 
 The group leader can be configured per process and is used in different
-situations, for example, when executing code in remote nodes, it
-guarantees messages printed in the remote node are redirected and
-printed in the "executor" one.
+situations. For example, when executing code in a remote terminal, it
+guarantees messages in a remote node are redirected and printed in the
+terminal that triggered the request.
 
 12.5 ``iodata`` and ``chardata``
 --------------------------------
@@ -239,7 +239,7 @@ details if you intend to pass lists to those functions. Binaries are
 already represented by the underlying bytes and as such their
 representation is always raw.
 
-This finishes our tour on IO devices and IO related functionality. We
+This finishes our tour of IO devices and IO related functionality. We
 have learned about four Elixir modules,
 ```IO`` </docs/stable/elixir/IO.html>`__,
 ```File`` </docs/stable/elixir/File.html>`__,

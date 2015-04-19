@@ -1,7 +1,7 @@
 3 Basic operators
 ==========================================================
 
-.. contents:: :local:
+{% include toc.html %}
 
 In the previous chapter, we saw Elixir provides ``+``, ``-``, ``*``,
 ``/`` as arithmetic operators, plus the functions ``div/2`` and

@@ -1,7 +1,7 @@
 7 Keywords, maps and dicts
 ==========================================================
 
-.. contents:: :local:
+{% include toc.html %}
 
 So far we haven't discussed any associative data structures, i.e. data
 structures that are able to associate a certain value (or multiple
@@ -51,11 +51,12 @@ Note that values added to the front are the ones fetched on lookup:
     iex> new_list[:a]
     0
 
-Keyword lists are important because they have two special
+Keyword lists are important because they have three special
 characteristics:
 
--  They keep the keys ordered as given by the developer.
--  They allow a key to be given more than once.
+-  Keys must be atoms.
+-  Keys are ordered, as specified by the developer.
+-  Keys can be given more than once.
 
 For example, `the Ecto library <https://github.com/elixir-lang/ecto>`__
 makes use of both features to provide an elegant DSL for writing
@@ -98,7 +99,9 @@ this reason, keyword lists are used in Elixir mainly as options. If you
 need to store many items or guarantee one-key associates with at maximum
 one-value, you should use maps instead.
 
-Note we can also pattern match on keyword lists:
+Although we can pattern match on keyword lists, it is rarely done in
+practice since pattern matching on lists require the number of items and
+their order to match:
 
 .. code:: iex
 
@@ -110,9 +113,6 @@ Note we can also pattern match on keyword lists:
     ** (MatchError) no match of right hand side value: [a: 1, b: 2]
     iex> [b: b, a: a] = [a: 1, b: 2]
     ** (MatchError) no match of right hand side value: [a: 1, b: 2]
-
-However this is rarely done in practice since pattern matching on lists
-require the number of items and their order to match.
 
 7.2 Maps
 --------
@@ -128,10 +128,12 @@ in Elixir. A map is created using the ``%{}`` syntax:
     1
     iex> map[2]
     :b
+    iex> map[:c]
+    nil
 
 Compared to keyword lists, we can already see two differences:
 
--  Maps allow any value as key.
+-  Maps allow any value as a key.
 -  Maps' keys do not follow any ordering.
 
 If you pass duplicate keys when creating a map, the last one wins:
@@ -166,6 +168,17 @@ matching:
 As shown above, a map matches as long as the given keys exist in the
 given map. Therefore, an empty map matches all maps.
 
+`The ``Map`` module </docs/stable/elixir/Map.html>`__ provides a very
+similar API to the ``Keyword`` module with convenience functions to
+manipulate maps:
+
+.. code:: iex
+
+    iex> Map.get(%{:a => 1, 2 => :b}, :a)
+    1
+    iex> Map.to_list(%{:a => 1, 2 => :b})
+    [{2, :b}, {:a, 1}]
+
 One interesting property about maps is that they provide a particular
 syntax for updating and accessing atom keys:
 
@@ -173,27 +186,28 @@ syntax for updating and accessing atom keys:
 
     iex> map = %{:a => 1, 2 => :b}
     %{:a => 1, 2 => :b}
+
     iex> map.a
     1
+    iex> map.c
+    ** (KeyError) key :c not found in: %{2 => :b, :a => 1}
+
     iex> %{map | :a => 2}
     %{:a => 2, 2 => :b}
     iex> %{map | :c => 3}
     ** (ArgumentError) argument error
 
 Both access and update syntaxes above require the given keys to exist.
-For example, the last line failed because there is no ``:c`` in the map.
-This is very useful when you are working with maps where you only expect
-certain keys to exist.
+For example, accessing and updating the ``:c`` key failed there is no
+``:c`` in the map.
 
-In future chapters, we will also learn about structs, which provide
-compile-time guarantees and the foundation for polymorphism in Elixir.
-Structs are built on top of maps where the update guarantees above are
-proven to be quite useful.
-
-Manipulating maps is done via `the ``Map``
-module </docs/stable/elixir/Map.html>`__, it provides a very similar API
-to the ``Keyword`` module. This is because both modules implement the
-``Dict`` behaviour.
+Elixir developers typically prefer to use the ``map.field`` syntax and
+pattern matching instead of the functions in the ``Map`` module when
+working with maps because they lead to an assertive style of
+programming. `This blog
+post <http://blog.plataformatec.com.br/2014/09/writing-assertive-code-with-elixir/>`__
+provides insight and examples on how you get more concise and faster
+software by writing assertive code in Elixir.
 
     Note: Maps were recently introduced into the Erlang VM with `EEP
     43 <http://www.erlang.org/eeps/eep-0043.html>`__. Erlang 17 provides
@@ -237,11 +251,12 @@ can compare two dictionaries of any kind.
 That said, you may be wondering, which of ``Keyword``, ``Map`` or
 ``Dict`` modules should you use in your code? The answer is: it depends.
 
-If your code is expecting a keyword as an argument, explicitly use the
-``Keyword`` module. If you want to manipulate a map, use the ``Map``
-module. However, if your API is meant to work with any dictionary, use
-the ``Dict`` module (and make sure to write tests that pass different
-dict implementations as arguments).
+If your code is expecting one specific time as argument, use the
+respective module as it leads to more assertive code. For example, if
+you expect a keyword as an argument, explicitly use the ``Keyword``
+module instead of ``Dict``. However, if your API is meant to work with
+any dictionary, use the ``Dict`` module (and make sure to write tests
+that pass different dict implementations as arguments).
 
 This concludes our introduction to associative data structures in
 Elixir. You will find out that given keyword lists and maps, you will

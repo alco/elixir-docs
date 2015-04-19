@@ -8,11 +8,10 @@ Getting started guides
 ======================
 
 .. toctree::
-   :maxdepth: 1
+   :maxdepth: 2
 
    intro/index
-   mix/index
-   exunit/index
+   mix_otp/index
    meta/index
 
 Technical guides
@@ -23,25 +22,3 @@ Technical guides
    :glob:
 
    technical/*
-
-API reference
-=============
-
-.. toctree::
-   :maxdepth: 2
-
-   v0.13.3 <ref/v0.13.3>
-   v0.14.0-dev (master) <ref/master>
-   ref/topical
-
-Source repo docs
-================
-
-.. toctree::
-   :maxdepth: 1
-
-   repo/readme
-   repo/contributing
-   repo/release
-   repo/license
-   repo/changelog

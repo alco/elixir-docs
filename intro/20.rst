@@ -1,7 +1,7 @@
 20 Where to go next
 ==========================================================
 
-.. contents:: :local:
+{% include toc.html %}
 
 Eager to learn more? Keep on reading!
 
@@ -9,25 +9,26 @@ Eager to learn more? Keep on reading!
 ------------------------------------
 
 In order to get your first project started, Elixir ships with a build
-tool called ```Mix`` </getting_started/mix/1.html>`__. You can get your
-new project started by simply running:
+tool called Mix. You can get your new project started by simply running:
 
 ::
 
     mix new path/to/new/project
 
-You can learn more about Mix and other applications that ship with
-Elixir in the links below:
+We have written a guide that covers how to build an Elixir application,
+with its own supervision tree, configuration, tests and more. The
+application works as a distributed key-value store where we organize
+key-value pairs into buckets and distribute those buckets across
+multiple nodes:
 
--  `Mix - a build tool for Elixir </getting_started/mix/1.html>`__
--  `ExUnit - a unit test framework </getting_started/ex_unit/1.html>`__
+-  `Mix and OTP </getting_started/mix_otp/1.html>`__
 
 20.2 Community and other resources
 ----------------------------------
 
 On the sidebar, you can find the link to some Elixir books and
-screencasts. They are plenty of Elixir resources out there, like
-conference talks, open source projects, and other learning material
+screencasts. There are plenty of Elixir resources out there, like
+conference talks, open source projects, and other learning materials
 produced by the community.
 
 Remember that in case of any difficulties, you can always visit the
@@ -35,14 +36,13 @@ Remember that in case of any difficulties, you can always visit the
 the `mailing list <http://groups.google.com/group/elixir-lang-talk>`__.
 You can be sure that there will be someone willing to help. And to keep
 posted on the latest news and announcements, follow the
-`blog <http://elixir-lang.org/blog/>`__ and follow language developments
-on the `elixir-core mailing
-list <http://groups.google.com/group/elixir-lang-core>`__.
+`blog </blog/>`__ and follow language developments on the `elixir-core
+mailing list <http://groups.google.com/group/elixir-lang-core>`__.
 
 Don't forget `you can also check the source code of Elixir
 itself <https://github.com/elixir-lang/elixir>`__, which is mostly
 written in Elixir (mainly the ``lib`` directory), or `explore Elixir's
-documentation <http://elixir-lang.org/docs.html>`__.
+documentation </docs.html>`__.
 
 20.3 A Byte of Erlang
 ---------------------
@@ -51,16 +51,15 @@ As the main page of this site puts it:
 
     Elixir is a programming language built on top of the Erlang VM.
 
-Sooner than later, an Elixir developer will want to interface with
+Sooner or later, an Elixir developer will want to interface with
 existing Erlang libraries. Here's a list of online resources that cover
 Erlang's fundamentals and its more advanced features:
 
--  This `Erlang Syntax: A Crash
-   Course <http://elixir-lang.org/crash-course.html>`__ provides a
-   concise intro to Erlang's syntax. Each code snippet is accompanied by
-   equivalent code in Elixir. This is an opportunity for you to not only
-   get some exposure to the Erlang's syntax but also review some of the
-   things you have learned in the present guide.
+-  This `Erlang Syntax: A Crash Course </crash-course.html>`__ provides
+   a concise intro to Erlang's syntax. Each code snippet is accompanied
+   by equivalent code in Elixir. This is an opportunity for you to not
+   only get some exposure to Erlang's syntax but also review some of the
+   things you have learned in this guide.
 
 -  Erlang's official website has a short
    `tutorial <http://www.erlang.org/course/concurrent_programming.html>`__

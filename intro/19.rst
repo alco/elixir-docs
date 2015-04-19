@@ -1,7 +1,7 @@
 19 Sigils
 ==========================================================
 
-.. contents:: :local:
+{% include toc.html %}
 
 We have already learned Elixir provides double-quoted strings and
 single-quoted char lists. However, this only covers the surface of
@@ -102,8 +102,9 @@ space:
     iex> ~w(foo bar bat)
     ["foo", "bar", "bat"]
 
-The ``~w`` sigil also accepts the ``c``, ``s`` and ``a`` modifiers to
-choose the format of the result:
+The ``~w`` sigil also accepts the ``c``, ``s`` and ``a`` modifiers (for
+char lists, strings and atoms, respectively) to choose the format of the
+result:
 
 .. code:: iex
 
@@ -143,7 +144,7 @@ The following escape codes can be used in strings and char lists:
 -  ``\x{D...}`` - character with hexadecimal representation with one or
    more hexadecimal digits (example: ``\x{abc13}``)
 
-Sigils also support heredocs which is when tripe double- or
+Sigils also support heredocs, which is when triple double- or
 single-quotes are used as separators:
 
 .. code:: iex
@@ -213,7 +214,7 @@ an integer:
 .. code:: iex
 
     iex> defmodule MySigils do
-    ...>   def sigil_i(binary, []), do: binary_to_integer(binary)
+    ...>   def sigil_i(string, []), do: String.to_integer(string)
     ...> end
     iex> import MySigils
     iex> ~i(13)
