@@ -13,8 +13,8 @@ next chapter.
 -----------
 
 The building block of an Elixir program is a tuple with three elements.
-For example, the function call ``sum(1,2,3)`` is represented internally
-as:
+For example, the function call ``sum(1, 2, 3)`` is represented
+internally as:
 
 .. code:: elixir
 
@@ -51,7 +51,7 @@ element is an atom, instead of a list:
 .. code:: iex
 
     iex> quote do: x
-    { :x, [], Elixir }
+    {:x, [], Elixir}
 
 When quoting more complex expressions, we can see that the code is
 represented in such tuples, which are often nested inside each other in
@@ -78,7 +78,7 @@ format:
 
 .. code:: elixir
 
-    { tuple | atom, list, list | atom }
+    {tuple | atom, list, list | atom}
 
 -  The first element is an atom or another tuple in the same
    representation;
@@ -116,8 +116,18 @@ other particular chunk of code inside the representation we want to
 retrieve.
 
 For example, imagine you have a variable ``number`` which contains the
-number you want to inject inside a quoted expression. The number can be
-injected into the quoted representation by using ``unquote``:
+number you want to inject inside a quoted expression.
+
+.. code:: iex
+
+    iex> number = 13
+    iex> Macro.to_string(quote do: 11 + number)
+    "11 + number"
+
+That's not what we wanted, since the value of the ``number`` variable
+has not been injected and ``number`` has been quoted in the expression.
+In order to inject the *value* of the ``number`` variable, ``unquote``
+has to be used inside the quoted representation:
 
 .. code:: iex
 

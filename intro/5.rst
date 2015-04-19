@@ -51,7 +51,8 @@ The first clause above will only match when ``x`` is positive.
 5.2 Expressions in guard clauses.
 ---------------------------------
 
-The Erlang VM only allows a limited set of expressions in guards:
+The Erlang Virtual Machine (VM) only allows a limited set of expressions
+in guards:
 
 -  comparison operators (``==``, ``!=``, ``===``, ``!==``, ``>``, ``<``,
    ``<=``, ``>=``)
@@ -228,8 +229,8 @@ They also support ``else`` blocks:
     like ``is_function/2`` are defined, all automatically imported and
     available in your code by default.
 
-5.5 ``do`` blocks
------------------
+5.5 ``do``/``end`` blocks
+-------------------------
 
 At this point, we have learned four control structures: ``case``,
 ``cond``, ``if`` and ``unless``, and they were all wrapped in

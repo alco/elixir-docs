@@ -251,9 +251,9 @@ can compare two dictionaries of any kind.
 That said, you may be wondering, which of ``Keyword``, ``Map`` or
 ``Dict`` modules should you use in your code? The answer is: it depends.
 
-If your code is expecting one specific time as argument, use the
-respective module as it leads to more assertive code. For example, if
-you expect a keyword as an argument, explicitly use the ``Keyword``
+If your code is expecting one specific data structure as argument, use
+the respective module as it leads to more assertive code. For example,
+if you expect a keyword as an argument, explicitly use the ``Keyword``
 module instead of ``Dict``. However, if your API is meant to work with
 any dictionary, use the ``Dict`` module (and make sure to write tests
 that pass different dict implementations as arguments).

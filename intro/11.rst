@@ -223,8 +223,8 @@ supervision tree. Furthermore, tasks provides convenience functions,
 like ``Task.async/1`` and ``Task.await/1``, and functionality to ease
 distribution.
 
-We will explore those functionalities in the Mix and OTP guide, for now
-it is enough to remember to use Tasks to get better logging.
+We will explore those functionalities in the ***Mix and OTP guide***,
+for now it is enough to remember to use Tasks to get better logging.
 
 11.5 State
 ----------
@@ -327,7 +327,7 @@ would be automatically registered. Besides agents, Elixir provides an
 API for building generic servers (called GenServer), generic event
 managers and event handlers (called GenEvent), tasks and more, all
 powered by processes underneath. Those, along with supervision trees,
-will be explored with more detail in the Mix and OTP guide which will
-build a complete Elixir application from start to finish.
+will be explored with more detail in the ***Mix and OTP guide*** which
+will build a complete Elixir application from start to finish.
 
 For now, let's move on and explore the world of I/O in Elixir.

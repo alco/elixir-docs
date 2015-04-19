@@ -22,7 +22,7 @@ math specific operations:
 
 From now on, any reference to ``List`` will automatically expand to
 ``Math.List``. In case one wants to access the original ``List``, it can
-be done by accessing the module via ``Elixir``:
+be done by prefixing the module name with ``Elixir.``:
 
 .. code:: elixir
 
@@ -88,9 +88,9 @@ with the ``require`` directive:
     iex> Integer.is_odd(3)
     true
 
-In Elixir, ``Integer.is_odd/1`` is defined as a macro so it can be used
-as guards. This means that, in order to invoke ``Integer.is_odd/1``, we
-need to first require the ``Integer`` module.
+In Elixir, ``Integer.is_odd/1`` is defined as a macro so that it can be
+used as a guard. This means that, in order to invoke
+``Integer.is_odd/1``, we need to first require the ``Integer`` module.
 
 In general a module does not need to be required before usage, except if
 we want to use the macros available in that module. An attempt to call a
@@ -102,9 +102,9 @@ more about macros in a later chapter.
 -----------
 
 We use ``import`` whenever we want to easily access functions or macros
-from other modules without using the qualified name. For instance, if we
-want to use the ``duplicate`` function from ``List`` several times, we
-can simply import it:
+from other modules without using the fully-qualified name. For instance,
+if we want to use the ``duplicate/2`` function from the ``List`` module
+several times, we can simply import it:
 
 .. code:: iex
 
@@ -115,7 +115,10 @@ can simply import it:
 
 In this case, we are importing only the function ``duplicate`` (with
 arity 2) from ``List``. Although ``:only`` is optional, its usage is
-recommended. ``:except`` could also be given as an option.
+recommended in order to avoid importing all the functions of a given
+module inside the namespace. ``:except`` could also be given as an
+option in order to import everything in a module *except* a list of
+functions.
 
 ``import`` also supports ``:macros`` and ``:functions`` to be given to
 ``:only``. For example, to import all macros, one could write:
@@ -130,15 +133,15 @@ Or to import all functions, you could write:
 
     import Integer, only: :functions
 
-Note that ``import`` is also **lexically scoped**, this means we can
-import specific macros inside specific functions:
+Note that ``import`` is **lexically scoped** too. This means that we can
+import specific macros or functions inside function definitions:
 
 .. code:: elixir
 
     defmodule Math do
       def some_function do
         import List, only: [duplicate: 2]
-        # call duplicate
+        duplicate(:ok, 10)
       end
     end
 
@@ -146,13 +149,13 @@ In the example above, the imported ``List.duplicate/2`` is only visible
 within that specific function. ``duplicate/2`` won't be available in any
 other function in that module (or any other module for that matter).
 
-Note that importing a module automatically requires it.
+Note that ``import``\ ing a module automatically ``require``\ s it.
 
 13.4 Aliases
 ------------
 
-At this point, you may be wondering, what exactly an Elixir alias is and
-how it is represented?
+At this point you may be wondering: what exactly an Elixir alias is and
+how is it represented?
 
 An alias in Elixir is a capitalized identifier (like ``String``,
 ``Keyword``, etc) which is converted to an atom during compilation. For
@@ -165,19 +168,19 @@ instance, the ``String`` alias translates by default to the atom
     true
     iex> to_string(String)
     "Elixir.String"
-    iex> :"Elixir.String"
-    String
+    iex> :"Elixir.String" == String
+    true
 
 By using the ``alias/2`` directive, we are simply changing what an alias
 translates to.
 
 Aliases work as described because in the Erlang VM (and consequently
-Elixir), modules are represented by atoms. For example, that's the
+Elixir) modules are represented by atoms. For example, that's the
 mechanism we use to call Erlang modules:
 
 .. code:: iex
 
-    iex> :lists.flatten([1,[2],3])
+    iex> :lists.flatten([1, [2], 3])
     [1, 2, 3]
 
 This is also the mechanism that allows us to dynamically call a given
@@ -187,11 +190,10 @@ function in a module:
 
     iex> mod = :lists
     :lists
-    iex> mod.flatten([1,[2],3])
-    [1,2,3]
+    iex> mod.flatten([1, [2], 3])
+    [1, 2, 3]
 
-In other words, we are simply calling the function ``flatten`` on the
-atom ``:lists``.
+We are simply calling the function ``flatten`` on the atom ``:lists``.
 
 13.5 Nesting
 ------------
@@ -206,14 +208,26 @@ it works in Elixir. Consider the following example:
       end
     end
 
-The example above will define two modules ``Foo`` and ``Foo.Bar``. The
+The example above will define two modules: ``Foo`` and ``Foo.Bar``. The
 second can be accessed as ``Bar`` inside ``Foo`` as long as they are in
-the same lexical scope. If later the developer decides to move ``Bar``
-to another file, it will need to be referenced by its full name
-(``Foo.Bar``) or an alias needs to be set using the ``alias`` directive
-discussed above.
+the same lexical scope.
 
-In other words, the code above is exactly the same as:
+If later the ``Bar`` module is moved outside the ``Foo`` module
+definition, it will need to be referenced by its full name (``Foo.Bar``)
+or an alias will need to be set using the ``alias`` directive discussed
+above. The ``Bar`` module definition will change too. This code is
+equivalent to the example above:
+
+.. code:: elixir
+
+    defmodule Foo.Bar do
+    end
+
+    defmodule Foo do
+      alias Foo.Bar, as: Bar
+    end
+
+The code above is exactly the same as:
 
 .. code:: elixir
 
@@ -223,7 +237,14 @@ In other words, the code above is exactly the same as:
       alias Elixir.Foo.Bar, as: Bar
     end
 
+**Note**: in Elixir, you don't have to define the ``Foo`` module before
+being able to define the ``Foo.Bar`` module, as the language translates
+all module names to atoms anyway. You can define arbitrarily-nested
+modules without defining any module in the chain (e.g., ``Foo.Bar.Baz``
+without defining ``Foo`` or ``Foo.Bar`` first).
+
 As we will see in later chapters, aliases also play a crucial role in
-macros, to guarantee they are hygienic. With this we are almost
-finishing our tour about Elixir modules, the last topic to cover is
-module attributes.
+macros, to guarantee they are hygienic.
+
+With this we are almost finishing our tour about Elixir modules. The
+last topic to cover is module attributes.

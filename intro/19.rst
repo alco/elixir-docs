@@ -1,228 +1,243 @@
-19 Sigils
+19 try, catch and rescue
 ==========================================================
 
 {% include toc.html %}
 
-We have already learned Elixir provides double-quoted strings and
-single-quoted char lists. However, this only covers the surface of
-structures that have textual representation in the language. Atoms are,
-for example, another structure which are mostly created via the
-``:atom`` representation.
+Elixir has three error mechanisms: errors, throws and exits. In this
+chapter we will explore each of them and include remarks about when each
+should be used.
 
-One of Elixir's goals is extensibility: developers should be able to
-extend the language to particular domains. Computer science has become
-such a wide field that it is impossible for a language to tackle many
-fields as part of its core. Our best bet is to rather make the language
-extensible, so developers, companies and communities can extend the
-language to their relevant domains.
+19.1 Errors
+-----------
 
-In the chapter, we are going to explore sigils, which are one of the
-mechanisms provided by the language for working with textual
-representations.
-
-19.1 Regular expressions
-------------------------
-
-Sigils start with the tilde (``~``) character which is followed by a
-letter and then a separator. The most common sigil in Elixir is ``~r``
-for `regular
-expressions <https://en.wikipedia.org/wiki/Regular_Expressions>`__:
+Errors (or *exceptions*) are used when exceptional things happen in the
+code. A sample error can be retrieved by trying to add a number into an
+atom:
 
 .. code:: iex
 
-    # A regular expression that returns true if the text has foo or bar
-    iex> regex = ~r/foo|bar/
-    ~r/foo|bar/
-    iex> "foo" =~ regex
-    true
-    iex> "bat" =~ regex
-    false
+    iex> :foo + 1
+    ** (ArithmeticError) bad argument in arithmetic expression
+         :erlang.+(:foo, 1)
 
-Elixir provides Perl-compatible regular expressions (regexes), as
-implemented by the `PCRE <http://www.pcre.org/>`__ library. Regexes also
-support modifiers. For example, the ``i`` modifier makes a regular
-expression case insensitive:
+A runtime error can be raised any time by using ``raise/1``:
 
 .. code:: iex
 
-    iex> "HELLO" =~ ~r/hello/
-    false
-    iex> "HELLO" =~ ~r/hello/i
-    true
+    iex> raise "oops"
+    ** (RuntimeError) oops
 
-Check out the ```Regex`` module </docs/stable/elixir/Regex.html>`__ for
-more information on other modifiers and the supported operations with
-regular expressions.
-
-So far, all examples have used ``/`` to delimit a regular expression.
-However sigils support 8 different separators:
-
-::
-
-    ~r/hello/
-    ~r|hello|
-    ~r"hello"
-    ~r'hello'
-    ~r(hello)
-    ~r[hello]
-    ~r{hello}
-    ~r<hello>
-
-The reasoning in supporting different operators is that different
-separators can be more convenient to different sigils. For example,
-using parentheses for regular expressions may be a confusing choice as
-they can get mixed with the parentheses inside the regex. However,
-parentheses can be handy for other sigils, as we will see in the next
-section.
-
-19.2 Strings, char lists and words sigils
------------------------------------------
-
-Besides regular expressions, Elixir ships with three other sigils.
-
-The ``~s`` sigil is used to generate strings, similar to double quotes:
+Other errors can be raised with ``raise/2`` passing the error name and a
+list of keyword arguments:
 
 .. code:: iex
 
-    iex> ~s(this is a string with "quotes")
-    "this is a string with \"quotes\""
+    iex> raise ArgumentError, message: "invalid argument foo"
+    ** (ArgumentError) invalid argument foo
 
-While ``~c`` is used to generate char lists:
-
-.. code:: iex
-
-    iex> ~c(this is a string with "quotes")
-    'this is a string with "quotes"'
-
-The ``~w`` sigil is used to generate a list of words separated by white
-space:
+You can also define your own errors by creating a module and using the
+``defexception`` construct inside it; this way, you'll create an error
+with the same name as the module it's defined in. The most common case
+is to define a custom exception with a message field:
 
 .. code:: iex
 
-    iex> ~w(foo bar bat)
-    ["foo", "bar", "bat"]
+    iex> defmodule MyError do
+    iex>   defexception message: "default message"
+    iex> end
+    iex> raise MyError
+    ** (MyError) default message
+    iex> raise MyError, message: "custom message"
+    ** (MyError) custom message
 
-The ``~w`` sigil also accepts the ``c``, ``s`` and ``a`` modifiers (for
-char lists, strings and atoms, respectively) to choose the format of the
-result:
-
-.. code:: iex
-
-    iex> ~w(foo bar bat)a
-    [:foo, :bar, :bat]
-
-Besides lowercase sigils, Elixir supports uppercase sigils. While both
-``~s`` and ``~S`` will return strings, the first one allows escape codes
-and interpolation while the second does not:
-
-.. code:: elixir
-
-    iex> ~s(String with escape codes \x26 interpolation)
-    "String with escape codes & interpolation"
-    iex> ~S(String without escape codes and without #{interpolation})
-    "String without escape codes and without \#{interpolation}"
-
-The following escape codes can be used in strings and char lists:
-
--  ``\"`` – double quote
--  ``\'`` – single quote
--  ``\\`` – single backslash
--  ``\a`` – bell/alert
--  ``\b`` – backspace
--  ``\d`` - delete
--  ``\e`` - escape
--  ``\f`` - form feed
--  ``\n`` – newline
--  ``\r`` – carriage return
--  ``\s`` – space
--  ``\t`` – tab
--  ``\v`` – vertical tab
--  ``\DDD``, ``\DD``, ``\D`` - character with octal representation DDD,
-   DD or D (example: ``\377``)
--  ``\xDD`` - character with hexadecimal representation DD (example:
-   ``\x13``)
--  ``\x{D...}`` - character with hexadecimal representation with one or
-   more hexadecimal digits (example: ``\x{abc13}``)
-
-Sigils also support heredocs, which is when triple double- or
-single-quotes are used as separators:
+Errors can be **rescued** using the ``try/rescue`` construct:
 
 .. code:: iex
 
-    iex> ~s"""
-    ...> this is
-    ...> a heredoc string
-    ...> """
-
-The most common case for heredoc sigils is when writing documentation.
-For example, if you need to write escape characters in your
-documentation, it can become error prone as we would need to
-double-escape some characters:
-
-.. code:: elixir
-
-    @doc """
-    Converts double-quotes to single-quotes.
-
-    ## Examples
-
-        iex> convert("\\\"foo\\\"")
-        "'foo'"
-
-    """
-    def convert(...)
-
-By using using ``~S``, we can avoid this problem altogether:
-
-.. code:: elixir
-
-    @doc ~S"""
-    Converts double-quotes to single-quotes.
-
-    ## Examples
-
-        iex> convert("\"foo\"")
-        "'foo'"
-
-    """
-    def convert(...)
-
-19.3 Custom sigils
-------------------
-
-As hinted at the beginning of this chapter, sigils in Elixir are
-extensible. In fact, the sigil ``~r/foo/i`` is equivalent to calling the
-``sigil_r`` function with two arguments:
-
-.. code:: iex
-
-    iex> sigil_r(<<"foo">>, 'i')
-    ~r"foo"i
-
-That said, we can access the documentation for the ``~r`` sigil via the
-``sigil_r`` function:
-
-.. code:: iex
-
-    iex> h sigil_r
-    ...
-
-We can also provide our own sigils by simply implementing the proper
-function. For example, let's implement the ``~i(13)`` sigil that returns
-an integer:
-
-.. code:: iex
-
-    iex> defmodule MySigils do
-    ...>   def sigil_i(string, []), do: String.to_integer(string)
+    iex> try do
+    ...>   raise "oops"
+    ...> rescue
+    ...>   e in RuntimeError -> e
     ...> end
-    iex> import MySigils
-    iex> ~i(13)
-    13
+    %RuntimeError{message: "oops"}
 
-Sigils can also be used to do compile-time work with the help of macros.
-For example, regular expressions in Elixir are compiled into efficient
-representation during compilation of the source code, therefore skipping
-this step at runtime. If you have interest in the subject, we recommend
-you to learn more about macros and check how those sigils are
-implemented in the ``Kernel`` module.
+The example above rescues the runtime error and returns the error itself
+which is then printed in the ``iex`` session. In practice, however,
+Elixir developers rarely use the ``try/rescue`` construct. For example,
+many languages would force you to rescue an error when a file cannot be
+opened successfully. Elixir instead provides a ``File.read/1`` function
+which returns a tuple containing informations about whether the file was
+successfully opened:
+
+.. code:: iex
+
+    iex> File.read "hello"
+    {:error, :enoent}
+    iex> File.write "hello", "world"
+    :ok
+    iex> File.read "hello"
+    {:ok, "world"}
+
+There is no ``try/rescue`` here. In case you want to handle multiple
+outcomes of opening a file, you can simply use pattern matching with the
+``case`` construct:
+
+.. code:: iex
+
+    iex> case File.read "hello" do
+    ...>   {:ok, body}      -> IO.puts "Success: #{body}"
+    ...>   {:error, reason} -> IO.puts "Error: #{reason}"
+    ...> end
+
+At the end of the day, it's up to your application to decide if an error
+while opening a file is exceptional or not. That's why Elixir doesn't
+impose exceptions on ``File.read/1`` and many other functions. Instead,
+it leaves it up to the developer to choose the best way to proceed.
+
+For the cases where you do expect a file to exist (and the lack of that
+file is truly an *error*) you can simply use ``File.read!/1``:
+
+.. code:: iex
+
+    iex> File.read! "unknown"
+    ** (File.Error) could not read file unknown: no such file or directory
+        (elixir) lib/file.ex:305: File.read!/1
+
+Many functions in the standard library follow the pattern of having a
+counterpart that raises an exception instead of returning tuples to
+match against. The convention is to create a function (``foo``) which
+returns ``{:ok, result}`` or ``{:error, reason}`` tuples and another
+function (``foo!``, same name but with a trailing ``!``) that takes the
+same arguments as ``foo`` but which raises an exception if there's an
+error. ``foo!`` should return the result (not wrapped in a tuple) if
+everything goes fine. The ```File``
+module </docs/stable/elixir/File.html>`__ is a good example of this
+convention.
+
+In Elixir, we avoid using ``try/rescue`` because **we don't use errors
+for control flow**. We take errors literally: they are reserved to
+unexpected and/or exceptional situations. In case you actually need flow
+control constructs, *throws* should be used. That's what we are going to
+see next.
+
+19.2 Throws
+-----------
+
+In Elixir, a value can be thrown and later be caught. ``throw`` and
+``catch`` are reserved for situations where it is not possible to
+retrieve a value unless by using ``throw`` and ``catch``.
+
+Those situations are quite uncommon in practice except when interfacing
+with libraries that does not provide a proper API. For example, let's
+imagine the ``Enum`` module did not provide any API for finding a value
+and that we needed to find the first multiple of 13 in a list of
+numbers:
+
+.. code:: iex
+
+    iex> try do
+    ...>   Enum.each -50..50, fn(x) ->
+    ...>     if rem(x, 13) == 0, do: throw(x)
+    ...>   end
+    ...>   "Got nothing"
+    ...> catch
+    ...>   x -> "Got #{x}"
+    ...> end
+    "Got -39"
+
+Since ``Enum`` *does* provide a proper API, in practice ``Enum.find/2``
+is the way to go:
+
+.. code:: iex
+
+    iex> Enum.find -50..50, &(rem(&1, 13) == 0)
+    -39
+
+19.3 Exits
+----------
+
+All Elixir code runs inside processes that communicate with each other.
+When a process dies of "natural causes" (e.g., unhandled exceptions), it
+sends an ``exit`` signal. A process can also die by explicitly sending
+an exit signal:
+
+.. code:: iex
+
+    iex> spawn_link fn -> exit(1) end
+    #PID<0.56.0>
+    ** (EXIT from #PID<0.56.0>) 1
+
+In the example above, the linked process died by sending an ``exit``
+signal with value of 1. The Elixir shell automatically handles those
+messages and prints them to the terminal.
+
+``exit`` can also be "caught" using ``try/catch``:
+
+.. code:: iex
+
+    iex> try do
+    ...>   exit "I am exiting"
+    ...> catch
+    ...>   :exit, _ -> "not really"
+    ...> end
+    "not really"
+
+Using ``try/catch`` is already uncommon and using it to catch exits is
+even more rare.
+
+``exit`` signals are an important part of the fault tolerant system
+provided by the Erlang VM. Processes usually run under supervision trees
+which are themselves processes that just wait for ``exit`` signals from
+the supervised processes. Once an exit signal is received, the
+supervision strategy kicks in and the supervised process is restarted.
+
+It is exactly this supervision system that makes constructs like
+``try/catch`` and ``try/rescue`` so uncommon in Elixir. Instead of
+rescuing an error, we'd rather "fail fast" since the supervision tree
+will guarantee our application will go back to a known initial state
+after the error.
+
+19.4 After
+----------
+
+Sometimes it's necessary to ensure that a resource is cleaned up after
+some action that could potentially raise an error. The ``try/after``
+construct allows you to do that. For example, we can open a file and
+guarantee it will be closed (even if something goes wrong) with a
+``try/after`` block:
+
+.. code:: iex
+
+    iex> {:ok, file} = File.open "sample", [:utf8, :write]
+    iex> try do
+    ...>   IO.write file, "olá"
+    ...>   raise "oops, something went wrong"
+    ...> after
+    ...>   File.close(file)
+    ...> end
+    ** (RuntimeError) oops, something went wrong
+
+19.5 Variables scope
+--------------------
+
+It is important to bear in mind that variables defined inside
+``try/catch/rescue/after`` blocks do not leak to the outer context. This
+is because the ``try`` block may fail and as such the variables may
+never be bound in the first place. In other words, this code is invalid:
+
+.. code:: iex
+
+    iex> try do
+    ...>   from_try = true
+    ...> after
+    ...>   from_after = true
+    ...> end
+    iex> from_try
+    ** (RuntimeError) undefined function: from_try/0
+    iex> from_after
+    ** (RuntimeError) undefined function: from_after/0
+
+This finishes our introduction to ``try``, ``catch`` and ``rescue``. You
+will find they are used less frequently in Elixir than in other
+languages although they may be handy in some situations where a library
+or some particular code is not playing "by the rules".
